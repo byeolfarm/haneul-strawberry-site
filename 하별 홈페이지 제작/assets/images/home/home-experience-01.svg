@@ -1,0 +1,14 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="42" fill="#FDF6EC"/>
+  <rect x="90" y="120" width="1020" height="640" rx="34" fill="#FFFDF8"/>
+  <rect x="150" y="530" width="900" height="140" rx="28" fill="#E4EFD5"/>
+  <circle cx="370" cy="380" r="82" fill="#F0C8A8"/>
+  <rect x="300" y="465" width="150" height="170" rx="50" fill="#E2A46F"/>
+  <circle cx="770" cy="360" r="78" fill="#F0C8A8"/>
+  <rect x="700" y="445" width="145" height="185" rx="50" fill="#8BBA73"/>
+  <path d="M505 490C548 430 632 420 682 474C636 543 557 559 505 490Z" fill="#C94A57"/>
+  <path d="M585 330C610 284 675 269 720 302C695 349 647 365 602 351L585 330Z" fill="#6D8E53"/>
+  <path d="M495 340C521 292 580 279 627 302C602 353 554 373 510 360L495 340Z" fill="#82A864"/>
+  <text x="150" y="210" fill="#923640" font-family="Pretendard, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="52" font-weight="800">함께 고르고, 함께 따는 체험</text>
+  <text x="150" y="275" fill="#5B554D" font-family="Pretendard, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="28" font-weight="600">아이와 부모가 나란히 즐기는 가족 중심 시간</text>
+</svg>
