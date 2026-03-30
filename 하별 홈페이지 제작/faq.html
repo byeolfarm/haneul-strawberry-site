@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ | 하늘의별딸기</title>
   <meta name="description" content="하늘의별딸기 FAQ 페이지입니다. 예약, 요금, 추가 수확, 주차, 우천 운영, 감성 스냅과 환불 기준까지 자주 묻는 질문을 확인하세요.">
-  <!-- 운영 도메인 확정 후 canonical, og:url, og:image는 절대경로로 정리 -->
-  <!-- 예: https://www.example.com/faq.html -->
-  <link rel="canonical" href="faq.html">
-  <!-- <meta property="og:url" content="https://www.example.com/faq.html"> -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="canonical" href="https://byeolfarm.com/faq">
+  <meta property="og:url" content="https://byeolfarm.com/faq">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:title" content="FAQ | 하늘의별딸기">
   <meta property="og:description" content="예약, 결제, 주차, 우천 운영, 감성 스냅까지 하늘의별딸기 자주 묻는 질문을 정리했습니다.">
-  <meta property="og:image" content="assets/images/common/og-image.jpg">
+  <meta property="og:image" content="https://byeolfarm.com/assets/images/common/og-image.jpg">
   <meta name="theme-color" content="#f7f1e6">
   <link rel="icon" href="assets/images/common/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- 운영 도메인 확정 후 FAQ JSON-LD에 url / image / logo를 추가할 경우 절대경로 사용 -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -139,17 +139,11 @@
     }
   </script>
 </head>
-<body>
+<body class="page-faq" data-page="faq">
   <a class="skip-link" href="#main-content">본문 바로가기</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand-link" href="index.html">하늘의별딸기</a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="메뉴 열기">
-        <span class="menu-toggle__text">메뉴</span>
-        <span class="menu-toggle__line"></span>
-        <span class="menu-toggle__line"></span>
-        <span class="menu-toggle__line"></span>
-      </button>
       <nav class="site-navigation" id="site-navigation" aria-label="주요 메뉴">
         <ul class="nav-list">
           <li><a href="index.html">홈</a></li>
@@ -160,6 +154,22 @@
         </ul>
         <a class="button button-primary nav-booking-button" href="https://map.naver.com/p/entry/place/1487772117?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202603302343&locale=ko&svcName=map_pcv5&searchType=place&lng=126.8615976&lat=37.1489770&c=15.00,0,0,2,dh" target="_blank" rel="noopener">예약하기</a>
       </nav>
+      <div class="header-tools">
+        <div class="language-switcher">
+          <span class="language-switcher__icon" aria-hidden="true">🌐</span>
+          <label class="visually-hidden" for="language-select">언어 선택</label>
+          <select id="language-select" class="language-switcher__select" aria-label="언어 선택">
+            <option value="ko">KO</option>
+            <option value="en">EN</option>
+          </select>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="메뉴 열기">
+          <span class="menu-toggle__text">메뉴</span>
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+        </button>
+      </div>
     </div>
   </header>
 

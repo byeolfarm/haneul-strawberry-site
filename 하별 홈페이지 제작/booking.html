@@ -5,30 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>예약 / 가격 안내 | 하늘의별딸기</title>
   <meta name="description" content="하늘의별딸기 예약 / 가격 안내 페이지입니다. 설향 딸기 수확 체험 요금, 이용 원칙, 추가 옵션, 감성 스냅 이벤트 안내를 확인하세요.">
-  <!-- 운영 도메인 확정 후 canonical, og:url, og:image는 절대경로로 정리 -->
-  <!-- 예: https://www.example.com/booking.html -->
-  <link rel="canonical" href="booking.html">
-  <!-- <meta property="og:url" content="https://www.example.com/booking.html"> -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="canonical" href="https://byeolfarm.com/booking">
+  <meta property="og:url" content="https://byeolfarm.com/booking">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:title" content="예약 / 가격 안내 | 하늘의별딸기">
   <meta property="og:description" content="설향 딸기 수확 체험 1인 18,000원, 추가 옵션과 방문 전 필수 안내를 확인하세요.">
-  <meta property="og:image" content="assets/images/common/og-image.jpg">
+  <meta property="og:image" content="https://byeolfarm.com/assets/images/common/og-image.jpg">
   <meta name="theme-color" content="#f7f1e6">
   <link rel="icon" href="assets/images/common/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="page-booking" data-page="booking">
   <a class="skip-link" href="#main-content">본문 바로가기</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand-link" href="index.html">하늘의별딸기</a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="메뉴 열기">
-        <span class="menu-toggle__text">메뉴</span>
-        <span class="menu-toggle__line"></span>
-        <span class="menu-toggle__line"></span>
-        <span class="menu-toggle__line"></span>
-      </button>
       <nav class="site-navigation" id="site-navigation" aria-label="주요 메뉴">
         <ul class="nav-list">
           <li><a href="index.html">홈</a></li>
@@ -39,6 +34,22 @@
         </ul>
         <a class="button button-primary nav-booking-button" href="https://map.naver.com/p/entry/place/1487772117?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202603302343&locale=ko&svcName=map_pcv5&searchType=place&lng=126.8615976&lat=37.1489770&c=15.00,0,0,2,dh" target="_blank" rel="noopener">예약하기</a>
       </nav>
+      <div class="header-tools">
+        <div class="language-switcher">
+          <span class="language-switcher__icon" aria-hidden="true">🌐</span>
+          <label class="visually-hidden" for="language-select">언어 선택</label>
+          <select id="language-select" class="language-switcher__select" aria-label="언어 선택">
+            <option value="ko">KO</option>
+            <option value="en">EN</option>
+          </select>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="메뉴 열기">
+          <span class="menu-toggle__text">메뉴</span>
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -51,23 +62,35 @@
         </div>
         <div class="booking-hero-card">
           <div class="booking-hero-text">
-            <p class="small-label">기본 체험</p>
+            <p class="small-label">대표 체험</p>
             <h2>설향 딸기 수확 체험</h2>
+            <p class="booking-trust-note">2026 화성시 로컬푸드 우수농가 선정 농장</p>
             <!-- 가격 수정 시작 -->
             <p class="price-text">1인 18,000원</p>
             <!-- 가격 수정 끝 -->
             <p>가족이 함께 설향 딸기를 직접 수확하며 시간을 보내는 대표 체험입니다.</p>
-            <div class="policy-highlight" aria-label="중요 예약 기준">
-              <p class="policy-highlight__title">꼭 확인해 주세요</p>
-              <ul class="policy-highlight__list">
-                <li><strong>전원 1인 1체험이 기본입니다.</strong></li>
-                <li><strong>사진만 찍는 보호자도 동일 요금이 적용됩니다.</strong></li>
-                <li><strong>24개월 미만은 증빙서류 지참 시 무료 입장 가능합니다.</strong></li>
-                <li><strong>1인당 500g 전용 팩 1개가 제공되며, 전용 팩은 뚜껑이 완전히 닫히는 범위까지 담아가실 수 있습니다.</strong></li>
-                <li><strong>추가 수확분은 100g 단위로 현장 결제되며, 금액은 방문일 현장 시세 기준으로 안내됩니다.</strong></li>
-              </ul>
+            <div class="booking-hero-summary" aria-label="대표 체험 요약">
+              <article class="booking-hero-summary__item">
+                <p class="booking-hero-summary__label">입장 기준</p>
+                <p>사진만 찍는 보호자도 동일 요금 적용</p>
+              </article>
+              <article class="booking-hero-summary__item">
+                <p class="booking-hero-summary__label">유아 기준</p>
+                <p>24개월 미만 무료 입장(증빙서류 지참)</p>
+              </article>
+              <article class="booking-hero-summary__item">
+                <p class="booking-hero-summary__label">기본 구성</p>
+                <p>1인 500g 전용 팩 / 뚜껑이 닫히는 범위</p>
+              </article>
+              <article class="booking-hero-summary__item">
+                <p class="booking-hero-summary__label">추가 수확</p>
+                <p>100g 단위 현장 결제 / 방문일 현장 시세 기준</p>
+              </article>
             </div>
-            <a class="button button-primary" href="https://map.naver.com/p/entry/place/1487772117?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202603302343&locale=ko&svcName=map_pcv5&searchType=place&lng=126.8615976&lat=37.1489770&c=15.00,0,0,2,dh" target="_blank" rel="noopener">네이버 예약하기</a>
+            <div class="button-group booking-hero-actions">
+              <a class="button button-primary" href="https://map.naver.com/p/entry/place/1487772117?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202603302343&locale=ko&svcName=map_pcv5&searchType=place&lng=126.8615976&lat=37.1489770&c=15.00,0,0,2,dh" target="_blank" rel="noopener">네이버 예약하기</a>
+              <a class="button button-ghost" href="#booking-operation">운영 안내 보기</a>
+            </div>
           </div>
           <div class="booking-hero-image">
             <img src="assets/images/booking/booking-program-01.jpg" alt="설향 딸기 수확 체험을 소개하는 안내 이미지">
@@ -76,37 +99,13 @@
       </div>
     </section>
 
-    <section class="section-space">
+    <section class="section-space section-background" id="booking-operation">
       <div class="container">
         <div class="section-heading">
-          <p class="section-label">이용 원칙</p>
-          <h2>예약 전 꼭 확인해 주세요</h2>
-        </div>
-        <div class="list-card">
-          <ul class="check-list">
-            <li>전원 1인 1체험 필수</li>
-            <li>사진만 찍는 보호자도 동일 요금 적용</li>
-            <li>24개월 미만 무료 입장(증빙서류 지참)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-space section-background">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-label">기본 구성</p>
-          <h2>체험에 포함되는 내용</h2>
+          <p class="section-label">체험 운영 안내</p>
+          <h2>예약 전에 흐름을 간단히 확인해 주세요</h2>
         </div>
         <div class="info-grid">
-          <article class="info-card">
-            <h3>수확 구성</h3>
-            <ul class="check-list">
-              <li>1인당 500g 전용 팩 1개 제공</li>
-              <li>제공된 전용 팩의 뚜껑이 완전히 닫히는 범위까지 담아가실 수 있습니다.</li>
-              <li>추가 수확분은 100g 단위로 현장 결제되며, 금액은 방문일 현장 시세 기준으로 안내됩니다.</li>
-            </ul>
-          </article>
           <article class="info-card">
             <h3>체험 시간</h3>
             <ul class="check-list">
@@ -121,6 +120,13 @@
               <li>운영 일정과 예약 가능 여부는 네이버 스마트플레이스 예약 페이지에서 확인해 주세요.</li>
             </ul>
           </article>
+          <article class="info-card">
+            <h3>도착 안내</h3>
+            <ul class="check-list">
+              <li>원활한 진행을 위해 예약 시간 10분 전 도착을 권장합니다.</li>
+              <li>늦게 도착하실 경우 감성 스냅 진행이 어려울 수 있습니다.</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -131,7 +137,7 @@
           <p class="section-label">추가 옵션</p>
           <h2>인기 옵션 안내</h2>
         </div>
-        <article class="highlight-card">
+        <article class="highlight-card highlight-card--addon">
           <div>
             <p class="small-label">옵션명</p>
             <h3>딸기 미니 컵케이크 만들기</h3>
@@ -151,7 +157,7 @@
           <p class="section-label">특별 이벤트</p>
           <h2>농장주의 깜짝 감성 스냅 선물</h2>
         </div>
-        <article class="text-panel text-panel--wide">
+        <article class="highlight-card highlight-card--event text-panel--wide">
           <p>감성 스냅은 하늘의별딸기가 예약 가족에게 드리는 무료 특별 이벤트입니다. 현장 운영 상황에 따라 진행 여부가 달라지며, 모든 방문객에게 상시 제공되는 기본 서비스는 아닙니다.</p>
           <ul class="check-list">
             <li>평일에는 예약 고객을 중심으로 운영됩니다.</li>
@@ -166,21 +172,6 @@
             <li>현재 별도의 유료 촬영 서비스나 추가 결제형 보정본 판매는 운영하지 않습니다.</li>
           </ul>
         </article>
-      </div>
-    </section>
-
-    <section class="section-space">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-label">도착 안내</p>
-          <h2>체험 시간 전에 여유 있게 도착해 주세요</h2>
-        </div>
-        <div class="list-card">
-          <ul class="check-list">
-            <li>원활한 진행을 위해 예약 시간 10분 전 도착을 권장합니다.</li>
-            <li>늦게 도착하실 경우 감성 스냅 진행이 어려울 수 있습니다.</li>
-          </ul>
-        </div>
       </div>
     </section>
 
