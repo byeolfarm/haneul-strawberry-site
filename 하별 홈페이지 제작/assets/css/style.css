@@ -371,6 +371,25 @@ select {
   background: rgba(184, 77, 88, 0.12);
 }
 
+.instagram-link,
+.footer-external__link--instagram {
+  position: relative;
+}
+
+.instagram-link::before,
+.footer-external__link--instagram::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: -2px;
+  background-image: url("../images/common/instagram-icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 .button-full {
   width: 100%;
 }
@@ -1014,6 +1033,11 @@ select {
     width: auto;
   }
 
+  .award-proof-actions .instagram-link::before {
+    width: 17px;
+    height: 17px;
+  }
+
   .award-proof-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1266,5 +1290,12 @@ select {
     width: 100%;
     justify-content: center;
     text-align: center;
+  }
+
+  .instagram-link::before,
+  .footer-external__link--instagram::before {
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;
   }
 }
