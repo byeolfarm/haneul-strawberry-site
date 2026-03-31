@@ -1092,19 +1092,43 @@ select {
 
 @media (max-width: 719px) {
   .section-space {
-    padding: 68px 0;
+    padding: 60px 0;
   }
 
   .header-inner {
-    gap: 10px;
-  }
-
-  .header-tools {
+    min-height: 74px;
     gap: 8px;
   }
 
+  .header-tools {
+    gap: 7px;
+  }
+
   .brand-link {
-    font-size: 1.1rem;
+    font-size: 1.04rem;
+  }
+
+  .language-switcher {
+    min-height: 40px;
+    padding: 0 10px;
+    gap: 6px;
+    box-shadow: 0 6px 14px rgba(73, 51, 35, 0.04);
+  }
+
+  .language-switcher__icon {
+    font-size: 0.86rem;
+  }
+
+  .language-switcher__select {
+    min-width: 84px;
+    font-size: 0.8rem;
+  }
+
+  .menu-toggle {
+    width: 46px;
+    height: 46px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(73, 51, 35, 0.05);
   }
 
   .hero-text h1,
@@ -1115,8 +1139,9 @@ select {
   }
 
   .hero-subtitle {
-    font-size: 1.16rem;
+    font-size: 1.12rem;
     max-width: none;
+    line-height: 1.42;
   }
 
   .hero-description,
@@ -1135,34 +1160,116 @@ select {
   .highlight-card,
   .text-panel,
   .cta-card {
-    padding: 22px;
+    padding: 20px;
   }
 
   .booking-hero-card {
-    padding: 24px;
+    padding: 22px;
+    gap: 18px;
+  }
+
+  .booking-hero-text .small-label {
+    margin-bottom: 8px;
+  }
+
+  .booking-trust-note {
+    min-height: 32px;
+    margin: 0 0 10px;
+    padding: 7px 12px;
+    font-size: 0.84rem;
+  }
+
+  .price-text {
+    margin-bottom: 12px;
+    font-size: 1.92rem;
+  }
+
+  .booking-hero-text > p:not(.small-label):not(.booking-trust-note):not(.price-text) {
+    margin-bottom: 0;
+    font-size: 0.97rem;
+  }
+
+  .booking-hero-summary {
+    margin-top: 16px;
+    gap: 14px;
   }
 
   .booking-hero-summary__item {
-    padding: 16px 16px 18px;
+    border-radius: 18px;
+    padding: 14px 14px 16px;
+    box-shadow: 0 8px 18px rgba(73, 51, 35, 0.04);
+  }
+
+  .booking-hero-actions {
+    margin-top: 16px;
+    gap: 10px;
+  }
+
+  .info-card,
+  .guide-card,
+  .faq-item {
+    border-radius: 20px;
+    box-shadow: 0 10px 22px rgba(73, 51, 35, 0.05);
+  }
+
+  .quick-action-group {
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .quick-action-group--grid {
+    gap: 10px;
+  }
+
+  .faq-list {
+    gap: 12px;
+  }
+
+  .faq-item {
+    border-radius: 20px;
   }
 
   .faq-item summary {
-    padding: 20px 20px;
+    padding: 17px 18px;
+    font-size: 0.98rem;
+    line-height: 1.38;
+  }
+
+  .faq-item summary::after {
+    right: 18px;
+    top: 15px;
+    font-size: 1.2rem;
   }
 
   .faq-item p {
-    padding: 0 20px 20px;
+    padding: 0 18px 18px;
+    font-size: 0.94rem;
+    line-height: 1.64;
   }
 
   .award-proof-card {
-    padding: 24px;
+    padding: 22px;
   }
 
   .award-proof-image {
-    padding: 14px;
+    padding: 12px;
   }
 
   .cta-card {
-    padding: 26px;
+    padding: 22px;
+    gap: 16px;
+  }
+
+  .cta-section {
+    padding-top: 24px;
+  }
+
+  .cta-card .button-group {
+    gap: 10px;
+  }
+
+  .cta-card .button-secondary,
+  .cta-card .button-ghost {
+    min-height: 50px;
   }
 }
