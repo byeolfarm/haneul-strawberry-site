@@ -1,0 +1,17 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="42" fill="#FFF4EC"/>
+  <rect x="120" y="130" width="960" height="620" rx="34" fill="#FEFBF5"/>
+  <rect x="230" y="280" width="740" height="320" rx="30" fill="#E9F1DB"/>
+  <rect x="330" y="330" width="540" height="220" rx="26" fill="#FFFFFF"/>
+  <rect x="380" y="390" width="440" height="110" rx="20" fill="#FBE6E0"/>
+  <circle cx="470" cy="445" r="28" fill="#C54853"/>
+  <circle cx="575" cy="445" r="28" fill="#D05561"/>
+  <circle cx="680" cy="445" r="28" fill="#BB404B"/>
+  <circle cx="785" cy="445" r="28" fill="#D4646E"/>
+  <path d="M442 368C456 336 499 324 526 342C515 377 486 394 451 392L442 368Z" fill="#6F8F54"/>
+  <path d="M548 367C562 335 605 323 633 341C621 376 592 394 557 391L548 367Z" fill="#6F8F54"/>
+  <path d="M653 367C668 334 711 323 738 341C726 375 697 393 662 391L653 367Z" fill="#6F8F54"/>
+  <path d="M759 367C774 334 817 323 844 341C832 375 803 393 768 391L759 367Z" fill="#6F8F54"/>
+  <text x="180" y="220" fill="#923640" font-family="Pretendard, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="54" font-weight="800">설향 딸기 수확 체험</text>
+  <text x="180" y="700" fill="#5B554D" font-family="Pretendard, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="30" font-weight="600">가족이 함께 직접 따고 담아가는 대표 체험</text>
+</svg>

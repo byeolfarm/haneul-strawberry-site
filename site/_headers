@@ -1,0 +1,19 @@
+# Cloudflare Pages용 간단한 정적 사이트 헤더
+# 이 프로젝트는 Pages Functions를 쓰지 않는 순수 정적 사이트 기준입니다.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/css/*
+  Cache-Control: public, max-age=86400
+
+/assets/js/*
+  Cache-Control: public, max-age=86400
+
+/assets/images/*
+  Cache-Control: public, max-age=86400

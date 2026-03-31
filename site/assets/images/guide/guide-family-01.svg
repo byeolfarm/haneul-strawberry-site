@@ -1,0 +1,15 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="42" fill="#FFF7F0"/>
+  <rect x="100" y="120" width="1000" height="660" rx="34" fill="#FFFDF8"/>
+  <rect x="180" y="560" width="840" height="130" rx="28" fill="#E4EED6"/>
+  <circle cx="380" cy="350" r="72" fill="#F0C9AB"/>
+  <rect x="315" y="425" width="130" height="150" rx="44" fill="#C44D56"/>
+  <circle cx="620" cy="325" r="92" fill="#F0C9AB"/>
+  <rect x="535" y="420" width="170" height="170" rx="56" fill="#6F8F54"/>
+  <circle cx="865" cy="365" r="68" fill="#F0C9AB"/>
+  <rect x="805" y="435" width="120" height="145" rx="40" fill="#E2A46F"/>
+  <path d="M555 270C580 224 650 215 691 252C661 297 616 311 570 307L555 270Z" fill="#6F8F54"/>
+  <path d="M815 305C840 264 896 253 934 281C909 322 871 336 831 331L815 305Z" fill="#6F8F54"/>
+  <text x="160" y="205" fill="#923640" font-family="Pretendard, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="54" font-weight="800">방문 전에 확인하면 더 편안합니다</text>
+  <text x="160" y="265" fill="#5B554D" font-family="Pretendard, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="28" font-weight="600">수확 기준, 소지품, 안전 안내를 한눈에 정리했습니다</text>
+</svg>
