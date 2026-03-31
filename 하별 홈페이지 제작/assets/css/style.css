@@ -384,8 +384,7 @@ select {
 .hero-grid,
 .content-grid,
 .directions-layout,
-.guide-hero,
-.award-proof-card {
+.guide-hero {
   display: grid;
   gap: 32px;
   align-items: center;
@@ -477,8 +476,7 @@ select {
 
 .hero-image-card,
 .booking-hero-image,
-.image-panel,
-.award-proof-image {
+.image-panel {
   overflow: hidden;
   border-radius: var(--radius-large);
 }
@@ -490,8 +488,7 @@ select {
 
 .hero-image-card::after,
 .booking-hero-image::after,
-.image-panel::after,
-.award-proof-image::after {
+.image-panel::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -649,14 +646,24 @@ select {
   border-radius: 34px;
 }
 
+.award-proof-text {
+  max-width: 760px;
+}
+
 .award-proof-text h2 {
   margin: 0 0 16px;
+}
+
+.award-proof-description {
+  margin: 18px 0 0;
+  color: var(--color-text-soft);
 }
 
 .award-proof-list {
   display: grid;
   gap: 12px;
-  margin-top: 18px;
+  margin-top: 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .award-proof-list li {
@@ -677,30 +684,7 @@ select {
   background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
 }
 
-.award-proof-image {
-  position: relative;
-  background: rgba(255, 255, 255, 0.94);
-  padding: 18px;
-  border: 1px solid rgba(216, 203, 184, 0.72);
-  box-shadow: 0 16px 28px rgba(73, 51, 35, 0.08);
-}
-
-.award-proof-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: contain;
-  background: #fffdf9;
-  padding: 14px;
-  max-width: 460px;
-  margin: 0 auto;
-}
-
 .award-proof-stamp {
-  position: absolute;
-  left: 28px;
-  bottom: 28px;
   display: inline-flex;
   align-items: center;
   min-height: 38px;
@@ -710,6 +694,7 @@ select {
   color: #fff;
   font-size: 0.86rem;
   font-weight: 800;
+  margin-top: 18px;
 }
 
 .award-proof-actions {
@@ -997,8 +982,7 @@ select {
   .hero-grid,
   .content-grid,
   .directions-layout,
-  .guide-hero,
-  .award-proof-card {
+  .guide-hero {
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.96fr);
   }
 
@@ -1028,6 +1012,10 @@ select {
 
   .award-proof-actions .button {
     width: auto;
+  }
+
+  .award-proof-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -1251,10 +1239,6 @@ select {
     padding: 22px;
   }
 
-  .award-proof-image {
-    padding: 12px;
-  }
-
   .cta-card {
     padding: 22px;
     gap: 16px;
@@ -1271,5 +1255,16 @@ select {
   .cta-card .button-secondary,
   .cta-card .button-ghost {
     min-height: 50px;
+  }
+
+  .award-proof-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .award-proof-stamp {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 }

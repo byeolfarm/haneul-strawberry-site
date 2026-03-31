@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
           seasonStatus: "2025-26 시즌 운영 중",
           sectionTitles: [
             "딸기를 따는 시간까지 추억으로 남는 곳",
-            "아이와 함께 방문하는 가족이 더 안심할 수 있는 이유",
+            "2026 화성시 로컬푸드 우수농가 선정",
             "하늘의별딸기가 사랑받는 이유",
             "방문 전 꼭 확인해 주세요",
             "가족과 함께 달콤한 하루를 준비해 보세요"
@@ -54,11 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
             "하늘의별딸기는 딸기 한 팩만 들고 돌아가는 곳이 아니라, 가족이 함께 딸기를 찾고, 따고, 웃으며 시간을 보내는 체험형 딸기 농장입니다.",
             "아이와 나란히 앉아 빨갛게 익은 열매를 고르고, 손끝으로 조심조심 따는 그 순간이 저희가 드리고 싶은 가장 소중한 체험입니다."
           ],
-          awardLead: "2026 화성시 로컬푸드 우수농가 선정. 1,000여 농가 가운데 거래 실적부터 안전성, 현장 관리까지 기준을 통과한 농가의 딸기를 만나보세요.",
+          awardLead: "하늘의별딸기는 화성시 로컬푸드 직매장에 직접 농산물을 납품하는 농가 가운데, 거래 실적과 판매금액, 안전성 검사, 클레임 이력, 현장점검 등 복수 기준을 바탕으로 선정되는 우수농가에 이름을 올렸습니다.",
           awardList: [
-            "거래 실적과 운영 신뢰를 함께 본 기준",
-            "안전성과 현장 관리 상태를 확인한 농가",
-            "아이와 함께 방문하는 가족이 더 안심할 수 있는 이유"
+            "거래 실적",
+            "판매금액",
+            "안전성 검사",
+            "클레임 이력",
+            "현장점검"
           ],
           awardStamp: "1,000여 농가 가운데 선정된 신뢰",
           instagramLink: "인스타그램에서 최근 농장 분위기 보기",
@@ -275,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
           seasonStatus: "2025-26 season now open",
           sectionTitles: [
             "A place where strawberry picking becomes part of the memory",
-            "Why families can feel more at ease here",
+            "Selected as a 2026 Hwaseong Local Food Best Farm",
             "Why families remember Haneul Strawberry",
             "Please check before your visit",
             "Plan a sweet day out with your family"
@@ -284,11 +286,13 @@ document.addEventListener("DOMContentLoaded", function () {
             "Haneul Strawberry is more than a place where you leave with a pack of strawberries. It is a family experience farm where parents and children look, pick, and smile together.",
             "Sitting side by side with your child, choosing bright red fruit and carefully picking it by hand. That moment is the experience we value most."
           ],
-          awardLead: "Selected as a 2026 Hwaseong Local Food Best Farm. Among more than 1,000 farms, ours was chosen through standards that reflect transaction record, safety, and on-site management.",
+          awardLead: "Haneul Strawberry was selected as a best local food farm among growers directly supplying produce to the Hwaseong Local Food market, based on multiple standards including transaction record, sales volume, safety inspection, complaint history, and on-site checks.",
           awardList: [
-            "Standards that reviewed both track record and operating trust",
-            "A farm checked for safety and on-site management quality",
-            "A reason families with children can feel more at ease"
+            "Transaction record",
+            "Sales volume",
+            "Safety inspection",
+            "Complaint history",
+            "On-site checks"
           ],
           awardStamp: "Trusted among 1,000+ farms",
           instagramLink: "See the latest farm moments on Instagram",
@@ -508,7 +512,7 @@ document.addEventListener("DOMContentLoaded", function () {
           seasonStatus: "2025-26 季度运营中",
           sectionTitles: [
             "不仅带走草莓，也把采摘时光变成回忆",
-            "为什么带孩子来会更安心",
+            "2026 华城市本地食品优秀农家",
             "为什么家庭会记住天空草莓",
             "来访前请先确认",
             "和家人一起规划甜蜜的一天"
@@ -517,11 +521,13 @@ document.addEventListener("DOMContentLoaded", function () {
             "天空草莓不只是带走一盒草莓的地方，而是家人一起找草莓、采草莓、一起欢笑的体验型农场。",
             "和孩子并肩坐着，挑选熟透的红草莓，再用手轻轻采下来的那一刻，就是我们最想送给您的体验。"
           ],
-          awardLead: "2026 华城市本地食品优秀农家。我们在 1,000 多家农户中通过交易记录、安全性与现场管理标准而被选中。",
+          awardLead: "天空草莓是在向华城市本地食品直卖场直接供货的农家中，根据交易实绩、销售金额、安全性检测、投诉记录、现场检查等多项标准被评选为优秀农家的农场。",
           awardList: [
-            "以交易记录与运营信赖为基础的筛选标准",
-            "经过安全性与现场管理状态确认的农家",
-            "让带孩子来访的家庭更安心的理由"
+            "交易实绩",
+            "销售金额",
+            "安全性检测",
+            "投诉记录",
+            "现场检查"
           ],
           awardStamp: "在 1,000 多家农户中被选中的信赖",
           instagramLink: "在 Instagram 查看最近的农场氛围",
@@ -668,16 +674,18 @@ document.addEventListener("DOMContentLoaded", function () {
           seasonStatus: "Mùa 2025-26 đang hoạt động",
           sectionTitles: [
             "Nơi việc hái dâu trở thành một phần của ký ức",
-            "Lý do gia đình có thể yên tâm hơn khi ghé thăm",
+            "Được chọn là Nông hộ Local Food xuất sắc Hwaseong 2026",
             "Lý do các gia đình nhớ đến Haneul Strawberry",
             "Vui lòng kiểm tra trước khi đến",
             "Lên kế hoạch cho một ngày thật ngọt ngào cùng gia đình"
           ],
-          awardLead: "Được chọn là Nông hộ Local Food xuất sắc Hwaseong 2026. Trong hơn 1.000 nông hộ, chúng tôi được chọn nhờ vượt qua các tiêu chí về thành tích giao dịch, an toàn và quản lý hiện trường.",
+          awardLead: "Haneul Strawberry là nông trại được chọn là Nông hộ Local Food xuất sắc Hwaseong 2026 trong số các nông hộ đang trực tiếp cung cấp nông sản cho cửa hàng local food của thành phố, dựa trên nhiều tiêu chí như thành tích giao dịch, doanh số, kiểm tra an toàn, lịch sử khiếu nại và kiểm tra hiện trường.",
           awardList: [
-            "Tiêu chí đánh giá cả thành tích giao dịch và độ tin cậy vận hành",
-            "Nông hộ đã được kiểm tra về an toàn và quản lý tại hiện trường",
-            "Lý do để các gia đình có trẻ nhỏ cảm thấy yên tâm hơn"
+            "Thành tích giao dịch",
+            "Doanh số bán",
+            "Kiểm tra an toàn",
+            "Lịch sử khiếu nại",
+            "Kiểm tra hiện trường"
           ],
           awardStamp: "Niềm tin được chọn giữa hơn 1.000 nông hộ",
           instagramLink: "Xem không khí nông trại gần đây trên Instagram",
@@ -789,16 +797,18 @@ document.addEventListener("DOMContentLoaded", function () {
           seasonStatus: "ฤดูกาล 2025-26 กำลังเปิดให้บริการ",
           sectionTitles: [
             "สถานที่ที่การเก็บสตรอว์เบอร์รีกลายเป็นส่วนหนึ่งของความทรงจำ",
-            "เหตุผลที่ครอบครัวมาพร้อมลูกแล้วอุ่นใจได้มากขึ้น",
+            "ได้รับเลือกเป็นฟาร์ม Local Food ยอดเยี่ยมเมืองฮวาซอง ปี 2026",
             "เหตุผลที่ครอบครัวจดจำ Haneul Strawberry",
             "โปรดตรวจสอบก่อนมาเยือน",
             "วางแผนวันแสนหวานกับครอบครัวของคุณ"
           ],
-          awardLead: "ได้รับเลือกเป็นฟาร์ม Local Food ยอดเยี่ยมของเมืองฮวาซอง ปี 2026 จากกว่า 1,000 ฟาร์ม ด้วยเกณฑ์ด้านผลงาน ความปลอดภัย และการจัดการหน้างาน",
+          awardLead: "Haneul Strawberry ได้รับเลือกเป็นฟาร์ม Local Food ยอดเยี่ยมของเมืองฮวาซอง ปี 2026 จากบรรดาฟาร์มที่ส่งผลผลิตตรงสู่ร้าน Local Food ของเมือง โดยพิจารณาจากหลายเกณฑ์ เช่น ผลงานการซื้อขาย ยอดขาย การตรวจสอบความปลอดภัย ประวัติคำร้องเรียน และการตรวจหน้างาน",
           awardList: [
-            "มาตรฐานที่พิจารณาทั้งผลงานและความน่าเชื่อถือในการดำเนินงาน",
-            "ฟาร์มที่ผ่านการตรวจสอบด้านความปลอดภัยและการจัดการหน้างาน",
-            "เหตุผลที่ครอบครัวพร้อมเด็กเล็กยิ่งวางใจได้"
+            "ผลงานการซื้อขาย",
+            "ยอดขาย",
+            "การตรวจสอบความปลอดภัย",
+            "ประวัติคำร้องเรียน",
+            "การตรวจหน้างาน"
           ],
           awardStamp: "ความเชื่อมั่นจากการได้รับเลือกท่ามกลางกว่า 1,000 ฟาร์ม",
           instagramLink: "ดูบรรยากาศฟาร์มล่าสุดบน Instagram",
