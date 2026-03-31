@@ -1011,7 +1011,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTextList(queryAll(".site-footer h3"), common.footerHeadings);
     setTextList(queryAll(".footer-links a"), common.footerLinks);
     setText(document.querySelector(".footer-external__title"), common.footerExternalTitle);
-    setTextList(queryAll(".footer-external__link"), common.footerExternalLinks);
+    setTextList(queryAll(".footer-external__link-text"), common.footerExternalLinks);
 
     if (languageSelect) {
       languageSelect.setAttribute("aria-label", common.languageLabel);
@@ -1038,7 +1038,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setText(document.querySelector(".award-proof-lead"), pageData.awardLead);
     setTextList(queryAll(".award-proof-list li"), pageData.awardList);
     setText(document.querySelector(".award-proof-stamp"), pageData.awardStamp);
-    setText(document.querySelector(".award-proof-actions a"), pageData.instagramLink);
+    setText(document.querySelector(".award-proof-actions .instagram-link__text"), pageData.instagramLink);
     setTextList(queryAll(".feature-grid h3"), pageData.featureHeadings);
     setTextList(queryAll(".feature-grid p"), pageData.featureParagraphs);
 
