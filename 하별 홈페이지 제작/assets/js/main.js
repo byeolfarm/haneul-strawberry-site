@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var languageSelect = document.querySelector("#language-select");
   var storageKey = "byeolfarm-language";
   var currentLanguage = "ko";
-  var supportedLanguages = ["ko", "en"];
-  var futureLanguages = ["zh", "vi", "th"];
+  var supportedLanguages = ["ko", "en", "zh", "vi", "th"];
 
   var translations = {
     ko: {
@@ -27,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
         footerTagline: "가족이 함께 딸기를 따고 추억을 담아가는 체험형 딸기 농장",
         footerHeadings: ["연락처", "주소 / 운영", "페이지 바로가기"],
         footerLinks: ["홈", "예약 / 가격", "오시는 길", "방문 가이드", "FAQ"],
+        footerExternalTitle: "외부 바로가기",
+        footerExternalLinks: ["네이버 예약", "인스타그램", "TMAP 길찾기"],
         menuOpen: "메뉴 열기",
         menuClose: "메뉴 닫기",
         languageLabel: "언어 선택",
@@ -60,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "아이와 함께 방문하는 가족이 더 안심할 수 있는 이유"
           ],
           awardStamp: "1,000여 농가 가운데 선정된 신뢰",
+          instagramLink: "인스타그램에서 최근 농장 분위기 보기",
           featureHeadings: ["가족 중심 체험", "깔끔하고 쾌적한 농장", "기억에 남는 하루"],
           featureParagraphs: [
             "아이와 부모가 함께 움직이며 자연스럽게 추억을 만들 수 있는 체험 흐름으로 운영합니다.",
@@ -133,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "지번 주소: 경기도 화성시 만세구 팔탄면 노하리 1267-5",
             "우편번호: 18576"
           ],
-          actionButtons: ["도로명 주소 복사하기", "전화 걸기", "네이버 지도 열기", "대표번호로 전화하기"],
+          actionButtons: ["도로명 주소 복사하기", "전화 걸기", "네이버 지도 열기", "TMAP 길찾기", "대표번호로 전화하기"],
           mapParagraphs: [
             "방문 전 길 찾기와 예약 페이지 확인을 한 번에 진행하실 수 있습니다.",
             "위 버튼으로 주소 복사, 전화 연결, 네이버 지도 이동을 바로 진행하실 수 있습니다."
@@ -254,6 +256,8 @@ document.addEventListener("DOMContentLoaded", function () {
         footerTagline: "A family strawberry farm where picking fruit becomes a lasting memory.",
         footerHeadings: ["Contact", "Address / Hours", "Site Links"],
         footerLinks: ["Home", "Booking / Pricing", "Directions", "Visit Guide", "FAQ"],
+        footerExternalTitle: "External Links",
+        footerExternalLinks: ["Naver Booking", "Instagram", "TMAP Directions"],
         menuOpen: "Open menu",
         menuClose: "Close menu",
         languageLabel: "Select language",
@@ -287,6 +291,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "A reason families with children can feel more at ease"
           ],
           awardStamp: "Trusted among 1,000+ farms",
+          instagramLink: "See the latest farm moments on Instagram",
           featureHeadings: ["Family-centered experience", "Clean and comfortable farm", "A day worth remembering"],
           featureParagraphs: [
             "We operate the experience so parents and children can move together naturally and make memories side by side.",
@@ -360,7 +365,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Lot address: 1267-5, Nohari, Paltan-myeon, Hwaseong-si, Gyeonggi-do",
             "Postal code: 18576"
           ],
-          actionButtons: ["Copy road address", "Call now", "Open Naver Map", "Call main number"],
+          actionButtons: ["Copy road address", "Call now", "Open Naver Map", "TMAP Directions", "Call main number"],
           mapParagraphs: [
             "You can check directions and the reservation page in one place before visiting.",
             "Use the buttons above to copy the address, call, or open Naver Map right away."
@@ -468,6 +473,441 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  var extendedTranslations = {
+    zh: {
+      titles: {
+        index: "天空草莓 | 亲子草莓体验农场",
+        booking: "预约 / 价格信息 | 天空草莓",
+        directions: "交通指南 | 天空草莓",
+        guide: "到访指南 | 天空草莓",
+        faq: "常见问题 | 天空草莓"
+      },
+      common: {
+        nav: ["首页", "预约 / 价格", "交通指南", "到访指南", "FAQ"],
+        navBook: "立即预约",
+        mobileBook: "前往 Naver 预约",
+        footerTagline: "和家人一起采草莓、把回忆带回家的亲子体验农场。",
+        footerHeadings: ["联系方式", "地址 / 营业时间", "页面导航"],
+        footerLinks: ["首页", "预约 / 价格", "交通指南", "到访指南", "FAQ"],
+        footerExternalTitle: "外部快捷入口",
+        footerExternalLinks: ["Naver 预约", "Instagram", "TMAP 路线"],
+        menuOpen: "打开菜单",
+        menuClose: "关闭菜单",
+        languageLabel: "选择语言",
+        copySuccess: "地址已复制",
+        copyFail: "复制失败"
+      },
+      pages: {
+        index: {
+          heroChips: ["本季运营中", "2026 华城市本地食品优秀农家", "Naver 预约"],
+          sectionLabels: ["亲子草莓体验农场", "农场介绍", "经过验证的农家", "为什么家庭会选择这里", "快速信息", "立即预约"],
+          heroSubtitle: "一家人一起采草莓、把难忘时光带回家的体验型草莓农场。",
+          heroDescription: "被评为 2026 年华城市本地食品优秀农家，在整洁舒适的农场里与孩子一起度过甜蜜的一天。",
+          heroButtons: ["前往 Naver 预约", "查看路线"],
+          trustStrip: ["2026 华城市本地食品优秀农家", "通过交易记录、安全性与现场管理标准审核的可信农家"],
+          seasonStatus: "2025-26 季度运营中",
+          sectionTitles: [
+            "不仅带走草莓，也把采摘时光变成回忆",
+            "为什么带孩子来会更安心",
+            "为什么家庭会记住天空草莓",
+            "来访前请先确认",
+            "和家人一起规划甜蜜的一天"
+          ],
+          introParagraphs: [
+            "天空草莓不只是带走一盒草莓的地方，而是家人一起找草莓、采草莓、一起欢笑的体验型农场。",
+            "和孩子并肩坐着，挑选熟透的红草莓，再用手轻轻采下来的那一刻，就是我们最想送给您的体验。"
+          ],
+          awardLead: "2026 华城市本地食品优秀农家。我们在 1,000 多家农户中通过交易记录、安全性与现场管理标准而被选中。",
+          awardList: [
+            "以交易记录与运营信赖为基础的筛选标准",
+            "经过安全性与现场管理状态确认的农家",
+            "让带孩子来访的家庭更安心的理由"
+          ],
+          awardStamp: "在 1,000 多家农户中被选中的信赖",
+          instagramLink: "在 Instagram 查看最近的农场氛围",
+          featureHeadings: ["以家庭为中心的体验", "整洁舒适的农场", "值得记住的一天"],
+          featureParagraphs: [
+            "让父母和孩子自然地一起行动、一起留下回忆的体验流程。",
+            "整洁的环境和顺畅的动线，让第一次来访的家庭也能安心停留。",
+            "不仅是采摘，更是值得一家人记住的一次出行。"
+          ],
+          quickHeadings: ["营业时间", "预约信息", "位置"],
+          quickParagraphGroups: [
+            ["营业时间为上午 9 点至下午 4 点。", "每周一为基本休息日，若周一遇到法定假日则可能正常营业。"],
+            ["请在 Naver Smart Place 预约页面确认营业日程与预约名额。"],
+            ["京畿道 华城市 八滩面 老下街116番街 177-26", "邮编 18576"]
+          ],
+          quickLinks: ["查看预约 / 价格", "查看交通指南"],
+          ctaDescription: "营业日程与预约名额请以 Naver Smart Place 预约页面为准。",
+          ctaButtons: ["打开预约页面", "查看常见问题"]
+        },
+        booking: {
+          sectionLabels: ["预约 / 价格信息", "体验运营信息", "附加选项", "特别活动", "立即预约"],
+          pageTitle: "预约 / 价格信息",
+          heroSmallLabel: "代表体验",
+          productTitle: "香雪草莓采摘体验",
+          trustNote: "2026 华城市本地食品优秀农家",
+          heroDescription: "一家人一起亲手采摘香雪草莓、共享时光的代表体验。",
+          heroSummaryLabels: ["入场 기준", "婴幼儿 기준", "基本 구성", "追加采摘"],
+          heroSummaryTexts: [
+            "仅拍照的监护人也适用相同收费",
+            "24 个月以下凭证明可免费入场",
+            "每人 500g 专用盒 / 以盒盖可完全盖上为准",
+            "按 100g 单位现场结算 / 以当天现场价格为准"
+          ],
+          heroButtons: ["前往 Naver 预约", "查看运营信息"],
+          operationTitle: "预约前请先快速确认流程",
+          addonSectionTitle: "热门附加选项",
+          addonSmallLabel: "附加选项",
+          addonTitle: "迷你草莓纸杯蛋糕制作",
+          addonParagraphs: [
+            " 구성: 迷你纸杯蛋糕盒 + 鲜奶油 + 卡斯特拉蛋糕",
+            "用亲手采摘的草莓制作只属于自己的小甜点，是很受欢迎的附加体验。"
+          ],
+          eventTitle: "农场主惊喜感性抓拍礼物",
+          eventIntro: "感性抓拍是为预约家庭准备的免费特别活动。是否提供会根据现场情况而变化，并非所有访客都会固定获得的基础服务。",
+          ctaTitle: "最准确的营业日程请以 Naver 预约页面为准",
+          ctaDescription: "营业日与预约名额可能随时变动，请在来访前务必确认预约页面。",
+          ctaButtons: ["前往 Naver 预约", "查看 FAQ"]
+        },
+        directions: {
+          sectionLabels: ["交通指南", "到达 안내"],
+          pageTitle: "交通指南",
+          intro: "大多数访客以自驾方式前来。来访前请先在 Naver 地图确认位置。",
+          cardTitles: ["地址信息", "地图确认", "停车 안내", "营业时间 안내", "联系方式"],
+          addressParagraphs: [
+            "道路名地址: 京畿道 华城市 八滩面 老下街116番街 177-26",
+            "地番地址: 京畿道 华城市 八滩面 老下里 1267-5",
+            "邮编: 18576"
+          ],
+          actionButtons: ["复制道路名地址", "拨打电话", "打开 Naver 地图", "TMAP 路线", "拨打代表电话"],
+          mapParagraphs: [
+            "来访前可以一次性查看路线与预约页面。",
+            "可通过上方按钮立即复制地址、拨打电话或打开 Naver 地图。"
+          ],
+          parkingParagraphs: ["请将车辆平行停放在农场旁道路上。", "进出通道禁止停车。"],
+          arrivalTitle: "建议在预约时间前 10 分钟到达",
+          arrivalList: ["请最晚于预约时间前 10 分钟到达。", "若迟到，体验时间难以延长，感性抓拍活动也可能无法进行。"],
+          hoursParagraphs: [
+            "营业时间为上午 9 点至下午 4 点。",
+            "每周一为基本休息日，但周一遇到法定假日时可能正常营业。",
+            "营业日程与预约名额请在 Naver Smart Place 预约页面确认。"
+          ],
+          contactParagraphs: ["代表电话:", "电子邮箱:"]
+        },
+        guide: {
+          sectionLabels: ["到访指南"],
+          pageTitle: "到访指南",
+          intro: "来访前请先确认以下内容，以便获得更舒适愉快的体验。",
+          quickTitle: "来访前快速确认",
+          quickList: [
+            "建议提前 10 分钟到达。",
+            "迟到时无法延长体验时间。",
+            "不可携带宠物同行。",
+            "采摘区内限制携带包袋。"
+          ],
+          cardTitles: ["体验使用说明", "包袋与随身物品", "安全 안내", "现场使用 안내", "雨天 안내", "感性抓拍 안내"]
+        },
+        faq: {
+          sectionLabels: ["FAQ", "还需要更多帮助吗？"],
+          pageTitle: "常见问题",
+          intro: "我们整理了预约与来访前最常被询问的问题。",
+          questions: [
+            "在哪里预约？",
+            "监护人也必须支付体验费用吗？",
+            "24 个月以下也收费吗？",
+            "取消 / 退款 / 未到场 기준是什么？",
+            "可以带走多少草莓？",
+            "可以追加采摘吗？",
+            "纸杯蛋糕选项怎么使用？",
+            "可以把包带进采摘区吗？",
+            "停车要停在哪里？",
+            "可以带宠物吗？",
+            "迟到会怎样？",
+            "下雨也能进行体验吗？",
+            "感性抓拍每位访客都会提供吗？",
+            "如何领取数码照片？"
+          ],
+          ctaTitle: "请在预约页面确认日期与可预约情况",
+          ctaDescription: "营业状态与可预约日期请以 Naver Smart Place 页面为准。",
+          ctaButtons: ["前往 Naver 预约", "查看到访指南"]
+        }
+      }
+    },
+    vi: {
+      titles: {
+        index: "Haneul Strawberry | Nông trại trải nghiệm hái dâu cho gia đình",
+        booking: "Đặt chỗ / Giá vé | Haneul Strawberry",
+        directions: "Đường đi | Haneul Strawberry",
+        guide: "Hướng dẫn tham quan | Haneul Strawberry",
+        faq: "FAQ | Haneul Strawberry"
+      },
+      common: {
+        nav: ["Trang chủ", "Đặt chỗ / Giá", "Đường đi", "Hướng dẫn", "FAQ"],
+        navBook: "Đặt chỗ ngay",
+        mobileBook: "Đặt chỗ trên Naver",
+        footerTagline: "Nông trại trải nghiệm nơi cả gia đình cùng hái dâu và mang về những kỷ niệm đẹp.",
+        footerHeadings: ["Liên hệ", "Địa chỉ / Giờ mở cửa", "Liên kết trang"],
+        footerLinks: ["Trang chủ", "Đặt chỗ / Giá", "Đường đi", "Hướng dẫn", "FAQ"],
+        footerExternalTitle: "Liên kết ngoài",
+        footerExternalLinks: ["Naver Booking", "Instagram", "TMAP Directions"],
+        menuOpen: "Mở menu",
+        menuClose: "Đóng menu",
+        languageLabel: "Chọn ngôn ngữ",
+        copySuccess: "Đã sao chép địa chỉ",
+        copyFail: "Sao chép thất bại"
+      },
+      pages: {
+        index: {
+          heroChips: ["Đang vào mùa", "Nông hộ địa phương xuất sắc Hwaseong 2026", "Đặt chỗ trên Naver"],
+          sectionLabels: ["Nông trại trải nghiệm dâu cho gia đình", "Giới thiệu nông trại", "Nông hộ đã được kiểm chứng", "Vì sao các gia đình chọn chúng tôi", "Thông tin nhanh", "Đặt chỗ ngay"],
+          heroSubtitle: "Một nông trại trải nghiệm nơi cả gia đình cùng hái dâu và mang về khoảng thời gian đáng nhớ.",
+          heroDescription: "Được 선정 là Nông hộ Local Food xuất sắc Hwaseong 2026, chúng tôi mang đến không gian sạch sẽ, thoải mái để bố mẹ và các bé tận hưởng một ngày thật ngọt ngào.",
+          heroButtons: ["Đặt chỗ trên Naver", "Xem đường đi"],
+          trustStrip: ["Được chọn là Nông hộ Local Food xuất sắc Hwaseong 2026", "Nông hộ đáng tin cậy đã vượt qua các tiêu chí về thành tích giao dịch, an toàn và quản lý hiện trường"],
+          seasonStatus: "Mùa 2025-26 đang hoạt động",
+          sectionTitles: [
+            "Nơi việc hái dâu trở thành một phần của ký ức",
+            "Lý do gia đình có thể yên tâm hơn khi ghé thăm",
+            "Lý do các gia đình nhớ đến Haneul Strawberry",
+            "Vui lòng kiểm tra trước khi đến",
+            "Lên kế hoạch cho một ngày thật ngọt ngào cùng gia đình"
+          ],
+          awardLead: "Được chọn là Nông hộ Local Food xuất sắc Hwaseong 2026. Trong hơn 1.000 nông hộ, chúng tôi được chọn nhờ vượt qua các tiêu chí về thành tích giao dịch, an toàn và quản lý hiện trường.",
+          awardList: [
+            "Tiêu chí đánh giá cả thành tích giao dịch và độ tin cậy vận hành",
+            "Nông hộ đã được kiểm tra về an toàn và quản lý tại hiện trường",
+            "Lý do để các gia đình có trẻ nhỏ cảm thấy yên tâm hơn"
+          ],
+          awardStamp: "Niềm tin được chọn giữa hơn 1.000 nông hộ",
+          instagramLink: "Xem không khí nông trại gần đây trên Instagram",
+          ctaButtons: ["Mở trang đặt chỗ", "Xem FAQ"]
+        },
+        booking: {
+          sectionLabels: ["Đặt chỗ / Giá vé", "Thông tin vận hành", "Tùy chọn thêm", "Sự kiện đặc biệt", "Đặt chỗ ngay"],
+          pageTitle: "Đặt chỗ / Giá vé",
+          heroSmallLabel: "Trải nghiệm chính",
+          productTitle: "Trải nghiệm hái dâu Seolhyang",
+          trustNote: "Nông trại được chọn là Nông hộ Local Food xuất sắc Hwaseong 2026",
+          heroDescription: "Trải nghiệm 대표 nơi cả gia đình cùng trực tiếp hái dâu Seolhyang và tận hưởng thời gian bên nhau.",
+          heroSummaryLabels: ["Quy định vào cửa", "Trẻ nhỏ", "Bao gồm", "Thu hoạch thêm"],
+          heroSummaryTexts: [
+            "Người giám hộ chỉ chụp ảnh cũng áp dụng cùng mức phí",
+            "Miễn phí cho trẻ dưới 24 tháng khi có giấy tờ chứng minh",
+            "1 hộp 500g / theo giới hạn đóng kín nắp hộp",
+            "Thanh toán tại chỗ theo 100g / giá theo ngày"
+          ],
+          heroButtons: ["Đặt chỗ trên Naver", "Xem hướng dẫn"],
+          operationTitle: "Hãy kiểm tra nhanh quy trình trước khi đặt chỗ",
+          addonSectionTitle: "Tùy chọn được yêu thích",
+          addonSmallLabel: "Tùy chọn thêm",
+          addonTitle: "Làm bánh cupcake dâu mini",
+          eventTitle: "Quà tặng chụp ảnh cảm xúc bất ngờ từ chủ nông trại",
+          eventIntro: "Chụp ảnh cảm xúc là sự kiện đặc biệt miễn phí dành cho gia đình đã đặt chỗ. Việc có được cung cấp hay không phụ thuộc vào tình hình thực tế và không phải là dịch vụ mặc định cho mọi khách.",
+          ctaTitle: "Lịch hoạt động chính xác nhất nằm trên trang đặt chỗ Naver",
+          ctaDescription: "Ngày hoạt động và khả năng đặt chỗ có thể thay đổi, vì vậy vui lòng kiểm tra trang đặt chỗ trước khi đến.",
+          ctaButtons: ["Đặt chỗ trên Naver", "Xem FAQ"]
+        },
+        directions: {
+          sectionLabels: ["Đường đi", "Đến nơi"],
+          pageTitle: "Đường đi",
+          intro: "Phần lớn khách ghé thăm bằng ô tô. Vui lòng kiểm tra vị trí trên Naver Map trước khi đến.",
+          cardTitles: ["Thông tin địa chỉ", "Bản đồ", "Đỗ xe", "Giờ mở cửa", "Liên hệ"],
+          actionButtons: ["Sao chép địa chỉ đường", "Gọi điện", "Mở Naver Map", "TMAP Directions", "Gọi số chính"],
+          arrivalTitle: "Nên đến trước giờ hẹn khoảng 10 phút",
+          ctaButtons: ["Đặt chỗ trên Naver", "Xem hướng dẫn tham quan"]
+        },
+        guide: {
+          sectionLabels: ["Hướng dẫn tham quan"],
+          pageTitle: "Hướng dẫn tham quan",
+          intro: "Vui lòng xem trước các nội dung dưới đây để có trải nghiệm thoải mái và vui vẻ hơn.",
+          quickTitle: "Kiểm tra nhanh trước khi đến",
+          quickList: [
+            "Khuyến nghị đến sớm 10 phút.",
+            "Nếu đến muộn, thời gian trải nghiệm không được kéo dài.",
+            "Không được mang theo thú cưng.",
+            "Túi xách bị hạn chế trong khu hái dâu."
+          ]
+        },
+        faq: {
+          sectionLabels: ["FAQ", "Cần thêm hỗ trợ?"],
+          pageTitle: "Câu hỏi thường gặp",
+          intro: "Chúng tôi đã tổng hợp những câu hỏi được hỏi nhiều nhất trước khi đặt chỗ và ghé thăm.",
+          questions: [
+            "Đặt chỗ ở đâu?",
+            "Người giám hộ cũng phải trả phí trải nghiệm?",
+            "Trẻ dưới 24 tháng có mất phí không?",
+            "Quy định hủy / hoàn tiền / không đến là gì?",
+            "Có thể mang về bao nhiêu dâu?",
+            "Có thể hái thêm không?",
+            "Tùy chọn cupcake hoạt động như thế nào?",
+            "Có thể mang túi vào khu trải nghiệm không?",
+            "Nên đỗ xe ở đâu?",
+            "Có thể mang theo thú cưng không?",
+            "Nếu đến muộn thì sao?",
+            "Trời mưa có trải nghiệm được không?",
+            "Chụp ảnh cảm xúc có áp dụng cho mọi khách không?",
+            "Làm sao để nhận ảnh kỹ thuật số?"
+          ],
+          ctaTitle: "Vui lòng kiểm tra ngày hoạt động và khả năng đặt chỗ trên trang đặt chỗ",
+          ctaDescription: "Trang Naver Smart Place là nơi chính xác nhất để kiểm tra tình trạng hoạt động và ngày còn chỗ.",
+          ctaButtons: ["Đặt chỗ trên Naver", "Xem hướng dẫn"]
+        }
+      }
+    },
+    th: {
+      titles: {
+        index: "Haneul Strawberry | ฟาร์มเก็บสตรอว์เบอร์รีสำหรับครอบครัว",
+        booking: "จอง / ราคา | Haneul Strawberry",
+        directions: "การเดินทาง | Haneul Strawberry",
+        guide: "คู่มือการเยี่ยมชม | Haneul Strawberry",
+        faq: "FAQ | Haneul Strawberry"
+      },
+      common: {
+        nav: ["หน้าแรก", "จอง / ราคา", "การเดินทาง", "คู่มือ", "FAQ"],
+        navBook: "จองเลย",
+        mobileBook: "จองผ่าน Naver",
+        footerTagline: "ฟาร์มประสบการณ์ที่ทั้งครอบครัวได้เก็บสตรอว์เบอร์รีและพาความทรงจำกลับบ้าน",
+        footerHeadings: ["ติดต่อ", "ที่อยู่ / เวลาเปิด", "ลิงก์หน้าเว็บ"],
+        footerLinks: ["หน้าแรก", "จอง / ราคา", "การเดินทาง", "คู่มือ", "FAQ"],
+        footerExternalTitle: "ลิงก์ภายนอก",
+        footerExternalLinks: ["Naver Booking", "Instagram", "TMAP Directions"],
+        menuOpen: "เปิดเมนู",
+        menuClose: "ปิดเมนู",
+        languageLabel: "เลือกภาษา",
+        copySuccess: "คัดลอกที่อยู่แล้ว",
+        copyFail: "คัดลอกไม่สำเร็จ"
+      },
+      pages: {
+        index: {
+          heroChips: ["เปิดให้บริการฤดูกาลนี้", "ฟาร์ม Local Food ยอดเยี่ยม Hwaseong 2026", "จองผ่าน Naver"],
+          sectionLabels: ["ฟาร์มเก็บสตรอว์เบอร์รีสำหรับครอบครัว", "เกี่ยวกับฟาร์ม", "ฟาร์มที่ผ่านการรับรอง", "เหตุผลที่ครอบครัวเลือกเรา", "ข้อมูลด่วน", "จองเลย"],
+          heroSubtitle: "ฟาร์มประสบการณ์ที่ทั้งครอบครัวได้เก็บสตรอว์เบอร์รีด้วยกันและพากลับไปพร้อมช่วงเวลาที่น่าจดจำ",
+          heroDescription: "เราได้รับเลือกเป็นฟาร์ม Local Food ยอดเยี่ยมของเมืองฮวาซองปี 2026 พร้อมพื้นที่สะอาดและสบายสำหรับครอบครัวที่มาพร้อมเด็กเล็ก",
+          heroButtons: ["จองผ่าน Naver", "ดูเส้นทาง"],
+          trustStrip: ["ได้รับเลือกเป็นฟาร์ม Local Food ยอดเยี่ยมเมืองฮวาซอง ปี 2026", "ฟาร์มที่ผ่านเกณฑ์ด้านผลงานการซื้อขาย ความปลอดภัย และการจัดการหน้างาน"],
+          seasonStatus: "ฤดูกาล 2025-26 กำลังเปิดให้บริการ",
+          sectionTitles: [
+            "สถานที่ที่การเก็บสตรอว์เบอร์รีกลายเป็นส่วนหนึ่งของความทรงจำ",
+            "เหตุผลที่ครอบครัวมาพร้อมลูกแล้วอุ่นใจได้มากขึ้น",
+            "เหตุผลที่ครอบครัวจดจำ Haneul Strawberry",
+            "โปรดตรวจสอบก่อนมาเยือน",
+            "วางแผนวันแสนหวานกับครอบครัวของคุณ"
+          ],
+          awardLead: "ได้รับเลือกเป็นฟาร์ม Local Food ยอดเยี่ยมของเมืองฮวาซอง ปี 2026 จากกว่า 1,000 ฟาร์ม ด้วยเกณฑ์ด้านผลงาน ความปลอดภัย และการจัดการหน้างาน",
+          awardList: [
+            "มาตรฐานที่พิจารณาทั้งผลงานและความน่าเชื่อถือในการดำเนินงาน",
+            "ฟาร์มที่ผ่านการตรวจสอบด้านความปลอดภัยและการจัดการหน้างาน",
+            "เหตุผลที่ครอบครัวพร้อมเด็กเล็กยิ่งวางใจได้"
+          ],
+          awardStamp: "ความเชื่อมั่นจากการได้รับเลือกท่ามกลางกว่า 1,000 ฟาร์ม",
+          instagramLink: "ดูบรรยากาศฟาร์มล่าสุดบน Instagram",
+          ctaButtons: ["เปิดหน้าจอง", "ดู FAQ"]
+        },
+        booking: {
+          sectionLabels: ["จอง / ราคา", "ข้อมูลการให้บริการ", "ตัวเลือกเสริม", "อีเวนต์พิเศษ", "จองเลย"],
+          pageTitle: "จอง / ราคา",
+          heroSmallLabel: "ประสบการณ์หลัก",
+          productTitle: "ประสบการณ์เก็บสตรอว์เบอร์รี Seolhyang",
+          trustNote: "ฟาร์มที่ได้รับเลือกเป็นฟาร์ม Local Food ยอดเยี่ยม Hwaseong 2026",
+          heroDescription: "ประสบการณ์หลักที่ครอบครัวจะได้เก็บสตรอว์เบอร์รี Seolhyang ด้วยตัวเองและใช้เวลาร่วมกันอย่างมีความหมาย",
+          heroSummaryLabels: ["เงื่อนไขเข้าใช้", "เกณฑ์ทารก", "สิ่งที่รวม", "เก็บเพิ่ม"],
+          heroSummaryTexts: [
+            "ผู้ปกครองที่ถ่ายรูปอย่างเดียวคิดราคาเท่ากัน",
+            "เด็กอายุต่ำกว่า 24 เดือนเข้าฟรีเมื่อมีหลักฐานยืนยัน",
+            "กล่อง 500 กรัมต่อคน / เก็บได้ในระดับที่ปิดฝากล่องได้",
+            "ชำระเพิ่มหน้างานทุก 100 กรัม / ตามราคาวันนั้น"
+          ],
+          heroButtons: ["จองผ่าน Naver", "ดูข้อมูลการให้บริการ"],
+          operationTitle: "ตรวจสอบขั้นตอนสั้น ๆ ก่อนทำการจอง",
+          addonSectionTitle: "ตัวเลือกเสริมยอดนิยม",
+          addonSmallLabel: "ตัวเลือกเสริม",
+          addonTitle: "ทำคัพเค้กสตรอว์เบอร์รีขนาดมินิ",
+          eventTitle: "ของขวัญถ่ายภาพอารมณ์จากเจ้าของฟาร์ม",
+          eventIntro: "ภาพถ่ายอารมณ์เป็นอีเวนต์พิเศษฟรีสำหรับครอบครัวที่จองไว้ล่วงหน้า การให้บริการขึ้นอยู่กับสถานการณ์หน้างาน และไม่ใช่บริการพื้นฐานที่มีให้ทุกคนเสมอ",
+          ctaTitle: "ตารางเปิดให้บริการที่แม่นยำที่สุดอยู่ที่หน้าจอง Naver",
+          ctaDescription: "วันเปิดให้บริการและจำนวนที่จองได้อาจเปลี่ยนแปลง โปรดตรวจสอบหน้าจองก่อนมาเยือน",
+          ctaButtons: ["จองผ่าน Naver", "ดู FAQ"]
+        },
+        directions: {
+          sectionLabels: ["การเดินทาง", "การมาถึง"],
+          pageTitle: "การเดินทาง",
+          intro: "ผู้มาเยือนส่วนใหญ่มาด้วยรถยนต์ โปรดตรวจสอบตำแหน่งบน Naver Map ก่อนเดินทางมา",
+          cardTitles: ["ข้อมูลที่อยู่", "แผนที่", "ที่จอดรถ", "เวลาเปิดทำการ", "ติดต่อ"],
+          actionButtons: ["คัดลอกที่อยู่ถนน", "โทรเลย", "เปิด Naver Map", "TMAP Directions", "โทรเบอร์หลัก"],
+          arrivalTitle: "แนะนำให้มาถึงก่อนเวลาจองประมาณ 10 นาที",
+          ctaButtons: ["จองผ่าน Naver", "ดูคู่มือการเยี่ยมชม"]
+        },
+        guide: {
+          sectionLabels: ["คู่มือการเยี่ยมชม"],
+          pageTitle: "คู่มือการเยี่ยมชม",
+          intro: "โปรดตรวจสอบข้อมูลด้านล่างก่อนมาเยือน เพื่อให้การ体验สะดวกและสนุกยิ่งขึ้น",
+          quickTitle: "เช็กด่วนก่อนมา",
+          quickList: [
+            "แนะนำให้มาถึงก่อนเวลา 10 นาที",
+            "หากมาสายจะไม่สามารถขยายเวลาได้",
+            "ไม่อนุญาตให้นำสัตว์เลี้ยงเข้ามา",
+            "มีข้อจำกัดเรื่องกระเป๋าในโซนเก็บสตรอว์เบอร์รี"
+          ]
+        },
+        faq: {
+          sectionLabels: ["FAQ", "ต้องการความช่วยเหลือเพิ่มเติมหรือไม่?"],
+          pageTitle: "คำถามที่พบบ่อย",
+          intro: "เราได้รวบรวมคำถามที่ผู้เยี่ยมชมถามบ่อยที่สุดก่อนจองและก่อนมาเยือน",
+          questions: [
+            "จองได้ที่ไหน?",
+            "ผู้ปกครองต้องชำระค่าประสบการณ์ด้วยหรือไม่?",
+            "เด็กต่ำกว่า 24 เดือนมีค่าใช้จ่ายหรือไม่?",
+            "เงื่อนไขยกเลิก / คืนเงิน / ไม่มาเป็นอย่างไร?",
+            "นำสตรอว์เบอร์รีกลับได้เท่าไร?",
+            "เก็บเพิ่มได้หรือไม่?",
+            "ตัวเลือกคัพเค้กใช้งานอย่างไร?",
+            "สามารถนำกระเป๋าเข้าโซนเก็บได้หรือไม่?",
+            "ควรจอดรถที่ไหน?",
+            "นำสัตว์เลี้ยงมาได้หรือไม่?",
+            "ถ้ามาสายจะเกิดอะไรขึ้น?",
+            "ถ้าฝนตกยังทำกิจกรรมได้หรือไม่?",
+            "ทุกคนจะได้รับภาพถ่ายอารมณ์หรือไม่?",
+            "รับภาพดิจิทัลอย่างไร?"
+          ],
+          ctaTitle: "ตรวจสอบวันเปิดให้บริการและจำนวนที่จองได้ที่หน้าจอง",
+          ctaDescription: "หน้า Naver Smart Place เป็นแหล่งข้อมูลที่แม่นยำที่สุดสำหรับสถานะการเปิดให้บริการและวันว่าง",
+          ctaButtons: ["จองผ่าน Naver", "ดูคู่มือ"]
+        }
+      }
+    }
+  };
+
+  function mergeLanguage(base, extra) {
+    var result = Array.isArray(base) ? base.slice() : Object.assign({}, base);
+
+    Object.keys(extra || {}).forEach(function (key) {
+      if (
+        base &&
+        typeof base[key] === "object" &&
+        base[key] !== null &&
+        !Array.isArray(base[key]) &&
+        typeof extra[key] === "object" &&
+        extra[key] !== null &&
+        !Array.isArray(extra[key])
+      ) {
+        result[key] = mergeLanguage(base[key], extra[key]);
+      } else {
+        result[key] = extra[key];
+      }
+    });
+
+    return result;
+  }
+
+  function getLanguagePack(lang) {
+    if (translations[lang]) {
+      return translations[lang];
+    }
+
+    return mergeLanguage(translations.en, extendedTranslations[lang] || {});
+  }
+
   function queryAll(selector) {
     return Array.prototype.slice.call(document.querySelectorAll(selector));
   }
@@ -491,7 +931,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    var common = translations[currentLanguage].common;
+    var common = getLanguagePack(currentLanguage).common;
 
     menuToggle.setAttribute("aria-expanded", String(isOpen));
     menuToggle.setAttribute("aria-label", isOpen ? common.menuClose : common.menuOpen);
@@ -550,9 +990,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function applyCommonLanguage(lang) {
-    var common = translations[lang].common;
+    var common = getLanguagePack(lang).common;
     document.documentElement.lang = lang;
-    document.title = translations[lang].titles[page] || document.title;
+    document.title = getLanguagePack(lang).titles[page] || document.title;
 
     setTextList(queryAll(".nav-list a"), common.nav);
     setText(document.querySelector(".nav-booking-button"), common.navBook);
@@ -560,6 +1000,8 @@ document.addEventListener("DOMContentLoaded", function () {
     setText(document.querySelector(".footer-brand p"), common.footerTagline);
     setTextList(queryAll(".site-footer h3"), common.footerHeadings);
     setTextList(queryAll(".footer-links a"), common.footerLinks);
+    setText(document.querySelector(".footer-external__title"), common.footerExternalTitle);
+    setTextList(queryAll(".footer-external__link"), common.footerExternalLinks);
 
     if (languageSelect) {
       languageSelect.setAttribute("aria-label", common.languageLabel);
@@ -572,7 +1014,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function applyIndexLanguage(lang) {
-    var pageData = translations[lang].pages.index;
+    var pageData = getLanguagePack(lang).pages.index;
     setTextList(queryAll(".hero-chip"), pageData.heroChips);
     setTextList(queryAll("main .section-label"), pageData.sectionLabels);
     setText(document.querySelector(".hero-subtitle"), pageData.heroSubtitle);
@@ -586,6 +1028,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setText(document.querySelector(".award-proof-lead"), pageData.awardLead);
     setTextList(queryAll(".award-proof-list li"), pageData.awardList);
     setText(document.querySelector(".award-proof-stamp"), pageData.awardStamp);
+    setText(document.querySelector(".award-proof-actions a"), pageData.instagramLink);
     setTextList(queryAll(".feature-grid h3"), pageData.featureHeadings);
     setTextList(queryAll(".feature-grid p"), pageData.featureParagraphs);
 
@@ -613,7 +1056,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function applyBookingLanguage(lang) {
-    var pageData = translations[lang].pages.booking;
+    var pageData = getLanguagePack(lang).pages.booking;
     setTextList(queryAll("main .section-label"), pageData.sectionLabels);
     setText(document.querySelector(".section-heading--center h1"), pageData.pageTitle);
     setText(document.querySelector(".booking-hero-text .small-label"), pageData.heroSmallLabel);
@@ -648,13 +1091,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function applyDirectionsLanguage(lang) {
-    var pageData = translations[lang].pages.directions;
+    var pageData = getLanguagePack(lang).pages.directions;
     setTextList(queryAll("main .section-label"), pageData.sectionLabels);
     setText(document.querySelector(".section-heading--center h1"), pageData.pageTitle);
     setText(document.querySelector(".section-heading--center p:last-child"), pageData.intro);
     setTextList(queryAll(".info-grid h2"), pageData.cardTitles);
     setTextList(queryAll(".info-grid .info-card:first-child p"), pageData.addressParagraphs);
-    setTextList(queryAll(".quick-action-group .button"), pageData.actionButtons);
+    setTextList(queryAll(".info-grid .info-card:first-child .quick-action-group .button"), pageData.actionButtons.slice(0, 4));
     setTextList(queryAll(".info-grid .info-card:nth-child(2) p"), pageData.mapParagraphs);
     setTextList(queryAll(".info-grid .info-card:nth-child(3) p"), pageData.parkingParagraphs);
     setText(document.querySelector(".directions-layout h2"), pageData.arrivalTitle);
@@ -676,12 +1119,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (contactParagraphs[1]) {
         contactParagraphs[1].childNodes[0].textContent = pageData.contactParagraphs[1] + " ";
       }
-      setText(document.querySelector(".quick-action-group a.button-secondary"), pageData.actionButtons[3]);
+      setText(document.querySelector("main > section:last-of-type .info-card:nth-child(2) .quick-action-group .button"), pageData.actionButtons[4]);
     }
   }
 
   function applyGuideLanguage(lang) {
-    var pageData = translations[lang].pages.guide;
+    var pageData = getLanguagePack(lang).pages.guide;
     setTextList(queryAll("main .section-label"), pageData.sectionLabels);
     setText(document.querySelector(".guide-hero h1"), pageData.pageTitle);
     setText(document.querySelector(".guide-hero .section-heading p:last-child"), pageData.intro);
@@ -694,7 +1137,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function applyFaqLanguage(lang) {
-    var pageData = translations[lang].pages.faq;
+    var pageData = getLanguagePack(lang).pages.faq;
     setTextList(queryAll("main .section-label"), pageData.sectionLabels);
     setText(document.querySelector(".section-heading--center h1"), pageData.pageTitle);
     setText(document.querySelector(".section-heading--center p:last-child"), pageData.intro);
@@ -794,10 +1237,6 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem(storageKey, selected);
       applyLanguage(selected);
     });
-  }
-
-  if (futureLanguages.length) {
-    body.setAttribute("data-future-languages", futureLanguages.join(","));
   }
 
   applyLanguage(localStorage.getItem(storageKey) || "ko");
