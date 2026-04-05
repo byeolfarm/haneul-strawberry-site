@@ -37,10 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
       pages: {
         index: {
           heroChips: ["11월부터 6월까지 운영", "2026 화성시 로컬푸드 우수농가", "네이버 예약 운영"],
-          sectionLabels: ["가족 체험형 딸기 농장", "농장 소개", "검증된 농가", "핵심 장점", "빠른 안내", "지금 예약하기"],
-          heroSubtitle: "가족이 함께 딸기를 따고, 오래 남을 시간을 담아가는 체험형 딸기 농장",
-          heroDescription: "2026년 화성시 로컬푸드 우수농장으로 선정된 깔끔하고 쾌적한 농장에서 아이와 함께 달콤한 하루를 경험해 보세요.",
+          sectionLabels: ["프리미엄 가족 체험 농장", "농장 소개", "검증된 농가", "핵심 장점", "빠른 안내", "지금 예약하기"],
+          heroSubtitle: "딸기 한 팩이 아니라, 가족의 빛나는 시간을 담아가는 프리미엄 가족 체험",
+          heroDescription: "따뜻한 온실 안에서 아이와 함께 딸기를 따고, 쉬고, 오래 남을 시간을 담아가세요. 깔끔한 체험 동선과 신뢰할 수 있는 운영 기준까지 함께 준비했습니다.",
           heroButtons: ["네이버 예약하기", "오시는 길 보기"],
+          heroScrollCue: "아래로 내려보기",
           trustStrip: ["2026 화성시 로컬푸드 우수농가 선정", "거래 실적 · 안전성 · 현장 관리 기준을 통과한 검증 농가"],
           seasonStatus: "11월부터 6월까지 운영",
           sectionTitles: [
@@ -62,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "클레임 이력",
             "현장점검"
           ],
+          awardDescription: "체험의 즐거움에 더해, 기준을 통과한 농가라는 점까지 함께 안내드리고 싶었습니다. 아이와 함께 방문하는 가족이 더 안심할 수 있는 이유가 되기를 바랍니다.",
           awardStamp: "1,000여 농가 가운데 선정된 신뢰",
           instagramLink: "인스타그램에서 최근 농장 분위기 보기",
           featureHeadings: ["가족 중심 체험", "깔끔하고 쾌적한 농장", "기억에 남는 하루"],
@@ -81,12 +83,12 @@ document.addEventListener("DOMContentLoaded", function () {
           ctaButtons: ["예약 페이지 열기", "자주 묻는 질문 보기"]
         },
         booking: {
-          sectionLabels: ["예약 / 가격 안내", "체험 운영 안내", "추가 옵션", "특별 이벤트", "예약 바로가기"],
+          sectionLabels: ["프리미엄 가족 체험 예약", "체험 운영 안내", "추가 옵션", "특별 이벤트", "예약 바로가기"],
           pageTitle: "예약 / 가격 안내",
           heroSmallLabel: "대표 체험",
           productTitle: "설향 딸기 수확 체험",
           trustNote: "2026 화성시 로컬푸드 우수농가 선정 농장",
-          heroDescription: "가족이 함께 설향 딸기를 직접 수확하며 시간을 보내는 대표 체험입니다.",
+          heroDescription: "따뜻한 온실 안에서 가족이 함께 설향 딸기를 직접 수확하며, 오래 남을 시간을 담아가는 대표 체험입니다.",
           heroSummaryLabels: ["입장 기준", "유아 기준", "기본 구성", "추가 수확"],
           heroSummaryTexts: [
             "사진만 찍는 보호자도 동일 요금 적용",
@@ -269,10 +271,11 @@ document.addEventListener("DOMContentLoaded", function () {
       pages: {
         index: {
           heroChips: ["Season Open", "2026 Hwaseong Best Local Food Farm", "Naver Booking"],
-          sectionLabels: ["Family Strawberry Experience Farm", "About the Farm", "Verified Farm", "Why Families Choose Us", "Quick Info", "Book Now"],
-          heroSubtitle: "A hands-on strawberry farm where families pick fruit together and take home a day to remember.",
-          heroDescription: "Selected as a 2026 Hwaseong Local Food Best Farm, we offer a clean and comfortable space where families with children can enjoy a sweeter day out.",
+          sectionLabels: ["Premium Family Experience Farm", "About the Farm", "Verified Farm", "Why Families Choose Us", "Quick Info", "Book Now"],
+          heroSubtitle: "A premium family strawberry experience that brings home more than fruit, but a glowing memory together.",
+          heroDescription: "Step into a warm greenhouse where families can pick strawberries, rest, and carry home a truly memorable day, supported by clean visitor flow and trustworthy operating standards.",
           heroButtons: ["Book on Naver", "View Directions"],
+          heroScrollCue: "Scroll down",
           trustStrip: ["Selected as a 2026 Hwaseong Local Food Best Farm", "A verified farm that passed standards for transaction record, safety, and on-site management"],
           seasonStatus: "2025-26 season now open",
           sectionTitles: [
@@ -294,6 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Complaint history",
             "On-site checks"
           ],
+          awardDescription: "We wanted to share not only the joy of the experience, but also the reassurance that this is a farm that passed clear standards. It is one more reason families with children can feel at ease.",
           awardStamp: "Trusted among 1,000+ farms",
           instagramLink: "See the latest farm moments on Instagram",
           featureHeadings: ["Family-centered experience", "Clean and comfortable farm", "A day worth remembering"],
@@ -313,12 +317,12 @@ document.addEventListener("DOMContentLoaded", function () {
           ctaButtons: ["Open booking page", "See FAQ"]
         },
         booking: {
-          sectionLabels: ["Booking / Pricing", "Experience Details", "Add-on Option", "Special Event", "Book Now"],
+          sectionLabels: ["Premium Family Experience Booking", "Experience Details", "Add-on Option", "Special Event", "Book Now"],
           pageTitle: "Booking / Pricing",
           heroSmallLabel: "Signature Experience",
           productTitle: "Seolhyang Strawberry Picking Experience",
           trustNote: "Selected as a 2026 Hwaseong Local Food Best Farm",
-          heroDescription: "Our signature family experience where you harvest Seolhyang strawberries together and spend meaningful time on the farm.",
+          heroDescription: "Our signature experience in a warm greenhouse where families harvest Seolhyang strawberries together and take home time worth remembering.",
           heroSummaryLabels: ["Entry Policy", "Infant Policy", "Included", "Extra Harvest"],
           heroSummaryTexts: [
             "Guardians taking photos are charged the same rate",
@@ -1030,12 +1034,14 @@ document.addEventListener("DOMContentLoaded", function () {
     setText(document.querySelector(".hero-subtitle"), pageData.heroSubtitle);
     setText(document.querySelector(".hero-description"), pageData.heroDescription);
     setTextList(queryAll(".hero-text .button-group a"), pageData.heroButtons);
+    setText(document.querySelector(".hero-scroll-cue"), pageData.heroScrollCue);
     setText(document.querySelector(".trust-strip__title"), pageData.trustStrip[0]);
     setText(document.querySelector(".trust-strip__text"), pageData.trustStrip[1]);
     setText(document.querySelector(".season-status__text"), pageData.seasonStatus);
     setTextList(queryAll("main h2"), pageData.sectionTitles);
     setTextList(queryAll(".content-grid--intro .text-panel p"), pageData.introParagraphs);
     setText(document.querySelector(".award-proof-lead"), pageData.awardLead);
+    setText(document.querySelector(".award-proof-description"), pageData.awardDescription);
     setTextList(queryAll(".award-proof-list li"), pageData.awardList);
     setText(document.querySelector(".award-proof-stamp"), pageData.awardStamp);
     setText(document.querySelector(".award-proof-actions .instagram-link__text"), pageData.instagramLink);
