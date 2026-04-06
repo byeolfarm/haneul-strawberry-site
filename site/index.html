@@ -355,12 +355,32 @@
     }
 
     .hero-frame-image {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center center;
-      will-change: transform;
-      transform-origin: center center;
+      transition: opacity 0.25s var(--ease);
+    }
+
+    .hero-frame-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.25s var(--ease);
+      z-index: 0;
+    }
+
+    .hero-frame-canvas.is-ready {
+      opacity: 1;
+    }
+
+    .hero-frame-image.is-hidden {
+      opacity: 0;
     }
 
     .hero-overlay {
@@ -1310,6 +1330,7 @@
       <div class="hero-scroll-shell">
         <div class="hero-stage">
           <div class="hero-frame-track" aria-hidden="true">
+            <canvas class="hero-frame-canvas" id="heroFrameCanvas" width="960" height="540"></canvas>
             <img class="hero-frame-image" id="heroFrameImage" src="assets/hero/scroll-webp/poster.webp" alt="" width="960" height="540" decoding="async" fetchpriority="high">
           </div>
           <div class="hero-overlay">
@@ -1727,11 +1748,21 @@
     (() => {
       const hero = document.getElementById("home");
       const frameImage = document.getElementById("heroFrameImage");
+      const frameCanvas = document.getElementById("heroFrameCanvas");
       const progressValue = document.getElementById("heroProgressValue");
       const heroCopy = document.getElementById("heroCopy");
       const statusNode = document.getElementById("heroSequenceStatus");
 
-      if (!hero || !frameImage || !progressValue || !heroCopy) {
+      if (!hero || !frameImage || !frameCanvas || !progressValue || !heroCopy) {
+        return;
+      }
+
+      const frameContext = frameCanvas.getContext("2d", {
+        alpha: false,
+        desynchronized: true
+      });
+
+      if (!frameContext) {
         return;
       }
 
@@ -1745,25 +1776,81 @@
       const poster = `${basePath}/poster.webp`;
       const frames = Array.from({ length: totalFrames }, (_, index) => `${basePath}/frame-${String(index + 1).padStart(3, "0")}.webp`);
       const images = Array.from({ length: totalFrames }, () => null);
+      const posterImage = new Image();
       let loadedCount = 0;
       let currentFrame = -1;
+      let currentRenderedImage = null;
       let ticking = false;
       let activeLoads = 0;
       let queueIndex = 0;
+      let lastProgress = 0;
       const maxConcurrentLoads = 6;
 
-      const setFrame = (frameIndex) => {
-        if (frameIndex === currentFrame) {
-          return;
+      const getCanvasMetrics = () => {
+        const rect = frameCanvas.getBoundingClientRect();
+        const width = Math.max(1, rect.width);
+        const height = Math.max(1, rect.height);
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        return { width, height, dpr };
+      };
+
+      const drawFrameToCanvas = (image, scaleValue) => {
+        if (!image || !image.complete) {
+          return false;
         }
+
+        const { width, height, dpr } = getCanvasMetrics();
+        const pixelWidth = Math.round(width * dpr);
+        const pixelHeight = Math.round(height * dpr);
+
+        if (frameCanvas.width !== pixelWidth || frameCanvas.height !== pixelHeight) {
+          frameCanvas.width = pixelWidth;
+          frameCanvas.height = pixelHeight;
+        }
+
+        frameContext.setTransform(dpr, 0, 0, dpr, 0, 0);
+        frameContext.clearRect(0, 0, width, height);
+
+        const sourceWidth = image.naturalWidth || image.width;
+        const sourceHeight = image.naturalHeight || image.height;
+        const coverScale = Math.max(width / sourceWidth, height / sourceHeight) * scaleValue;
+        const drawWidth = sourceWidth * coverScale;
+        const drawHeight = sourceHeight * coverScale;
+        const offsetX = (width - drawWidth) / 2;
+        const offsetY = (height - drawHeight) / 2;
+
+        frameContext.drawImage(image, offsetX, offsetY, drawWidth, drawHeight);
+        frameCanvas.classList.add("is-ready");
+        frameImage.classList.add("is-hidden");
+        return true;
+      };
+
+      const setFrame = (frameIndex, progress) => {
+        lastProgress = progress;
         const image = images[frameIndex];
         if (image && image.complete) {
-          frameImage.src = image.src;
-          currentFrame = frameIndex;
+          if (drawFrameToCanvas(image, 1 + progress * 0.06)) {
+            currentRenderedImage = image;
+            currentFrame = frameIndex;
+            return;
+          }
+        }
+
+        if (currentRenderedImage) {
+          drawFrameToCanvas(currentRenderedImage, 1 + progress * 0.06);
         }
       };
 
       frameImage.src = poster;
+      posterImage.decoding = "async";
+      posterImage.src = poster;
+      posterImage.onload = () => {
+        if (!currentRenderedImage) {
+          drawFrameToCanvas(posterImage, 1);
+          currentRenderedImage = posterImage;
+          currentFrame = 0;
+        }
+      };
 
       const buildPriorityQueue = () => {
         const priority = [];
@@ -1801,7 +1888,8 @@
             activeLoads -= 1;
             loadedCount += 1;
             if (index === 0 && currentFrame < 0) {
-              frameImage.src = image.src;
+              drawFrameToCanvas(image, 1 + lastProgress * 0.06);
+              currentRenderedImage = image;
               currentFrame = 0;
             }
             if (statusNode && loadedCount === totalFrames) {
@@ -1837,9 +1925,8 @@
         const progress = clamp(-rect.top / scrollRange, 0, 1);
         const frameIndex = Math.round(progress * (totalFrames - 1));
 
-        setFrame(frameIndex);
+        setFrame(frameIndex, progress);
         progressValue.style.transform = `scaleX(${progress})`;
-        frameImage.style.transform = `scale(${1 + progress * 0.06})`;
         heroCopy.style.transform = `translate3d(0, ${progress * -26}px, 0)`;
         heroCopy.style.opacity = `${1 - progress * 0.15}`;
       };
