@@ -1775,16 +1775,18 @@
 
       const poster = `${basePath}/poster.webp`;
       const frames = Array.from({ length: totalFrames }, (_, index) => `${basePath}/frame-${String(index + 1).padStart(3, "0")}.webp`);
-      const images = Array.from({ length: totalFrames }, () => null);
+      const frameCache = Array.from({ length: totalFrames }, () => null);
       const posterImage = new Image();
       let loadedCount = 0;
       let currentFrame = -1;
       let currentRenderedImage = null;
       let ticking = false;
       let activeLoads = 0;
-      let queueIndex = 0;
       let lastProgress = 0;
-      const maxConcurrentLoads = 6;
+      const maxConcurrentLoads = 4;
+      const preloadRadius = 10;
+      const retainRadius = 18;
+      const pendingLoads = new Set();
 
       const getCanvasMetrics = () => {
         const rect = frameCanvas.getBoundingClientRect();
@@ -1827,7 +1829,7 @@
 
       const setFrame = (frameIndex, progress) => {
         lastProgress = progress;
-        const image = images[frameIndex];
+        const image = frameCache[frameIndex];
         if (image && image.complete) {
           if (drawFrameToCanvas(image, 1 + progress * 0.06)) {
             currentRenderedImage = image;
@@ -1843,8 +1845,15 @@
 
       frameImage.src = poster;
       posterImage.decoding = "async";
+      posterImage.fetchPriority = "high";
       posterImage.src = poster;
-      posterImage.onload = () => {
+      posterImage.onload = async () => {
+        try {
+          if (posterImage.decode) {
+            await posterImage.decode();
+          }
+        } catch (error) {
+        }
         if (!currentRenderedImage) {
           drawFrameToCanvas(posterImage, 1);
           currentRenderedImage = posterImage;
@@ -1852,62 +1861,80 @@
         }
       };
 
-      const buildPriorityQueue = () => {
-        const priority = [];
-        const deferred = [];
+      const requestFrame = (index) => {
+        if (index < 0 || index >= totalFrames) {
+          return;
+        }
+        if (frameCache[index] || pendingLoads.has(index) || activeLoads >= maxConcurrentLoads) {
+          return;
+        }
 
-        frames.forEach((src, index) => {
-          if (index < 12 || index % 6 === 0) {
-            priority.push({ src, index });
-          } else {
-            deferred.push({ src, index });
+        pendingLoads.add(index);
+        activeLoads += 1;
+
+        const image = new Image();
+        image.decoding = "async";
+        image.fetchPriority = index <= 3 ? "high" : "low";
+
+        const finish = async () => {
+          try {
+            if (image.decode) {
+              await image.decode();
+            }
+          } catch (error) {
           }
-        });
 
-        return priority.concat(deferred);
+          frameCache[index] = image;
+          pendingLoads.delete(index);
+          activeLoads -= 1;
+          loadedCount += 1;
+
+          if (index === 0 && currentFrame < 0) {
+            drawFrameToCanvas(image, 1 + lastProgress * 0.06);
+            currentRenderedImage = image;
+            currentFrame = 0;
+          }
+
+          if (statusNode && loadedCount === totalFrames) {
+            statusNode.textContent = "히어로 스크롤 프레임이 모두 준비되었습니다.";
+          }
+
+          requestRender();
+          warmFrames(currentFrame < 0 ? 0 : currentFrame);
+        };
+
+        image.onload = () => {
+          finish();
+        };
+        image.onerror = () => {
+          pendingLoads.delete(index);
+          activeLoads -= 1;
+        };
+        image.src = frames[index];
       };
 
-      const queue = buildPriorityQueue();
+      const warmFrames = (centerIndex) => {
+        requestFrame(centerIndex);
+        for (let offset = 1; offset <= preloadRadius; offset += 1) {
+          requestFrame(centerIndex + offset);
+          requestFrame(centerIndex - offset);
+        }
+      };
 
-      const queueNextImage = () => {
-        while (activeLoads < maxConcurrentLoads && queueIndex < queue.length) {
-          const { src, index } = queue[queueIndex];
-          queueIndex += 1;
-          activeLoads += 1;
-
-          if (images[index]) {
-            activeLoads -= 1;
+      const pruneFrames = (centerIndex) => {
+        for (let index = 0; index < frameCache.length; index += 1) {
+          const cached = frameCache[index];
+          if (!cached || cached === currentRenderedImage) {
             continue;
           }
-
-          const image = new Image();
-          images[index] = image;
-          image.decoding = "async";
-          image.fetchPriority = index < 6 ? "high" : "low";
-          image.onload = () => {
-            activeLoads -= 1;
-            loadedCount += 1;
-            if (index === 0 && currentFrame < 0) {
-              drawFrameToCanvas(image, 1 + lastProgress * 0.06);
-              currentRenderedImage = image;
-              currentFrame = 0;
-            }
-            if (statusNode && loadedCount === totalFrames) {
-              statusNode.textContent = "히어로 스크롤 프레임이 모두 준비되었습니다.";
-            }
-            requestRender();
-            queueNextImage();
-          };
-          image.onerror = () => {
-            activeLoads -= 1;
-            queueNextImage();
-          };
-          image.src = src;
+          if (Math.abs(index - centerIndex) > retainRadius) {
+            frameCache[index] = null;
+          }
         }
       };
 
       const startPreload = () => {
-        queueNextImage();
+        warmFrames(0);
       };
 
       if ("requestIdleCallback" in window) {
@@ -1925,6 +1952,8 @@
         const progress = clamp(-rect.top / scrollRange, 0, 1);
         const frameIndex = Math.round(progress * (totalFrames - 1));
 
+        warmFrames(frameIndex);
+        pruneFrames(frameIndex);
         setFrame(frameIndex, progress);
         progressValue.style.transform = `scaleX(${progress})`;
         heroCopy.style.transform = `translate3d(0, ${progress * -26}px, 0)`;
