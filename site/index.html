@@ -211,7 +211,7 @@
       position: fixed;
       top: 16px;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate3d(-50%, 0, 0);
       z-index: 30;
       width: min(calc(100% - 24px), 1180px);
       padding: 10px 12px;
@@ -224,6 +224,8 @@
       background: rgba(255, 249, 244, 0.72);
       backdrop-filter: blur(18px);
       box-shadow: 0 16px 38px rgba(92, 64, 57, 0.08);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
     }
 
     .brand-lockup {
@@ -1198,6 +1200,10 @@
       box-shadow: 0 18px 40px rgba(92, 64, 57, 0.14);
       backdrop-filter: blur(18px);
       display: none;
+      opacity: 0;
+      transform: translate3d(0, 16px, 0);
+      pointer-events: none;
+      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .mobile-booking-bar .button {
@@ -1257,13 +1263,26 @@
 
     @media (max-width: 860px) {
       .section[id] {
-        scroll-margin-top: 96px;
+        scroll-margin-top: 92px;
+      }
+
+      body.mobile-nav-hidden .floating-nav {
+        transform: translate3d(-50%, -140%, 0);
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      body.mobile-bar-visible .mobile-booking-bar {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        pointer-events: auto;
       }
 
       .floating-nav {
         top: 10px;
         width: calc(100% - 16px);
-        padding: 10px;
+        padding: 9px 10px;
+        gap: 8px;
       }
 
       .nav-links {
@@ -1280,43 +1299,284 @@
 
       .language-switcher-mobile {
         display: inline-flex;
+        min-height: 38px;
+        padding: 0 9px;
       }
 
       .nav-actions {
         gap: 8px;
+        margin-left: auto;
       }
 
       .nav-actions .button-primary {
+        min-height: 44px;
         padding-inline: 14px;
+        font-size: 13px;
+        box-shadow: 0 12px 24px rgba(173, 89, 97, 0.16);
+      }
+
+      .nav-actions .button-primary iconify-icon {
+        font-size: 15px;
+      }
+
+      .brand-lockup {
+        gap: 8px;
+        min-width: 0;
+        flex: 1 1 auto;
+      }
+
+      .brand-mark {
+        width: 32px;
+        height: 32px;
+        border-radius: 12px;
+      }
+
+      .brand-copy strong {
+        font-size: 13px;
+      }
+
+      .brand-copy span {
+        margin-top: 1px;
+        font-size: 9px;
+        letter-spacing: 0.13em;
       }
 
       .hero-scroll-shell {
-        min-height: 148vh;
+        min-height: 132svh;
       }
 
       .hero-overlay {
-        padding-top: 100px;
-        padding-bottom: 78px;
+        padding-top: 112px;
+        padding-bottom: 108px;
         align-items: end;
       }
 
       .hero-copy {
         max-width: 100%;
+        display: grid;
+        gap: 0;
       }
 
-      .hero-highlights span:nth-child(4) {
+      .eyebrow {
+        padding: 8px 12px;
+        font-size: 10px;
+      }
+
+      .hero-title {
+        margin: 14px 0 10px;
+        font-size: clamp(2.5rem, 10.5vw, 4.5rem);
+        line-height: 0.94;
+      }
+
+      .hero-description {
+        max-width: 32ch;
+        font-size: 14px;
+        line-height: 1.75;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+
+      .hero-actions {
+        margin-top: 18px;
+      }
+
+      .hero-actions .button-primary {
+        width: 100%;
+        min-height: 56px;
+      }
+
+      .hero-actions .button-secondary,
+      .hero-meta,
+      .hero-highlights,
+      .hero-scroll-note {
+        display: none;
+      }
+
+      .strip {
+        padding-top: 20px;
+      }
+
+      .strip-items {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(88vw, 1fr);
+        gap: 12px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+      }
+
+      .strip-items::-webkit-scrollbar,
+      .gallery-stack::-webkit-scrollbar {
+        display: none;
+      }
+
+      .strip-item {
+        min-height: 0;
+        padding: 18px 18px 18px;
+        scroll-snap-align: start;
+      }
+
+      .strip-item p {
+        font-size: 15px;
+        line-height: 1.68;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+      }
+
+      .story-grid {
+        gap: 18px;
+      }
+
+      #story .text-panel {
+        padding: 24px 20px;
+      }
+
+      #story .text-panel > p {
+        display: none;
+      }
+
+      #story .story-list {
+        margin-top: 0;
+        gap: 0;
+      }
+
+      #story .story-list-item {
+        padding: 14px 0;
+      }
+
+      #experience .section-head p,
+      #visit .section-head p {
+        display: none;
+      }
+
+      #experience .experience-details > p {
+        display: none;
+      }
+
+      #experience .facts-list {
+        margin-top: 16px;
+        gap: 10px;
+      }
+
+      #experience .facts-list li {
+        padding: 10px 12px;
+        border-radius: 16px;
+        background: rgba(255, 250, 245, 0.84);
+        border: 1px solid rgba(90, 63, 56, 0.08);
+      }
+
+      #experience .hero-actions {
+        display: none;
+      }
+
+      .gallery-layout {
+        gap: 22px;
+      }
+
+      .gallery-text {
+        padding: 24px 20px;
+      }
+
+      .gallery-text .button {
         display: none;
       }
 
       .gallery-stack {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(84vw, 1fr);
+        gap: 14px;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+      }
+
+      .gallery-card {
+        scroll-snap-align: start;
       }
 
       .gallery-card.wide {
         grid-column: auto;
       }
 
-    }
+      .contact-actions {
+        display: grid;
+        gap: 10px;
+      }
+
+      .contact-actions .button {
+        width: 100%;
+        min-height: 56px;
+      }
+
+      .faq-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .faq-item {
+        padding: 0;
+        border: 1px solid rgba(90, 63, 56, 0.08);
+        border-radius: 22px;
+        background: rgba(255, 250, 245, 0.84);
+        overflow: hidden;
+      }
+
+      .faq-item strong {
+        margin: 0;
+        display: block;
+        padding: 18px 48px 18px 20px;
+        position: relative;
+        font-size: 16px;
+        line-height: 1.45;
+        cursor: pointer;
+      }
+
+      .faq-item strong::after {
+        content: "+";
+        position: absolute;
+        right: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--berry-deep);
+        font-size: 18px;
+        font-weight: 400;
+      }
+
+      .faq-item.is-open strong::after {
+        content: "-";
+      }
+
+      .faq-item p {
+        display: none;
+        padding: 0 20px 18px;
+      }
+
+      .faq-item.is-open p {
+        display: block;
+      }
+
+      .cta-grid {
+        gap: 18px;
+      }
+
+      .cta-panel {
+        padding: 28px 22px;
+      }
+
+      .cta-actions {
+        display: none;
+      }
+
+      }
 
     @media (max-width: 640px) {
       .container {
@@ -1950,6 +2210,121 @@
           { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
         );
         revealElements.forEach((element) => observer.observe(element));
+      }
+    })();
+
+    (() => {
+      const mobileQuery = window.matchMedia("(max-width: 860px)");
+      const faqItems = Array.from(document.querySelectorAll("#faq .faq-item"));
+      const nav = document.querySelector(".floating-nav");
+      const mobileBar = document.querySelector(".mobile-booking-bar");
+
+      if (!faqItems.length && !nav && !mobileBar) {
+        return;
+      }
+
+      const setupFaqAccordion = () => {
+        if (!mobileQuery.matches || !faqItems.length) {
+          faqItems.forEach((item) => {
+            item.classList.remove("is-open");
+            const trigger = item.querySelector("strong");
+            if (trigger) {
+              trigger.removeAttribute("role");
+              trigger.removeAttribute("tabindex");
+              trigger.removeAttribute("aria-expanded");
+            }
+          });
+          return;
+        }
+
+        const setOpenState = (targetIndex) => {
+          faqItems.forEach((item, index) => {
+            const trigger = item.querySelector("strong");
+            const isOpen = index === targetIndex;
+            item.classList.toggle("is-open", isOpen);
+            if (trigger) {
+              trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            }
+          });
+        };
+
+        faqItems.forEach((item, index) => {
+          const trigger = item.querySelector("strong");
+          if (!trigger) {
+            return;
+          }
+
+          trigger.setAttribute("role", "button");
+          trigger.setAttribute("tabindex", "0");
+
+          if (!trigger.dataset.faqBound) {
+            const toggle = () => {
+              const nextIndex = item.classList.contains("is-open") ? -1 : index;
+              setOpenState(nextIndex);
+            };
+
+            trigger.addEventListener("click", toggle);
+            trigger.addEventListener("keydown", (event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                toggle();
+              }
+            });
+            trigger.dataset.faqBound = "1";
+          }
+        });
+
+        setOpenState(0);
+      };
+
+      let lastY = 0;
+      let ticking = false;
+
+      const updateMobileChrome = () => {
+        ticking = false;
+
+        if (!mobileQuery.matches) {
+          document.body.classList.remove("mobile-nav-hidden", "mobile-bar-visible");
+          return;
+        }
+
+        const y = window.scrollY;
+        const revealBar = y > Math.max(window.innerHeight * 0.58, 420);
+        document.body.classList.toggle("mobile-bar-visible", revealBar);
+
+        if (y <= 24 || y < lastY - 8) {
+          document.body.classList.remove("mobile-nav-hidden");
+        } else if (y > lastY + 10) {
+          document.body.classList.add("mobile-nav-hidden");
+        }
+
+        lastY = y;
+      };
+
+      const requestMobileChromeUpdate = () => {
+        if (ticking) {
+          return;
+        }
+        ticking = true;
+        window.requestAnimationFrame(updateMobileChrome);
+      };
+
+      setupFaqAccordion();
+      updateMobileChrome();
+
+      window.addEventListener("scroll", requestMobileChromeUpdate, { passive: true });
+      window.addEventListener("resize", requestMobileChromeUpdate);
+
+      if (typeof mobileQuery.addEventListener === "function") {
+        mobileQuery.addEventListener("change", () => {
+          setupFaqAccordion();
+          updateMobileChrome();
+        });
+      } else if (typeof mobileQuery.addListener === "function") {
+        mobileQuery.addListener(() => {
+          setupFaqAccordion();
+          updateMobileChrome();
+        });
       }
     })();
 
