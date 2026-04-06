@@ -732,9 +732,9 @@
     }
 
     .photo-panel img,
-    .photo-panel video,
+    .photo-panel canvas,
     .gallery-card img,
-    .gallery-card video {
+    .gallery-card canvas {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -752,9 +752,10 @@
       position: relative;
       z-index: 0;
       display: block;
+      transition: opacity 0.25s var(--ease);
     }
 
-    .media-video {
+    .media-sequence-canvas {
       position: absolute;
       inset: 0;
       z-index: 1;
@@ -764,8 +765,12 @@
       background: transparent;
     }
 
-    .media-shell.is-video-ready .media-video {
+    .media-shell.is-sequence-ready .media-sequence-canvas {
       opacity: 1;
+    }
+
+    .media-shell.is-sequence-ready .media-fallback {
+      opacity: 0;
     }
 
     .motion-photo {
@@ -1535,6 +1540,7 @@
       .hero-copy,
       .hero-frame-image,
       .hero-frame-canvas,
+      .media-sequence-canvas,
       .button,
       .nav-links a {
         transition: none !important;
@@ -1547,6 +1553,10 @@
       }
 
       .hero-frame-canvas {
+        display: none !important;
+      }
+
+      .media-sequence-canvas {
         display: none !important;
       }
 
@@ -1697,11 +1707,9 @@
       <div class="container">
         <div class="story-grid">
           <div class="photo-panel story-photo reveal">
-            <div class="media-shell has-motion-video">
+            <div class="media-shell has-scroll-sequence" data-frame-base="assets/photos/scroll-webp/photo-02" data-frame-count="24">
+              <canvas class="media-sequence-canvas" width="720" height="404" aria-hidden="true"></canvas>
               <img class="media-fallback" src="assets/photos/photo-02.jpg" alt="딸기 온실 안에서 아이와 엄마가 눈을 맞추는 하늘의별딸기 체험 장면" width="6960" height="4640">
-              <video class="media-video" muted autoplay loop playsinline preload="metadata" poster="assets/photos/photo-02.jpg" data-loop-end="2" aria-hidden="true" tabindex="-1">
-                <source src="assets/photos/photo-02.mp4" type="video/mp4">
-              </video>
             </div>
           </div>
           <div class="text-panel reveal">
@@ -1772,11 +1780,9 @@
           </article>
           <div class="experience-visuals">
             <div class="photo-panel experience-image-main reveal">
-              <div class="media-shell has-motion-video">
+              <div class="media-shell has-scroll-sequence" data-frame-base="assets/photos/scroll-webp/photo-06" data-frame-count="24">
+                <canvas class="media-sequence-canvas" width="720" height="404" aria-hidden="true"></canvas>
                 <img class="media-fallback" src="assets/photos/photo-06.jpg" alt="하늘의별딸기 온실에서 엄마와 아이가 딸기를 직접 따는 대표 체험 장면" width="2000" height="1333" loading="lazy" decoding="async">
-                <video class="media-video" muted autoplay loop playsinline preload="metadata" poster="assets/photos/photo-06.jpg" data-loop-end="2" aria-hidden="true" tabindex="-1">
-                  <source src="assets/photos/photo-06.mp4" type="video/mp4">
-                </video>
               </div>
             </div>
             <div class="experience-subgrid">
@@ -1816,11 +1822,9 @@
           </article>
           <div class="gallery-stack">
             <article class="gallery-card tall reveal">
-              <div class="media-shell has-motion-video">
+              <div class="media-shell has-scroll-sequence" data-frame-base="assets/photos/scroll-webp/photo-03" data-frame-count="24">
+                <canvas class="media-sequence-canvas" width="720" height="542" aria-hidden="true"></canvas>
                 <img class="media-fallback" src="assets/photos/photo-03.jpg" alt="하늘의별딸기 온실 안에서 아이가 딸기를 살펴보는 장면" width="6960" height="4640" loading="lazy" decoding="async">
-                <video class="media-video" muted autoplay loop playsinline preload="metadata" poster="assets/photos/photo-03.jpg" data-loop-end="2" aria-hidden="true" tabindex="-1">
-                  <source src="assets/photos/photo-03.mp4" type="video/mp4">
-                </video>
               </div>
               <div class="gallery-caption">
                 <strong>Quiet Detail</strong>
@@ -1842,11 +1846,9 @@
               </div>
             </article>
             <article class="gallery-card wide reveal">
-              <div class="media-shell has-motion-video">
+              <div class="media-shell has-scroll-sequence" data-frame-base="assets/photos/scroll-webp/photo-07" data-frame-count="24">
+                <canvas class="media-sequence-canvas" width="720" height="404" aria-hidden="true"></canvas>
                 <img class="media-fallback" src="assets/photos/photo-07.jpg" alt="하늘의별딸기 온실에서 아이가 딸기를 들고 있는 모습" width="6960" height="4640" loading="lazy" decoding="async">
-                <video class="media-video" muted autoplay loop playsinline preload="metadata" poster="assets/photos/photo-07.jpg" data-loop-end="2" aria-hidden="true" tabindex="-1">
-                  <source src="assets/photos/photo-07.mp4" type="video/mp4">
-                </video>
               </div>
               <div class="gallery-caption">
                 <strong>Little Memory</strong>
@@ -2323,119 +2325,260 @@
     })();
 
     (() => {
-      const motionVideos = document.querySelectorAll(".media-video");
-      if (!motionVideos.length) {
+      const sequenceShells = document.querySelectorAll(".media-shell.has-scroll-sequence");
+      if (!sequenceShells.length) {
         return;
       }
 
       const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-      const supportsVisibilityObserver = "IntersectionObserver" in window;
-      const visibilityObserver = supportsVisibilityObserver
-        ? new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                const video = entry.target;
-                if (reducedMotionQuery.matches) {
-                  video.pause();
-                  video.currentTime = 0;
-                  return;
-                }
+      if (reducedMotionQuery.matches) {
+        return;
+      }
 
-                if (entry.isIntersecting) {
-                  const playPromise = video.play();
-                  if (playPromise && typeof playPromise.catch === "function") {
-                    playPromise.catch(() => {});
-                  }
-                } else {
-                  video.pause();
-                }
-              });
-            },
-            { threshold: 0.2 }
-          )
-        : null;
+      const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+      let scrubTicking = false;
+      const sequenceStates = [];
 
-      const syncReducedMotion = () => {
-        motionVideos.forEach((video) => {
-          const shell = video.closest(".media-shell");
-          if (reducedMotionQuery.matches) {
-            if (shell) {
-              shell.classList.remove("is-video-ready");
-            }
-            video.pause();
-            video.currentTime = 0;
-            return;
-          }
-
-          if (shell && video.readyState >= 2) {
-            shell.classList.add("is-video-ready");
-          }
-
-          if (!visibilityObserver) {
-            const playPromise = video.play();
-            if (playPromise && typeof playPromise.catch === "function") {
-              playPromise.catch(() => {});
-            }
-          }
-        });
+      const getSequenceLoadConfig = () => {
+        if (window.innerWidth <= 640) {
+          return { maxConcurrentLoads: 2, preloadRadius: 2, retainRadius: 4 };
+        }
+        if (window.innerWidth <= 860) {
+          return { maxConcurrentLoads: 2, preloadRadius: 3, retainRadius: 5 };
+        }
+        return { maxConcurrentLoads: 3, preloadRadius: 4, retainRadius: 7 };
       };
 
-      motionVideos.forEach((video) => {
-        const shell = video.closest(".media-shell");
-        const loopEnd = Number(video.dataset.loopEnd || 0);
-        const markReady = () => {
-          if (shell && !reducedMotionQuery.matches) {
-            shell.classList.add("is-video-ready");
+      const getCanvasMetrics = (canvas) => {
+        const rect = canvas.getBoundingClientRect();
+        const width = Math.max(1, rect.width);
+        const height = Math.max(1, rect.height);
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        return { width, height, dpr };
+      };
+
+      const drawSequenceFrame = (state, image, progress) => {
+        if (!image || !image.complete) {
+          return false;
+        }
+
+        const { canvas, context, fallback } = state;
+        const { width, height, dpr } = getCanvasMetrics(canvas);
+        const pixelWidth = Math.round(width * dpr);
+        const pixelHeight = Math.round(height * dpr);
+
+        if (canvas.width !== pixelWidth || canvas.height !== pixelHeight) {
+          canvas.width = pixelWidth;
+          canvas.height = pixelHeight;
+        }
+
+        context.setTransform(dpr, 0, 0, dpr, 0, 0);
+        context.clearRect(0, 0, width, height);
+
+        const sourceWidth = image.naturalWidth || image.width;
+        const sourceHeight = image.naturalHeight || image.height;
+        const coverScale = Math.max(width / sourceWidth, height / sourceHeight) * (1 + progress * 0.04);
+        const drawWidth = sourceWidth * coverScale;
+        const drawHeight = sourceHeight * coverScale;
+        const offsetX = (width - drawWidth) / 2;
+        const offsetY = (height - drawHeight) / 2;
+
+        context.drawImage(image, offsetX, offsetY, drawWidth, drawHeight);
+        state.shell.classList.add("is-sequence-ready");
+        fallback.classList.add("is-hidden");
+        return true;
+      };
+
+      sequenceShells.forEach((shell) => {
+        const canvas = shell.querySelector(".media-sequence-canvas");
+        const fallback = shell.querySelector(".media-fallback");
+        const basePath = shell.dataset.frameBase || "";
+        const totalFrames = Number(shell.dataset.frameCount || 0);
+
+        if (!canvas || !fallback || !basePath || totalFrames < 2) {
+          return;
+        }
+
+        const context = canvas.getContext("2d", {
+          alpha: false,
+          desynchronized: true
+        });
+
+        if (!context) {
+          return;
+        }
+
+        const state = {
+          shell,
+          canvas,
+          context,
+          fallback,
+          frames: Array.from({ length: totalFrames }, (_, index) => `${basePath}/frame-${String(index + 1).padStart(3, "0")}.webp`),
+          frameCache: Array.from({ length: totalFrames }, () => null),
+          pendingLoads: new Set(),
+          activeLoads: 0,
+          currentFrame: -1,
+          currentRenderedImage: null,
+          lastProgress: 0
+        };
+
+        const posterImage = new Image();
+        posterImage.decoding = "async";
+        posterImage.src = `${basePath}/poster.webp`;
+        posterImage.onload = async () => {
+          try {
+            if (posterImage.decode) {
+              await posterImage.decode();
+            }
+          } catch (error) {
+          }
+          if (!state.currentRenderedImage) {
+            drawSequenceFrame(state, posterImage, 0);
+            state.currentRenderedImage = posterImage;
+            state.currentFrame = 0;
           }
         };
 
-        if (video.readyState >= 2) {
-          markReady();
-        }
-
-        video.addEventListener("loadeddata", markReady, { once: true });
-        video.addEventListener("canplay", markReady, { once: true });
-        video.addEventListener("error", () => {
-          if (shell) {
-            shell.classList.remove("is-video-ready");
+        state.requestFrame = (index) => {
+          const { maxConcurrentLoads } = getSequenceLoadConfig();
+          if (index < 0 || index >= totalFrames) {
+            return;
           }
-          video.pause();
-        });
+          if (state.frameCache[index] || state.pendingLoads.has(index) || state.activeLoads >= maxConcurrentLoads) {
+            return;
+          }
 
-        if (loopEnd > 0) {
-          video.addEventListener("timeupdate", () => {
-            if (video.currentTime >= loopEnd) {
-              video.currentTime = 0;
-              if (!video.paused && !reducedMotionQuery.matches) {
-                const playPromise = video.play();
-                if (playPromise && typeof playPromise.catch === "function") {
-                  playPromise.catch(() => {});
-                }
+          state.pendingLoads.add(index);
+          state.activeLoads += 1;
+
+          const image = new Image();
+          image.decoding = "async";
+          image.fetchPriority = index <= 2 ? "high" : "low";
+
+          const finish = async () => {
+            try {
+              if (image.decode) {
+                await image.decode();
               }
+            } catch (error) {
             }
-          });
-        }
 
-        if (visibilityObserver) {
-          visibilityObserver.observe(video);
-        }
+            state.frameCache[index] = image;
+            state.pendingLoads.delete(index);
+            state.activeLoads -= 1;
+
+            if (index === 0 && state.currentFrame < 0) {
+              drawSequenceFrame(state, image, state.lastProgress);
+              state.currentRenderedImage = image;
+              state.currentFrame = 0;
+            }
+
+            requestSequenceRender();
+          };
+
+          image.onload = () => {
+            finish();
+          };
+          image.onerror = () => {
+            state.pendingLoads.delete(index);
+            state.activeLoads -= 1;
+          };
+          image.src = state.frames[index];
+        };
+
+        state.warmFrames = (centerIndex) => {
+          const { preloadRadius } = getSequenceLoadConfig();
+          state.requestFrame(centerIndex);
+          for (let offset = 1; offset <= preloadRadius; offset += 1) {
+            state.requestFrame(centerIndex + offset);
+            state.requestFrame(centerIndex - offset);
+          }
+        };
+
+        state.pruneFrames = (centerIndex) => {
+          const { retainRadius } = getSequenceLoadConfig();
+          for (let index = 0; index < state.frameCache.length; index += 1) {
+            const cached = state.frameCache[index];
+            if (!cached || cached === state.currentRenderedImage) {
+              continue;
+            }
+            if (Math.abs(index - centerIndex) > retainRadius) {
+              cached.src = "";
+              state.frameCache[index] = null;
+            }
+          }
+        };
+
+        state.setFrame = (frameIndex, progress) => {
+          state.lastProgress = progress;
+          const image = state.frameCache[frameIndex];
+          if (image && image.complete) {
+            if (drawSequenceFrame(state, image, progress)) {
+              state.currentRenderedImage = image;
+              state.currentFrame = frameIndex;
+              return;
+            }
+          }
+
+          if (state.currentRenderedImage) {
+            drawSequenceFrame(state, state.currentRenderedImage, progress);
+          }
+        };
+
+        sequenceStates.push(state);
       });
 
-      if (typeof reducedMotionQuery.addEventListener === "function") {
-        reducedMotionQuery.addEventListener("change", syncReducedMotion);
-      } else if (typeof reducedMotionQuery.addListener === "function") {
-        reducedMotionQuery.addListener(syncReducedMotion);
+      const renderSequenceShells = () => {
+        scrubTicking = false;
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 1;
+        const startLine = viewportHeight * 0.94;
+        const endLine = viewportHeight * 0.16;
+        const range = Math.max(startLine - endLine, 1);
+
+        sequenceStates.forEach((state) => {
+          const rect = state.shell.getBoundingClientRect();
+          const progress = clamp((startLine - rect.top) / range, 0, 1);
+          const frameIndex = Math.round(progress * (state.frames.length - 1));
+          state.warmFrames(frameIndex);
+          state.pruneFrames(frameIndex);
+          state.setFrame(frameIndex, progress);
+        });
+      };
+
+      const requestSequenceRender = () => {
+        if (scrubTicking) {
+          return;
+        }
+        scrubTicking = true;
+        window.requestAnimationFrame(renderSequenceShells);
+      };
+
+      const cleanupSequences = () => {
+        sequenceStates.forEach((state) => {
+          state.frameCache.forEach((cached) => {
+            if (cached && cached !== state.currentRenderedImage) {
+              cached.src = "";
+            }
+          });
+          state.pendingLoads.clear();
+        });
+      };
+
+      const startPreload = () => {
+        sequenceStates.forEach((state) => state.warmFrames(0));
+      };
+
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(startPreload, { timeout: 700 });
+      } else {
+        window.setTimeout(startPreload, 120);
       }
 
-      window.addEventListener(
-        "pagehide",
-        () => {
-          motionVideos.forEach((video) => video.pause());
-        },
-        { once: true }
-      );
-
-      syncReducedMotion();
+      window.addEventListener("scroll", requestSequenceRender, { passive: true });
+      window.addEventListener("resize", requestSequenceRender);
+      window.addEventListener("load", requestSequenceRender);
+      window.addEventListener("pagehide", cleanupSequences, { once: true });
+      requestSequenceRender();
     })();
 
     (() => {
