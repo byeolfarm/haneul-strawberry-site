@@ -631,6 +631,10 @@
       padding: 110px 0;
     }
 
+    .section[id] {
+      scroll-margin-top: 112px;
+    }
+
     .section-soft {
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0));
     }
@@ -733,117 +737,22 @@
 
     .photo-panel img,
     .photo-panel canvas,
-    .gallery-card img,
-    .gallery-card canvas {
+    .gallery-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .media-shell {
-      position: relative;
-      display: block;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .sequence-fill-panel {
-      position: relative;
-    }
-
-    .sequence-fill-panel > .media-shell {
-      position: absolute;
-      inset: 0;
-    }
-
-    .media-fallback {
-      position: relative;
-      z-index: 0;
-      display: block;
-      transition: opacity 0.25s var(--ease);
-    }
-
-    .media-sequence-canvas {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.35s var(--ease);
-      background: transparent;
-    }
-
-    .media-shell.is-sequence-ready .media-sequence-canvas {
-      opacity: 1;
-    }
-
-    .media-shell.is-sequence-ready .media-fallback {
-      opacity: 0;
-    }
-
-    .motion-photo {
-      position: relative;
-    }
-
-    .motion-photo img {
-      will-change: transform;
-      transform: scale(1.018) translate3d(0, 0, 0);
-      transform-origin: center center;
-    }
-
-    .motion-photo.is-motion-live img {
-      animation-duration: var(--motion-duration, 16s);
-      animation-timing-function: ease-in-out;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-      animation-fill-mode: both;
-    }
-
-    .motion-photo[data-motion="drift"].is-motion-live img {
-      animation-name: photoDriftMotion;
-    }
-
-    .motion-photo[data-motion="float"].is-motion-live img {
-      animation-name: photoFloatMotion;
-    }
-
-    .motion-photo[data-motion="breathe"].is-motion-live img {
-      animation-name: photoBreatheMotion;
-    }
-
-    @keyframes photoDriftMotion {
-      0% {
-        transform: scale(1.018) translate3d(0, 0, 0);
-      }
-      100% {
-        transform: scale(1.05) translate3d(0.7%, -1.8%, 0);
-      }
-    }
-
-    @keyframes photoFloatMotion {
-      0% {
-        transform: scale(1.02) translate3d(0, 0.2%, 0);
-      }
-      50% {
-        transform: scale(1.045) translate3d(-0.8%, -1.4%, 0);
-      }
-      100% {
-        transform: scale(1.03) translate3d(0.6%, -0.4%, 0);
-      }
-    }
-
-    @keyframes photoBreatheMotion {
-      0% {
-        transform: scale(1.016) translate3d(0, 0, 0);
-      }
-      100% {
-        transform: scale(1.038) translate3d(0, -1.1%, 0);
-      }
-    }
-
     .story-photo {
+      position: relative;
       min-height: 680px;
+    }
+
+    .story-photo > img,
+    .experience-image-main > img {
+      position: absolute;
+      inset: 0;
+      display: block;
     }
 
     .text-panel {
@@ -973,6 +882,7 @@
     }
 
     .experience-image-main {
+      position: relative;
       min-height: 560px;
     }
 
@@ -1346,6 +1256,10 @@
     }
 
     @media (max-width: 860px) {
+      .section[id] {
+        scroll-margin-top: 96px;
+      }
+
       .floating-nav {
         top: 10px;
         width: calc(100% - 16px);
@@ -1402,9 +1316,6 @@
         grid-column: auto;
       }
 
-      .motion-photo.is-motion-live img {
-        animation-duration: var(--motion-duration-mobile, 18s);
-      }
     }
 
     @media (max-width: 640px) {
@@ -1482,13 +1393,8 @@
         min-height: 0;
       }
 
-      .gallery-card img,
-      .gallery-card .media-fallback {
+      .gallery-card img {
         display: block;
-        height: auto;
-      }
-
-      .gallery-card .media-shell {
         height: auto;
       }
 
@@ -1549,7 +1455,6 @@
       .hero-copy,
       .hero-frame-image,
       .hero-frame-canvas,
-      .media-sequence-canvas,
       .button,
       .nav-links a {
         transition: none !important;
@@ -1563,15 +1468,6 @@
 
       .hero-frame-canvas {
         display: none !important;
-      }
-
-      .media-sequence-canvas {
-        display: none !important;
-      }
-
-      .motion-photo img {
-        animation: none !important;
-        transform: none !important;
       }
 
       .hero-frame-image {
@@ -1594,7 +1490,7 @@
       <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-copy">
         <strong>하늘의별딸기</strong>
-        <span>Family Strawberry Farm</span>
+        <span>BYEOL FARM</span>
       </span>
     </a>
     <nav class="nav-links" aria-label="주요 메뉴">
@@ -1715,11 +1611,8 @@
     <section class="section" id="story">
       <div class="container">
         <div class="story-grid">
-          <div class="photo-panel story-photo sequence-fill-panel reveal">
-            <div class="media-shell has-scroll-sequence" data-frame-base="assets/photos/scroll-webp/photo-02" data-frame-count="24">
-              <canvas class="media-sequence-canvas" width="720" height="404" aria-hidden="true"></canvas>
-              <img class="media-fallback" src="assets/photos/photo-02.jpg" alt="딸기 온실 안에서 아이와 엄마가 눈을 맞추는 하늘의별딸기 체험 장면" width="6960" height="4640">
-            </div>
+          <div class="photo-panel story-photo reveal">
+            <img src="assets/photos/photo-02.jpg" alt="딸기 온실 안에서 아이와 엄마가 눈을 맞추는 하늘의별딸기 체험 장면" width="6960" height="4640">
           </div>
           <div class="text-panel reveal">
             <div class="section-label">농장 이야기</div>
@@ -1788,14 +1681,11 @@
             </div>
           </article>
           <div class="experience-visuals">
-            <div class="photo-panel experience-image-main sequence-fill-panel reveal">
-              <div class="media-shell has-scroll-sequence" data-frame-base="assets/photos/scroll-webp/photo-06" data-frame-count="24">
-                <canvas class="media-sequence-canvas" width="720" height="404" aria-hidden="true"></canvas>
-                <img class="media-fallback" src="assets/photos/photo-06.jpg" alt="하늘의별딸기 온실에서 엄마와 아이가 딸기를 직접 따는 대표 체험 장면" width="2000" height="1333" loading="lazy" decoding="async">
-              </div>
+            <div class="photo-panel experience-image-main reveal">
+              <img src="assets/photos/photo-06.jpg" alt="하늘의별딸기 온실에서 엄마와 아이가 딸기를 직접 따는 대표 체험 장면" width="2000" height="1333" loading="lazy" decoding="async">
             </div>
             <div class="experience-subgrid">
-              <div class="photo-panel experience-image-small reveal motion-photo" data-motion="breathe" style="--motion-duration: 17s; --motion-duration-mobile: 19s;">
+              <div class="photo-panel experience-image-small reveal">
                 <img src="assets/photos/photo-05.jpg" alt="하늘의별딸기 컵케이크 만들기 옵션 장면" width="4640" height="6960" loading="lazy" decoding="async">
               </div>
               <div class="experience-note reveal">
@@ -1831,23 +1721,20 @@
           </article>
           <div class="gallery-stack">
             <article class="gallery-card tall reveal">
-              <div class="media-shell has-scroll-sequence" data-frame-base="assets/photos/scroll-webp/photo-03" data-frame-count="24">
-                <canvas class="media-sequence-canvas" width="720" height="542" aria-hidden="true"></canvas>
-                <img class="media-fallback" src="assets/photos/photo-03.jpg" alt="하늘의별딸기 온실 안에서 아이가 딸기를 살펴보는 장면" width="6960" height="4640" loading="lazy" decoding="async">
-              </div>
+              <img src="assets/photos/photo-03.jpg" alt="하늘의별딸기 온실 안에서 아이가 딸기를 살펴보는 장면" width="6960" height="4640" loading="lazy" decoding="async">
               <div class="gallery-caption">
                 <strong>Quiet Detail</strong>
                 딸기를 바라보는 아이의 작은 표정까지도 하루의 기억이 됩니다.
               </div>
             </article>
-            <article class="gallery-card tall reveal motion-photo" data-motion="float" style="--motion-duration: 18s; --motion-duration-mobile: 20s;">
+            <article class="gallery-card tall reveal">
               <img src="assets/photos/photo-04.jpg" alt="하늘의별딸기 온실 안에서 아이가 딸기를 들고 앉아 있는 장면" width="6960" height="4640" loading="lazy" decoding="async">
               <div class="gallery-caption">
                 <strong>Inside The Field</strong>
                 드넓은 온실 안 풍경이 그대로 담겨 체험의 공간감이 살아납니다.
               </div>
             </article>
-            <article class="gallery-card wide reveal motion-photo" data-motion="drift" style="--motion-duration: 16s; --motion-duration-mobile: 18s;">
+            <article class="gallery-card wide reveal">
               <img src="assets/photos/photo-08.jpg" alt="딸기 온실 안에서 아이들이 서로 마주보는 장면" width="6960" height="4640" loading="lazy" decoding="async">
               <div class="gallery-caption">
                 <strong>Family Moment</strong>
@@ -1855,10 +1742,7 @@
               </div>
             </article>
             <article class="gallery-card wide reveal">
-              <div class="media-shell has-scroll-sequence" data-frame-base="assets/photos/scroll-webp/photo-07" data-frame-count="24">
-                <canvas class="media-sequence-canvas" width="720" height="404" aria-hidden="true"></canvas>
-                <img class="media-fallback" src="assets/photos/photo-07.jpg" alt="하늘의별딸기 온실에서 아이가 딸기를 들고 있는 모습" width="6960" height="4640" loading="lazy" decoding="async">
-              </div>
+              <img src="assets/photos/photo-07.jpg" alt="하늘의별딸기 온실에서 아이가 딸기를 들고 있는 모습" width="6960" height="4640" loading="lazy" decoding="async">
               <div class="gallery-caption">
                 <strong>Little Memory</strong>
                 사진 한 장이면 그날의 공기와 표정이 선명하게 떠오릅니다.
@@ -1974,7 +1858,7 @@
     <section class="section">
       <div class="container">
         <div class="cta-grid">
-          <div class="cta-photo-tile reveal motion-photo" data-motion="breathe" style="--motion-duration: 19s; --motion-duration-mobile: 21s;">
+          <div class="cta-photo-tile reveal">
             <img src="assets/photos/photo-09.jpg" alt="하늘의별딸기 온실에서 여러 아이들이 함께 체험을 즐기는 장면" width="6960" height="4640" loading="lazy" decoding="async">
           </div>
           <article class="cta-panel reveal">
@@ -2334,294 +2218,6 @@
     })();
 
     (() => {
-      const sequenceShells = document.querySelectorAll(".media-shell.has-scroll-sequence");
-      if (!sequenceShells.length) {
-        return;
-      }
-
-      const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (reducedMotionQuery.matches) {
-        return;
-      }
-
-      const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-      let scrubTicking = false;
-      const sequenceStates = [];
-
-      const getSequenceLoadConfig = () => {
-        if (window.innerWidth <= 640) {
-          return { maxConcurrentLoads: 2, preloadRadius: 2, retainRadius: 4 };
-        }
-        if (window.innerWidth <= 860) {
-          return { maxConcurrentLoads: 2, preloadRadius: 3, retainRadius: 5 };
-        }
-        return { maxConcurrentLoads: 3, preloadRadius: 4, retainRadius: 7 };
-      };
-
-      const getCanvasMetrics = (canvas) => {
-        const rect = canvas.getBoundingClientRect();
-        const width = Math.max(1, rect.width);
-        const height = Math.max(1, rect.height);
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        return { width, height, dpr };
-      };
-
-      const drawSequenceFrame = (state, image, progress) => {
-        if (!image || !image.complete) {
-          return false;
-        }
-
-        const { canvas, context, fallback } = state;
-        const { width, height, dpr } = getCanvasMetrics(canvas);
-        const pixelWidth = Math.round(width * dpr);
-        const pixelHeight = Math.round(height * dpr);
-
-        if (canvas.width !== pixelWidth || canvas.height !== pixelHeight) {
-          canvas.width = pixelWidth;
-          canvas.height = pixelHeight;
-        }
-
-        context.setTransform(dpr, 0, 0, dpr, 0, 0);
-        context.clearRect(0, 0, width, height);
-
-        const sourceWidth = image.naturalWidth || image.width;
-        const sourceHeight = image.naturalHeight || image.height;
-        const coverScale = Math.max(width / sourceWidth, height / sourceHeight) * (1 + progress * 0.04);
-        const drawWidth = sourceWidth * coverScale;
-        const drawHeight = sourceHeight * coverScale;
-        const offsetX = (width - drawWidth) / 2;
-        const offsetY = (height - drawHeight) / 2;
-
-        context.drawImage(image, offsetX, offsetY, drawWidth, drawHeight);
-        state.shell.classList.add("is-sequence-ready");
-        fallback.classList.add("is-hidden");
-        return true;
-      };
-
-      sequenceShells.forEach((shell) => {
-        const canvas = shell.querySelector(".media-sequence-canvas");
-        const fallback = shell.querySelector(".media-fallback");
-        const basePath = shell.dataset.frameBase || "";
-        const totalFrames = Number(shell.dataset.frameCount || 0);
-
-        if (!canvas || !fallback || !basePath || totalFrames < 2) {
-          return;
-        }
-
-        const context = canvas.getContext("2d", {
-          alpha: false,
-          desynchronized: true
-        });
-
-        if (!context) {
-          return;
-        }
-
-        const state = {
-          shell,
-          canvas,
-          context,
-          fallback,
-          frames: Array.from({ length: totalFrames }, (_, index) => `${basePath}/frame-${String(index + 1).padStart(3, "0")}.webp`),
-          frameCache: Array.from({ length: totalFrames }, () => null),
-          pendingLoads: new Set(),
-          activeLoads: 0,
-          currentFrame: -1,
-          currentRenderedImage: null,
-          lastProgress: 0
-        };
-
-        const posterImage = new Image();
-        posterImage.decoding = "async";
-        posterImage.src = `${basePath}/poster.webp`;
-        posterImage.onload = async () => {
-          try {
-            if (posterImage.decode) {
-              await posterImage.decode();
-            }
-          } catch (error) {
-          }
-          if (!state.currentRenderedImage) {
-            drawSequenceFrame(state, posterImage, 0);
-            state.currentRenderedImage = posterImage;
-            state.currentFrame = 0;
-          }
-        };
-
-        state.requestFrame = (index) => {
-          const { maxConcurrentLoads } = getSequenceLoadConfig();
-          if (index < 0 || index >= totalFrames) {
-            return;
-          }
-          if (state.frameCache[index] || state.pendingLoads.has(index) || state.activeLoads >= maxConcurrentLoads) {
-            return;
-          }
-
-          state.pendingLoads.add(index);
-          state.activeLoads += 1;
-
-          const image = new Image();
-          image.decoding = "async";
-          image.fetchPriority = index <= 2 ? "high" : "low";
-
-          const finish = async () => {
-            try {
-              if (image.decode) {
-                await image.decode();
-              }
-            } catch (error) {
-            }
-
-            state.frameCache[index] = image;
-            state.pendingLoads.delete(index);
-            state.activeLoads -= 1;
-
-            if (index === 0 && state.currentFrame < 0) {
-              drawSequenceFrame(state, image, state.lastProgress);
-              state.currentRenderedImage = image;
-              state.currentFrame = 0;
-            }
-
-            requestSequenceRender();
-          };
-
-          image.onload = () => {
-            finish();
-          };
-          image.onerror = () => {
-            state.pendingLoads.delete(index);
-            state.activeLoads -= 1;
-          };
-          image.src = state.frames[index];
-        };
-
-        state.warmFrames = (centerIndex) => {
-          const { preloadRadius } = getSequenceLoadConfig();
-          state.requestFrame(centerIndex);
-          for (let offset = 1; offset <= preloadRadius; offset += 1) {
-            state.requestFrame(centerIndex + offset);
-            state.requestFrame(centerIndex - offset);
-          }
-        };
-
-        state.pruneFrames = (centerIndex) => {
-          const { retainRadius } = getSequenceLoadConfig();
-          for (let index = 0; index < state.frameCache.length; index += 1) {
-            const cached = state.frameCache[index];
-            if (!cached || cached === state.currentRenderedImage) {
-              continue;
-            }
-            if (Math.abs(index - centerIndex) > retainRadius) {
-              cached.src = "";
-              state.frameCache[index] = null;
-            }
-          }
-        };
-
-        state.setFrame = (frameIndex, progress) => {
-          state.lastProgress = progress;
-          const image = state.frameCache[frameIndex];
-          if (image && image.complete) {
-            if (drawSequenceFrame(state, image, progress)) {
-              state.currentRenderedImage = image;
-              state.currentFrame = frameIndex;
-              return;
-            }
-          }
-
-          if (state.currentRenderedImage) {
-            drawSequenceFrame(state, state.currentRenderedImage, progress);
-          }
-        };
-
-        sequenceStates.push(state);
-      });
-
-      const renderSequenceShells = () => {
-        scrubTicking = false;
-        const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 1;
-        const startLine = viewportHeight * 0.94;
-        const endLine = viewportHeight * 0.16;
-        const range = Math.max(startLine - endLine, 1);
-
-        sequenceStates.forEach((state) => {
-          const rect = state.shell.getBoundingClientRect();
-          const progress = clamp((startLine - rect.top) / range, 0, 1);
-          const frameIndex = Math.round(progress * (state.frames.length - 1));
-          state.warmFrames(frameIndex);
-          state.pruneFrames(frameIndex);
-          state.setFrame(frameIndex, progress);
-        });
-      };
-
-      const requestSequenceRender = () => {
-        if (scrubTicking) {
-          return;
-        }
-        scrubTicking = true;
-        window.requestAnimationFrame(renderSequenceShells);
-      };
-
-      const cleanupSequences = () => {
-        sequenceStates.forEach((state) => {
-          state.frameCache.forEach((cached) => {
-            if (cached && cached !== state.currentRenderedImage) {
-              cached.src = "";
-            }
-          });
-          state.pendingLoads.clear();
-        });
-      };
-
-      const startPreload = () => {
-        sequenceStates.forEach((state) => state.warmFrames(0));
-      };
-
-      if ("requestIdleCallback" in window) {
-        window.requestIdleCallback(startPreload, { timeout: 700 });
-      } else {
-        window.setTimeout(startPreload, 120);
-      }
-
-      window.addEventListener("scroll", requestSequenceRender, { passive: true });
-      window.addEventListener("resize", requestSequenceRender);
-      window.addEventListener("load", requestSequenceRender);
-      window.addEventListener("pagehide", cleanupSequences, { once: true });
-      requestSequenceRender();
-    })();
-
-    (() => {
-      const motionPhotos = document.querySelectorAll(".motion-photo");
-      if (!motionPhotos.length) {
-        return;
-      }
-
-      const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (reducedMotionQuery.matches || !("IntersectionObserver" in window)) {
-        return;
-      }
-
-      const motionObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            entry.target.classList.toggle("is-motion-live", entry.isIntersecting);
-          });
-        },
-        { threshold: 0.18, rootMargin: "12% 0px -10% 0px" }
-      );
-
-      motionPhotos.forEach((element) => motionObserver.observe(element));
-
-      window.addEventListener(
-        "pagehide",
-        () => {
-          motionObserver.disconnect();
-        },
-        { once: true }
-      );
-    })();
-
-    (() => {
       const STORAGE_KEY = "haneul-strawberry-language";
       const SITE_URL = "https://byeolfarm.com/";
       const topSelect = document.getElementById("languageSelectTop");
@@ -2717,7 +2313,7 @@
           metaDescription: "2026년 화성시 로컬푸드 우수농장으로 선정된 하늘의별딸기. 경기도 화성시 팔탄면 온실에서 아이와 함께 설향 딸기를 따고, 담고, 사진으로 남기는 하루를 경험해 보세요.",
           ogTitle: "하늘의별딸기 | 2026 화성시 로컬푸드 우수농장 · 가족 딸기 체험",
           ogDescription: "경기도 화성시 팔탄면. 가족의 기억을 먼저 생각하는 체험형 딸기 농장입니다.",
-          brandSubtitle: "Family Strawberry Farm",
+          brandSubtitle: "BYEOL FARM",
           brandAria: "하늘의별딸기 첫 화면으로 이동",
           navAria: "주요 메뉴",
           langSelectorLabel: "언어 선택",
@@ -2842,7 +2438,7 @@
           metaDescription: "Haneul Strawberry Farm, selected as a 2026 Hwaseong Local Food Excellence Farm. Spend a day in a warm greenhouse in Paltan-myeon, Hwaseong, picking Seolhyang strawberries with your child, packing them, and keeping the memory in photos.",
           ogTitle: "Haneul Strawberry Farm | 2026 Hwaseong Local Food Excellence Farm · Family Strawberry Experience",
           ogDescription: "Paltan-myeon, Hwaseong. A strawberry experience farm that cares more about your family's memories than anything else.",
-          brandSubtitle: "Family Strawberry Farm",
+          brandSubtitle: "BYEOL FARM",
           brandAria: "Go to the Haneul Strawberry Farm home section",
           navAria: "Primary menu",
           langSelectorLabel: "Choose language",
@@ -2967,7 +2563,7 @@
           metaDescription: "天空之星草莓农场入选 2026 年华城市本地农产品优秀农场。在京畿道华城市八滩面温暖的温室里，和孩子一起采摘雪香草莓、装满专属果盒，留下值得反复回想的一天。",
           ogTitle: "天空之星草莓农场 | 2026 华城市本地农产品优秀农场 · 家庭草莓采摘体验",
           ogDescription: "京畿道华城市八滩面。把家人的回忆放在第一位的体验型草莓农场。",
-          brandSubtitle: "家庭草莓农场",
+          brandSubtitle: "BYEOL FARM",
           brandAria: "前往天空星草莓首页",
           navAria: "主要菜单",
           langSelectorLabel: "选择语言",
@@ -3092,7 +2688,7 @@
           metaDescription: "Haneul Strawberry Farm được chọn là nông trại địa phương tiêu biểu của Hwaseong năm 2026. Hãy đến nhà kính tại Paltan-myeon, Hwaseong cùng con để hái dâu Seolhyang, tự tay đóng hộp và lưu lại một ngày thật đáng nhớ.",
           ogTitle: "Haneul Strawberry Farm | Nông trại địa phương tiêu biểu Hwaseong 2026 · Trải nghiệm hái dâu cho gia đình",
           ogDescription: "Paltan-myeon, Hwaseong, Gyeonggi-do. Nông trại dâu trải nghiệm luôn đặt ký ức của gia đình lên trước.",
-          brandSubtitle: "Nông trại dâu cho gia đình",
+          brandSubtitle: "BYEOL FARM",
           brandAria: "Đi tới phần đầu trang của Haneul Strawberry Farm",
           navAria: "Menu chính",
           langSelectorLabel: "Chọn ngôn ngữ",
@@ -3217,7 +2813,7 @@
           metaDescription: "Haneul Strawberry Farm ได้รับคัดเลือกเป็นฟาร์มท้องถิ่นดีเด่นของเมืองฮวาซองปี 2026 มาสัมผัสวันพิเศษในโรงเรือนที่พัลทันมยอน ฮวาซอง เก็บสตรอว์เบอร์รีพันธุ์ซอลฮยังกับลูก ใส่กล่องด้วยตัวเอง และเก็บความทรงจำดี ๆ กลับบ้าน",
           ogTitle: "Haneul Strawberry Farm | ฟาร์มท้องถิ่นดีเด่นเมืองฮวาซองปี 2026 · เก็บสตรอว์เบอร์รีสำหรับครอบครัว",
           ogDescription: "พัลทันมยอน เมืองฮวาซอง ฟาร์มสตรอว์เบอร์รีเชิงประสบการณ์ที่ให้ความสำคัญกับความทรงจำของครอบครัวเป็นอันดับแรก",
-          brandSubtitle: "ฟาร์มสตรอว์เบอร์รีสำหรับครอบครัว",
+          brandSubtitle: "BYEOL FARM",
           brandAria: "ไปยังหน้าแรกของฮานึลสตรอว์เบอร์รี",
           navAria: "เมนูหลัก",
           langSelectorLabel: "เลือกภาษา",
@@ -3342,7 +2938,7 @@
           metaDescription: "Haneul Strawberry Farm — ферма, выбранная лучшей локальной фермой Хвасона 2026 года. Проведите день в тёплой теплице в Пальтан-мёне, вместе с ребёнком собирая клубнику Сольхян, наполняя коробочку и увозя с собой тёплые семейные воспоминания.",
           ogTitle: "Haneul Strawberry Farm | Лучшая локальная ферма Хвасона 2026 · Семейный сбор клубники",
           ogDescription: "Пальтан-мён, Хвасон. Клубничная ферма впечатлений, где важнее всего семейные воспоминания.",
-          brandSubtitle: "Семейная клубничная ферма",
+          brandSubtitle: "BYEOL FARM",
           brandAria: "Перейти к началу страницы Haneul Strawberry Farm",
           navAria: "Основное меню",
           langSelectorLabel: "Выбрать язык",
