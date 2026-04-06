@@ -1891,6 +1891,7 @@
       const progressValue = document.getElementById("heroProgressValue");
       const heroCopy = document.getElementById("heroCopy");
       const statusNode = document.getElementById("heroSequenceStatus");
+      const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
       if (!hero || !frameImage || !frameCanvas || !progressValue || !heroCopy) {
         return;
@@ -1916,16 +1917,23 @@
       const frames = Array.from({ length: totalFrames }, (_, index) => `${basePath}/frame-${String(index + 1).padStart(3, "0")}.webp`);
       const frameCache = Array.from({ length: totalFrames }, () => null);
       const posterImage = new Image();
-      let loadedCount = 0;
+      const uniqueLoadedFrames = new Set();
       let currentFrame = -1;
       let currentRenderedImage = null;
       let ticking = false;
       let activeLoads = 0;
       let lastProgress = 0;
-      const maxConcurrentLoads = 4;
-      const preloadRadius = 10;
-      const retainRadius = 18;
       const pendingLoads = new Set();
+
+      const getFrameLoadConfig = () => {
+        if (window.innerWidth <= 640) {
+          return { maxConcurrentLoads: 2, preloadRadius: 4, retainRadius: 6 };
+        }
+        if (window.innerWidth <= 860) {
+          return { maxConcurrentLoads: 3, preloadRadius: 6, retainRadius: 10 };
+        }
+        return { maxConcurrentLoads: 4, preloadRadius: 8, retainRadius: 14 };
+      };
 
       const getCanvasMetrics = () => {
         const rect = frameCanvas.getBoundingClientRect();
@@ -2000,7 +2008,15 @@
         }
       };
 
+      if (reducedMotionQuery.matches) {
+        if (statusNode) {
+          statusNode.textContent = "감속 모션 환경에서는 포스터 이미지를 표시합니다.";
+        }
+        return;
+      }
+
       const requestFrame = (index) => {
+        const { maxConcurrentLoads } = getFrameLoadConfig();
         if (index < 0 || index >= totalFrames) {
           return;
         }
@@ -2026,7 +2042,7 @@
           frameCache[index] = image;
           pendingLoads.delete(index);
           activeLoads -= 1;
-          loadedCount += 1;
+          uniqueLoadedFrames.add(index);
 
           if (index === 0 && currentFrame < 0) {
             drawFrameToCanvas(image, 1 + lastProgress * 0.06);
@@ -2034,7 +2050,7 @@
             currentFrame = 0;
           }
 
-          if (statusNode && loadedCount === totalFrames) {
+          if (statusNode && uniqueLoadedFrames.size === totalFrames) {
             statusNode.textContent = "히어로 스크롤 프레임이 모두 준비되었습니다.";
           }
 
@@ -2053,6 +2069,7 @@
       };
 
       const warmFrames = (centerIndex) => {
+        const { preloadRadius } = getFrameLoadConfig();
         requestFrame(centerIndex);
         for (let offset = 1; offset <= preloadRadius; offset += 1) {
           requestFrame(centerIndex + offset);
@@ -2061,15 +2078,28 @@
       };
 
       const pruneFrames = (centerIndex) => {
+        const { retainRadius } = getFrameLoadConfig();
         for (let index = 0; index < frameCache.length; index += 1) {
           const cached = frameCache[index];
           if (!cached || cached === currentRenderedImage) {
             continue;
           }
           if (Math.abs(index - centerIndex) > retainRadius) {
+            cached.src = "";
             frameCache[index] = null;
           }
         }
+      };
+
+      const cleanupHeroFrames = () => {
+        for (let index = 0; index < frameCache.length; index += 1) {
+          const cached = frameCache[index];
+          if (cached && cached !== currentRenderedImage) {
+            cached.src = "";
+          }
+          frameCache[index] = null;
+        }
+        pendingLoads.clear();
       };
 
       const startPreload = () => {
@@ -2114,6 +2144,7 @@
       window.addEventListener("scroll", requestRender, { passive: true });
       window.addEventListener("resize", requestRender);
       window.addEventListener("load", requestRender);
+      window.addEventListener("pagehide", cleanupHeroFrames, { once: true });
       requestRender();
     })();
 
