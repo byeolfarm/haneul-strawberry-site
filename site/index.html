@@ -9,9 +9,21 @@
   <meta name="color-scheme" content="light">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://byeolfarm.com/">
+  <link rel="alternate" hreflang="ko" href="https://byeolfarm.com/">
+  <link rel="alternate" hreflang="en" href="https://byeolfarm.com/?lang=en">
+  <link rel="alternate" hreflang="zh-Hans" href="https://byeolfarm.com/?lang=zh">
+  <link rel="alternate" hreflang="vi" href="https://byeolfarm.com/?lang=vi">
+  <link rel="alternate" hreflang="th" href="https://byeolfarm.com/?lang=th">
+  <link rel="alternate" hreflang="ru" href="https://byeolfarm.com/?lang=ru">
+  <link rel="alternate" hreflang="x-default" href="https://byeolfarm.com/">
   <meta property="og:url" content="https://byeolfarm.com/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ko_KR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:locale:alternate" content="vi_VN">
+  <meta property="og:locale:alternate" content="th_TH">
+  <meta property="og:locale:alternate" content="ru_RU">
   <meta property="og:title" content="하늘의별딸기 | 2026 화성시 로컬푸드 우수농장 · 가족 딸기 체험">
   <meta property="og:description" content="경기도 화성시 팔탄면. 가족의 기억을 먼저 생각하는 체험형 딸기 농장입니다.">
   <meta property="og:image" content="https://byeolfarm.com/assets/photos/photo-02.jpg">
@@ -2150,6 +2162,7 @@
 
     (() => {
       const STORAGE_KEY = "haneul-strawberry-language";
+      const SITE_URL = "https://byeolfarm.com/";
       const topSelect = document.getElementById("languageSelectTop");
       const mobileSelect = document.getElementById("languageSelectMobile");
       const footerSelect = document.getElementById("languageSelectFooter");
@@ -2161,8 +2174,11 @@
 
       const docTitle = document.querySelector("title");
       const metaDescription = document.querySelector('meta[name="description"]');
+      const canonicalLink = document.querySelector('link[rel="canonical"]');
       const ogTitle = document.querySelector('meta[property="og:title"]');
       const ogDescription = document.querySelector('meta[property="og:description"]');
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      const ogLocale = document.querySelector('meta[property="og:locale"]');
       const brandAria = document.querySelector(".brand-lockup");
       const navAria = document.querySelector(".nav-links");
       const brandStrong = document.querySelector(".brand-copy strong");
@@ -2224,6 +2240,14 @@
       const footerMetas = document.querySelectorAll(".footer-meta");
       const footerLinks = document.querySelectorAll(".footer-links a");
       const mobileButtons = document.querySelectorAll(".mobile-booking-bar .button");
+      const localeMap = {
+        ko: "ko_KR",
+        en: "en_US",
+        zh: "zh_CN",
+        vi: "vi_VN",
+        th: "th_TH",
+        ru: "ru_RU"
+      };
 
       const translations = {
         ko: {
@@ -3009,6 +3033,31 @@
         });
       };
 
+      const getLanguageUrl = (lang) => {
+        const url = new URL(SITE_URL);
+        if (lang !== "ko") {
+          url.searchParams.set("lang", lang);
+        }
+        return url.toString();
+      };
+
+      const syncMetaUrl = (lang) => {
+        const nextUrl = getLanguageUrl(lang);
+        if (canonicalLink) canonicalLink.setAttribute("href", nextUrl);
+        if (ogUrl) ogUrl.setAttribute("content", nextUrl);
+        if (ogLocale) ogLocale.setAttribute("content", localeMap[lang] || localeMap.ko);
+      };
+
+      const syncBrowserUrl = (lang) => {
+        const url = new URL(window.location.href);
+        if (lang === "ko") {
+          url.searchParams.delete("lang");
+        } else {
+          url.searchParams.set("lang", lang);
+        }
+        window.history.replaceState({}, "", url.toString());
+      };
+
       const applyLanguage = (lang, persist = true) => {
         const copy = translations[lang] || translations.ko;
 
@@ -3017,6 +3066,7 @@
         if (metaDescription) metaDescription.setAttribute("content", copy.metaDescription);
         if (ogTitle) ogTitle.setAttribute("content", copy.ogTitle);
         if (ogDescription) ogDescription.setAttribute("content", copy.ogDescription);
+        syncMetaUrl(lang);
         if (brandAria) brandAria.setAttribute("aria-label", copy.brandAria);
         if (navAria) navAria.setAttribute("aria-label", copy.navAria);
         selects.forEach((select) => select && select.setAttribute("aria-label", copy.langSelectorLabel));
@@ -3135,6 +3185,12 @@
       };
 
       const detectLanguage = () => {
+        const currentUrl = new URL(window.location.href);
+        const paramLanguage = normalizeLanguage(currentUrl.searchParams.get("lang") || "");
+        if (currentUrl.searchParams.get("lang") && translations[paramLanguage]) {
+          return paramLanguage;
+        }
+
         const stored = window.localStorage.getItem(STORAGE_KEY);
         if (stored && translations[stored]) {
           return stored;
@@ -3155,7 +3211,9 @@
       };
 
       const handleLanguageChange = (event) => {
-        applyLanguage(event.target.value, true);
+        const nextLang = event.target.value;
+        applyLanguage(nextLang, true);
+        syncBrowserUrl(nextLang);
       };
 
       selects.forEach((select) => select && select.addEventListener("change", handleLanguageChange));
