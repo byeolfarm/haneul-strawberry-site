@@ -748,6 +748,15 @@
       overflow: hidden;
     }
 
+    .sequence-fill-panel {
+      position: relative;
+    }
+
+    .sequence-fill-panel > .media-shell {
+      position: absolute;
+      inset: 0;
+    }
+
     .media-fallback {
       position: relative;
       z-index: 0;
@@ -1706,7 +1715,7 @@
     <section class="section" id="story">
       <div class="container">
         <div class="story-grid">
-          <div class="photo-panel story-photo reveal">
+          <div class="photo-panel story-photo sequence-fill-panel reveal">
             <div class="media-shell has-scroll-sequence" data-frame-base="assets/photos/scroll-webp/photo-02" data-frame-count="24">
               <canvas class="media-sequence-canvas" width="720" height="404" aria-hidden="true"></canvas>
               <img class="media-fallback" src="assets/photos/photo-02.jpg" alt="딸기 온실 안에서 아이와 엄마가 눈을 맞추는 하늘의별딸기 체험 장면" width="6960" height="4640">
@@ -1779,7 +1788,7 @@
             </div>
           </article>
           <div class="experience-visuals">
-            <div class="photo-panel experience-image-main reveal">
+            <div class="photo-panel experience-image-main sequence-fill-panel reveal">
               <div class="media-shell has-scroll-sequence" data-frame-base="assets/photos/scroll-webp/photo-06" data-frame-count="24">
                 <canvas class="media-sequence-canvas" width="720" height="404" aria-hidden="true"></canvas>
                 <img class="media-fallback" src="assets/photos/photo-06.jpg" alt="하늘의별딸기 온실에서 엄마와 아이가 딸기를 직접 따는 대표 체험 장면" width="2000" height="1333" loading="lazy" decoding="async">
