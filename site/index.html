@@ -1400,34 +1400,26 @@
 
       .strip-items {
         display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(88vw, 1fr);
+        grid-template-columns: 1fr;
         gap: 12px;
-        overflow-x: auto;
-        padding-bottom: 4px;
-        scroll-snap-type: x mandatory;
-        overscroll-behavior-x: contain;
-        scrollbar-width: none;
-      }
-
-      .strip-items::-webkit-scrollbar,
-      .gallery-stack::-webkit-scrollbar {
-        display: none;
+        overflow: visible;
+        padding-bottom: 0;
+        scroll-snap-type: none;
       }
 
       .strip-item {
         min-height: 0;
         padding: 18px 18px 18px;
-        scroll-snap-align: start;
+        scroll-snap-align: none;
       }
 
       .strip-item p {
-        font-size: 15px;
-        line-height: 1.68;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 4;
-        overflow: hidden;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .gallery-stack::-webkit-scrollbar {
+        display: none;
       }
 
       .story-grid {
