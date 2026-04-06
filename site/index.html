@@ -732,10 +732,100 @@
     }
 
     .photo-panel img,
-    .gallery-card img {
+    .photo-panel video,
+    .gallery-card img,
+    .gallery-card video {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    .media-shell {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .media-fallback {
+      position: relative;
+      z-index: 0;
+      display: block;
+    }
+
+    .media-video {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s var(--ease);
+      background: transparent;
+    }
+
+    .media-shell.is-video-ready .media-video {
+      opacity: 1;
+    }
+
+    .motion-photo {
+      position: relative;
+    }
+
+    .motion-photo img {
+      will-change: transform;
+      transform: scale(1.018) translate3d(0, 0, 0);
+      transform-origin: center center;
+    }
+
+    .motion-photo.is-motion-live img {
+      animation-duration: var(--motion-duration, 16s);
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-fill-mode: both;
+    }
+
+    .motion-photo[data-motion="drift"].is-motion-live img {
+      animation-name: photoDriftMotion;
+    }
+
+    .motion-photo[data-motion="float"].is-motion-live img {
+      animation-name: photoFloatMotion;
+    }
+
+    .motion-photo[data-motion="breathe"].is-motion-live img {
+      animation-name: photoBreatheMotion;
+    }
+
+    @keyframes photoDriftMotion {
+      0% {
+        transform: scale(1.018) translate3d(0, 0, 0);
+      }
+      100% {
+        transform: scale(1.05) translate3d(0.7%, -1.8%, 0);
+      }
+    }
+
+    @keyframes photoFloatMotion {
+      0% {
+        transform: scale(1.02) translate3d(0, 0.2%, 0);
+      }
+      50% {
+        transform: scale(1.045) translate3d(-0.8%, -1.4%, 0);
+      }
+      100% {
+        transform: scale(1.03) translate3d(0.6%, -0.4%, 0);
+      }
+    }
+
+    @keyframes photoBreatheMotion {
+      0% {
+        transform: scale(1.016) translate3d(0, 0, 0);
+      }
+      100% {
+        transform: scale(1.038) translate3d(0, -1.1%, 0);
+      }
     }
 
     .story-photo {
@@ -1297,6 +1387,10 @@
       .gallery-card.wide {
         grid-column: auto;
       }
+
+      .motion-photo.is-motion-live img {
+        animation-duration: var(--motion-duration-mobile, 18s);
+      }
     }
 
     @media (max-width: 640px) {
@@ -1368,6 +1462,43 @@
         min-height: 240px;
       }
 
+      .gallery-card,
+      .gallery-card.tall,
+      .gallery-card.wide {
+        min-height: 0;
+      }
+
+      .gallery-card img,
+      .gallery-card .media-fallback {
+        display: block;
+        height: auto;
+      }
+
+      .gallery-card .media-shell {
+        height: auto;
+      }
+
+      .gallery-caption {
+        position: static;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        margin: 0;
+        padding: 14px 16px 16px;
+        border-radius: 0;
+        border-width: 1px 0 0;
+        border-color: rgba(90, 63, 56, 0.08);
+        background: rgba(255, 250, 245, 0.94);
+        backdrop-filter: none;
+        font-size: 13px;
+        line-height: 1.58;
+      }
+
+      .gallery-caption strong {
+        margin-bottom: 6px;
+        font-size: 11px;
+      }
+
       .contact-row {
         grid-template-columns: 1fr;
         gap: 8px;
@@ -1384,7 +1515,13 @@
 
     @media (max-width: 480px) {
       .gallery-caption {
-        font-size: 13px;
+        padding: 12px 14px 14px;
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .gallery-caption strong {
+        font-size: 10px;
       }
     }
 
@@ -1411,6 +1548,11 @@
 
       .hero-frame-canvas {
         display: none !important;
+      }
+
+      .motion-photo img {
+        animation: none !important;
+        transform: none !important;
       }
 
       .hero-frame-image {
@@ -1555,7 +1697,12 @@
       <div class="container">
         <div class="story-grid">
           <div class="photo-panel story-photo reveal">
-            <img src="assets/photos/photo-02.jpg" alt="딸기 온실 안에서 아이와 엄마가 눈을 맞추는 하늘의별딸기 체험 장면" width="6960" height="4640">
+            <div class="media-shell has-motion-video">
+              <img class="media-fallback" src="assets/photos/photo-02.jpg" alt="딸기 온실 안에서 아이와 엄마가 눈을 맞추는 하늘의별딸기 체험 장면" width="6960" height="4640">
+              <video class="media-video" muted autoplay loop playsinline preload="metadata" poster="assets/photos/photo-02.jpg" data-loop-end="2" aria-hidden="true" tabindex="-1">
+                <source src="assets/photos/photo-02.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
           <div class="text-panel reveal">
             <div class="section-label">농장 이야기</div>
@@ -1625,10 +1772,15 @@
           </article>
           <div class="experience-visuals">
             <div class="photo-panel experience-image-main reveal">
-              <img src="assets/photos/photo-06.jpg" alt="하늘의별딸기 온실에서 엄마와 아이가 딸기를 직접 따는 대표 체험 장면" width="2000" height="1333" loading="lazy" decoding="async">
+              <div class="media-shell has-motion-video">
+                <img class="media-fallback" src="assets/photos/photo-06.jpg" alt="하늘의별딸기 온실에서 엄마와 아이가 딸기를 직접 따는 대표 체험 장면" width="2000" height="1333" loading="lazy" decoding="async">
+                <video class="media-video" muted autoplay loop playsinline preload="metadata" poster="assets/photos/photo-06.jpg" data-loop-end="2" aria-hidden="true" tabindex="-1">
+                  <source src="assets/photos/photo-06.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
             <div class="experience-subgrid">
-              <div class="photo-panel experience-image-small reveal">
+              <div class="photo-panel experience-image-small reveal motion-photo" data-motion="breathe" style="--motion-duration: 17s; --motion-duration-mobile: 19s;">
                 <img src="assets/photos/photo-05.jpg" alt="하늘의별딸기 컵케이크 만들기 옵션 장면" width="4640" height="6960" loading="lazy" decoding="async">
               </div>
               <div class="experience-note reveal">
@@ -1664,20 +1816,25 @@
           </article>
           <div class="gallery-stack">
             <article class="gallery-card tall reveal">
-              <img src="assets/photos/photo-03.jpg" alt="하늘의별딸기 온실 안에서 아이가 딸기를 살펴보는 장면" width="6960" height="4640" loading="lazy" decoding="async">
+              <div class="media-shell has-motion-video">
+                <img class="media-fallback" src="assets/photos/photo-03.jpg" alt="하늘의별딸기 온실 안에서 아이가 딸기를 살펴보는 장면" width="6960" height="4640" loading="lazy" decoding="async">
+                <video class="media-video" muted autoplay loop playsinline preload="metadata" poster="assets/photos/photo-03.jpg" data-loop-end="2" aria-hidden="true" tabindex="-1">
+                  <source src="assets/photos/photo-03.mp4" type="video/mp4">
+                </video>
+              </div>
               <div class="gallery-caption">
                 <strong>Quiet Detail</strong>
                 딸기를 바라보는 아이의 작은 표정까지도 하루의 기억이 됩니다.
               </div>
             </article>
-            <article class="gallery-card tall reveal">
+            <article class="gallery-card tall reveal motion-photo" data-motion="float" style="--motion-duration: 18s; --motion-duration-mobile: 20s;">
               <img src="assets/photos/photo-04.jpg" alt="하늘의별딸기 온실 안에서 아이가 딸기를 들고 앉아 있는 장면" width="6960" height="4640" loading="lazy" decoding="async">
               <div class="gallery-caption">
                 <strong>Inside The Field</strong>
                 드넓은 온실 안 풍경이 그대로 담겨 체험의 공간감이 살아납니다.
               </div>
             </article>
-            <article class="gallery-card wide reveal">
+            <article class="gallery-card wide reveal motion-photo" data-motion="drift" style="--motion-duration: 16s; --motion-duration-mobile: 18s;">
               <img src="assets/photos/photo-08.jpg" alt="딸기 온실 안에서 아이들이 서로 마주보는 장면" width="6960" height="4640" loading="lazy" decoding="async">
               <div class="gallery-caption">
                 <strong>Family Moment</strong>
@@ -1685,7 +1842,12 @@
               </div>
             </article>
             <article class="gallery-card wide reveal">
-              <img src="assets/photos/photo-07.jpg" alt="하늘의별딸기 온실에서 아이가 딸기를 들고 있는 모습" width="6960" height="4640" loading="lazy" decoding="async">
+              <div class="media-shell has-motion-video">
+                <img class="media-fallback" src="assets/photos/photo-07.jpg" alt="하늘의별딸기 온실에서 아이가 딸기를 들고 있는 모습" width="6960" height="4640" loading="lazy" decoding="async">
+                <video class="media-video" muted autoplay loop playsinline preload="metadata" poster="assets/photos/photo-07.jpg" data-loop-end="2" aria-hidden="true" tabindex="-1">
+                  <source src="assets/photos/photo-07.mp4" type="video/mp4">
+                </video>
+              </div>
               <div class="gallery-caption">
                 <strong>Little Memory</strong>
                 사진 한 장이면 그날의 공기와 표정이 선명하게 떠오릅니다.
@@ -1801,7 +1963,7 @@
     <section class="section">
       <div class="container">
         <div class="cta-grid">
-          <div class="cta-photo-tile reveal">
+          <div class="cta-photo-tile reveal motion-photo" data-motion="breathe" style="--motion-duration: 19s; --motion-duration-mobile: 21s;">
             <img src="assets/photos/photo-09.jpg" alt="하늘의별딸기 온실에서 여러 아이들이 함께 체험을 즐기는 장면" width="6960" height="4640" loading="lazy" decoding="async">
           </div>
           <article class="cta-panel reveal">
@@ -2158,6 +2320,153 @@
       window.addEventListener("load", requestRender);
       window.addEventListener("pagehide", cleanupHeroFrames, { once: true });
       requestRender();
+    })();
+
+    (() => {
+      const motionVideos = document.querySelectorAll(".media-video");
+      if (!motionVideos.length) {
+        return;
+      }
+
+      const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const supportsVisibilityObserver = "IntersectionObserver" in window;
+      const visibilityObserver = supportsVisibilityObserver
+        ? new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                const video = entry.target;
+                if (reducedMotionQuery.matches) {
+                  video.pause();
+                  video.currentTime = 0;
+                  return;
+                }
+
+                if (entry.isIntersecting) {
+                  const playPromise = video.play();
+                  if (playPromise && typeof playPromise.catch === "function") {
+                    playPromise.catch(() => {});
+                  }
+                } else {
+                  video.pause();
+                }
+              });
+            },
+            { threshold: 0.2 }
+          )
+        : null;
+
+      const syncReducedMotion = () => {
+        motionVideos.forEach((video) => {
+          const shell = video.closest(".media-shell");
+          if (reducedMotionQuery.matches) {
+            if (shell) {
+              shell.classList.remove("is-video-ready");
+            }
+            video.pause();
+            video.currentTime = 0;
+            return;
+          }
+
+          if (shell && video.readyState >= 2) {
+            shell.classList.add("is-video-ready");
+          }
+
+          if (!visibilityObserver) {
+            const playPromise = video.play();
+            if (playPromise && typeof playPromise.catch === "function") {
+              playPromise.catch(() => {});
+            }
+          }
+        });
+      };
+
+      motionVideos.forEach((video) => {
+        const shell = video.closest(".media-shell");
+        const loopEnd = Number(video.dataset.loopEnd || 0);
+        const markReady = () => {
+          if (shell && !reducedMotionQuery.matches) {
+            shell.classList.add("is-video-ready");
+          }
+        };
+
+        if (video.readyState >= 2) {
+          markReady();
+        }
+
+        video.addEventListener("loadeddata", markReady, { once: true });
+        video.addEventListener("canplay", markReady, { once: true });
+        video.addEventListener("error", () => {
+          if (shell) {
+            shell.classList.remove("is-video-ready");
+          }
+          video.pause();
+        });
+
+        if (loopEnd > 0) {
+          video.addEventListener("timeupdate", () => {
+            if (video.currentTime >= loopEnd) {
+              video.currentTime = 0;
+              if (!video.paused && !reducedMotionQuery.matches) {
+                const playPromise = video.play();
+                if (playPromise && typeof playPromise.catch === "function") {
+                  playPromise.catch(() => {});
+                }
+              }
+            }
+          });
+        }
+
+        if (visibilityObserver) {
+          visibilityObserver.observe(video);
+        }
+      });
+
+      if (typeof reducedMotionQuery.addEventListener === "function") {
+        reducedMotionQuery.addEventListener("change", syncReducedMotion);
+      } else if (typeof reducedMotionQuery.addListener === "function") {
+        reducedMotionQuery.addListener(syncReducedMotion);
+      }
+
+      window.addEventListener(
+        "pagehide",
+        () => {
+          motionVideos.forEach((video) => video.pause());
+        },
+        { once: true }
+      );
+
+      syncReducedMotion();
+    })();
+
+    (() => {
+      const motionPhotos = document.querySelectorAll(".motion-photo");
+      if (!motionPhotos.length) {
+        return;
+      }
+
+      const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (reducedMotionQuery.matches || !("IntersectionObserver" in window)) {
+        return;
+      }
+
+      const motionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            entry.target.classList.toggle("is-motion-live", entry.isIntersecting);
+          });
+        },
+        { threshold: 0.18, rootMargin: "12% 0px -10% 0px" }
+      );
+
+      motionPhotos.forEach((element) => motionObserver.observe(element));
+
+      window.addEventListener(
+        "pagehide",
+        () => {
+          motionObserver.disconnect();
+        },
+        { once: true }
+      );
     })();
 
     (() => {
