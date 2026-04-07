@@ -1476,6 +1476,18 @@
         padding: 24px 20px;
       }
 
+      .gallery-text p,
+      #faq .section-head p,
+      .cta-panel p {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .gallery-text p {
+        -webkit-line-clamp: 4;
+      }
+
       .gallery-text .button {
         display: none;
       }
@@ -1506,6 +1518,10 @@
       .faq-list {
         grid-template-columns: 1fr;
         gap: 12px;
+      }
+
+      #faq .section-head p {
+        -webkit-line-clamp: 3;
       }
 
       .faq-item {
@@ -1556,6 +1572,10 @@
 
       .cta-panel {
         padding: 28px 22px;
+      }
+
+      .cta-panel p {
+        -webkit-line-clamp: 4;
       }
 
       .cta-actions {
@@ -1671,7 +1691,7 @@
       }
 
       .footer {
-        padding-bottom: 120px;
+        padding-bottom: 144px;
       }
 
       .mobile-booking-bar {
@@ -2204,6 +2224,7 @@
       const faqItems = Array.from(document.querySelectorAll("#faq .faq-item"));
       const nav = document.querySelector(".floating-nav");
       const mobileBar = document.querySelector(".mobile-booking-bar");
+      const experienceSection = document.getElementById("experience");
 
       if (!faqItems.length && !nav && !mobileBar) {
         return;
@@ -2275,7 +2296,10 @@
         }
 
         const y = window.scrollY;
-        const revealBar = y > Math.max(window.innerHeight * 0.58, 420);
+        const experienceReached = experienceSection
+          ? experienceSection.getBoundingClientRect().top < window.innerHeight * 0.92
+          : false;
+        const revealBar = experienceReached || y > Math.max(window.innerHeight * 0.88, 780);
         document.body.classList.toggle("mobile-bar-visible", revealBar);
 
         if (y <= 24 || y < lastY - 8) {
