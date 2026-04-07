@@ -1482,17 +1482,11 @@
 
       .gallery-stack {
         display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(84vw, 1fr);
+        grid-template-columns: 1fr;
         gap: 14px;
-        overflow-x: auto;
-        padding-bottom: 6px;
-        scroll-snap-type: x mandatory;
-        overscroll-behavior-x: contain;
-      }
-
-      .gallery-card {
-        scroll-snap-align: start;
+        overflow: visible;
+        padding-bottom: 0;
+        scroll-snap-type: none;
       }
 
       .gallery-card.wide {
