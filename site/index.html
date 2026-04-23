@@ -1634,8 +1634,19 @@ body.nav-hidden .floating-nav {
   box-shadow: 0 18px 40px rgba(0,0,0,0.12);
   backdrop-filter: blur(14px);
   gap: 8px;
+  opacity: 0;
+  transform: translateY(18px);
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
 }
 .mobile-bar .btn { flex: 1; min-height: 52px; padding: 14px 16px; }
+.mobile-bar .btn iconify-icon { flex: 0 0 auto; }
+.mobile-bar .btn .mobile-bar-label { display: inline-flex; align-items: center; }
+.mobile-bar.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 
 /* ============================================================
    Reveal
@@ -1645,6 +1656,14 @@ body.nav-hidden .floating-nav {
 .reveal.in { opacity: 1; transform: none; }
 .reveal > .rc { opacity: 0; transform: translateY(24px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); transition-delay: var(--d, 0ms); }
 .reveal.in > .rc { opacity: 1; transform: none; }
+#summary .keyinfo.reveal,
+#summary .keyinfo.reveal > .rc {
+  opacity: 1;
+  transform: none;
+}
+#summary .keyinfo.reveal > .rc {
+  transition-delay: 0ms;
+}
 
 /* ============================================================
    Tweaks panel
@@ -2400,11 +2419,11 @@ body.nav-hidden .floating-nav {
 <div class="mobile-bar">
   <a class="btn btn-secondary" href="https://www.instagram.com/byeol_farm/" target="_blank" rel="noopener">
     <iconify-icon icon="skill-icons:instagram"></iconify-icon>
-    분위기
+    <span class="mobile-bar-label">분위기</span>
   </a>
   <a class="btn btn-primary" href="https://map.naver.com/p/entry/place/1487772117?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202603302343&locale=ko&svcName=map_pcv5&searchType=place&lng=126.8615976&lat=37.1489770&c=15.00,0,0,2,dh" target="_blank" rel="noopener">
     <iconify-icon icon="solar:ticket-sale-linear"></iconify-icon>
-    날짜 보기
+    <span class="mobile-bar-label">날짜 보기</span>
   </a>
 </div>
 
@@ -2636,6 +2655,23 @@ window.addEventListener('scroll', () => {
   }
   lastY = y;
 }, { passive: true });
+
+const mobileBar = document.querySelector('.mobile-bar');
+function syncMobileBarVisibility() {
+  if (!mobileBar) return;
+  if (window.innerWidth > 720) {
+    mobileBar.classList.remove('is-visible');
+    return;
+  }
+  const storySection = document.getElementById('story');
+  const showAt = storySection
+    ? Math.max(storySection.offsetTop - window.innerHeight * 0.35, 520)
+    : 720;
+  mobileBar.classList.toggle('is-visible', window.scrollY > showAt);
+}
+window.addEventListener('scroll', syncMobileBarVisibility, { passive: true });
+window.addEventListener('resize', syncMobileBarVisibility);
+syncMobileBarVisibility();
 
 /* ============================================================
    FAQ accordion
@@ -3226,7 +3262,10 @@ function applyLanguage(language) {
   });
 
   document.querySelectorAll('.mobile-bar .btn').forEach((btn, index) => {
-    if (copy.mobileBar[index]) btn.textContent = copy.mobileBar[index];
+    if (!copy.mobileBar[index]) return;
+    const label = btn.querySelector('.mobile-bar-label');
+    if (label) label.textContent = copy.mobileBar[index];
+    else btn.textContent = copy.mobileBar[index];
   });
 }
 
