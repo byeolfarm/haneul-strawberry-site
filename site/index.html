@@ -6,6 +6,24 @@
 <title>하늘의별딸기 | 화성 가족 체험형 딸기농장 · 3D 리빌드</title>
 <meta name="description" content="경기 화성시 만세구 팔탄면의 가족 체험형 딸기농장. 아이와 함께 설향 딸기 수확 체험을 예약하고, 운영시간·주차·우천 시 운영 여부를 확인해 보세요.">
 <meta name="theme-color" content="#f7efe7">
+<link rel="canonical" href="https://byeolfarm.com/">
+<link rel="alternate" hreflang="ko" href="https://byeolfarm.com/">
+<link rel="alternate" hreflang="en" href="https://byeolfarm.com/?lang=en">
+<link rel="alternate" hreflang="zh-Hans" href="https://byeolfarm.com/?lang=zh">
+<link rel="alternate" hreflang="vi" href="https://byeolfarm.com/?lang=vi">
+<link rel="alternate" hreflang="th" href="https://byeolfarm.com/?lang=th">
+<link rel="alternate" hreflang="ru" href="https://byeolfarm.com/?lang=ru">
+<link rel="alternate" hreflang="x-default" href="https://byeolfarm.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://byeolfarm.com/">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="하늘의별딸기 | 화성 가족 체험형 딸기농장 · 예약 안내">
+<meta property="og:description" content="경기 화성시 만세구 팔탄면의 가족 체험형 딸기농장. 아이와 함께 설향 딸기 수확 체험을 예약하고, 운영시간·주차·우천 시 운영 여부를 확인해 보세요.">
+<meta property="og:image" content="https://byeolfarm.com/assets/photos/photo-02.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="하늘의별딸기 | 화성 가족 체험형 딸기농장 · 예약 안내">
+<meta name="twitter:description" content="경기 화성시 만세구 팔탄면의 가족 체험형 딸기농장. 아이와 함께 설향 딸기 수확 체험을 예약하고, 운영시간·주차·우천 시 운영 여부를 확인해 보세요.">
+<meta name="twitter:image" content="https://byeolfarm.com/assets/photos/photo-02.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css">
@@ -1787,8 +1805,8 @@ body.nav-hidden .floating-nav {
     <div class="lang-pill" data-hover>
       <iconify-icon icon="solar:global-linear"></iconify-icon>
       <select aria-label="Language">
-        <option>KO</option><option>EN</option><option>中</option>
-        <option>VI</option><option>TH</option><option>RU</option>
+        <option value="ko">KO</option><option value="en">EN</option><option value="zh">中</option>
+        <option value="vi">VI</option><option value="th">TH</option><option value="ru">RU</option>
       </select>
     </div>
     <a class="btn btn-primary" href="https://map.naver.com/p/entry/place/1487772117?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202603302343&locale=ko&svcName=map_pcv5&searchType=place&lng=126.8615976&lat=37.1489770&c=15.00,0,0,2,dh" target="_blank" rel="noopener" data-hover>
@@ -2380,7 +2398,7 @@ body.nav-hidden .floating-nav {
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* ============================================================
    Tweaks (host edit-mode protocol)
    ============================================================ */
@@ -2597,6 +2615,618 @@ try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch
    Init
    ============================================================ */
 applyTweaks();
+
+/* ============================================================
+   Language switch
+   ============================================================ */
+const LANG_STORAGE_KEY = 'byeol-farm-language';
+const langSelect = document.querySelector('.lang-pill select');
+
+const pageCopy = {
+  ko: {
+    htmlLang: 'ko',
+    title: '하늘의별딸기 | 화성 가족 체험형 딸기농장 · 예약 안내',
+    description: '경기 화성시 만세구 팔탄면의 가족 체험형 딸기농장. 아이와 함께 설향 딸기 수확 체험을 예약하고, 운영시간·주차·우천 시 운영 여부를 확인해 보세요.',
+    ogTitle: '하늘의별딸기 | 화성 가족 체험형 딸기농장 · 예약 안내',
+    ogDescription: '경기 화성시 만세구 팔탄면의 가족 체험형 딸기농장. 아이와 함께 설향 딸기 수확 체험을 예약하고, 운영시간·주차·우천 시 운영 여부를 확인해 보세요.',
+    brandSubtitle: 'BYEOL FARM · 2026',
+    nav: ['농장 이야기', '체험 안내', '순간들', '오시기 전', 'FAQ'],
+    navCta: '예약하기',
+    skip: '체험 안내로 바로가기',
+    heroTitle: 'Where <em>sunlight</em><br>ripens into <em>memory.</em><span class="kr">하늘의별딸기 · 가족 체험형 딸기농장</span>',
+    heroDesc: '빨갛게 익은 설향 딸기를 아이가 직접 찾아 손에 쥐는 순간. 집으로 돌아가는 길에도 "우리가 딴 딸기" 이야기가 한참 이어지는 하루. 하늘의별딸기는 그런 기억이 자연스럽게 남는 시간을 준비합니다.',
+    heroButtons: ['예약 가능한 날짜 보기', '농장 이야기 먼저 보기'],
+    heroMeta: [
+      ['Price', '<em>₩18,000</em> / 1인 · 500g 팩 포함'],
+      ['Hours', '<em>10:00 → 16:00</em> · 월요일 휴무'],
+      ['Location', '<em>경기 화성시</em> 만세구 팔탄면']
+    ],
+    trust: [
+      '1인 수확 체험<br><small>500g 전용 팩 포함</small>',
+      '미만 영아 무료<br><small>증빙 서류 지참 시</small>',
+      '평일·주말 운영<br><small>기본 휴무 월요일</small>',
+      '날씨 무관 온실<br><small>우천 시에도 정상 진행</small>',
+      '선별한 단일 품종<br><small>화성 팔탄면 직접 재배</small>'
+    ],
+    summary: {
+      label: '핵심 이용 정보',
+      heading: '예약 전 <em>가장 많이</em><br>확인하시는 것<span class="outlined">.</span>',
+      items: [
+        ['위치', '경기 화성시 만세구 팔탄면<br>노하길116번길 177-26', '지번 — 노하리 1267-5'],
+        ['체험', '설향 딸기 수확<br>1인 500g 전용 팩', '뚜껑이 닫힐 만큼 가득 담기'],
+        ['대상', '아이와 함께 찾는<br>가족 나들이', '24개월 미만 증빙 시 무료'],
+        ['예약', '네이버 스마트플레이스<br>예약·결제 모두 가능', '날짜·시간 확인 후 예약'],
+        ['운영', '10:00 — 16:00<br>기본 휴무 월요일', '공휴일 월요일 예약 페이지 확인'],
+        ['주차 · 우천', '농장 옆 도로 가로주차<br>우천시 온실 진행', '반려동물 동반 불가']
+      ]
+    },
+    story: {
+      label: '농장 이야기',
+      heading: '한 번 다녀가면<br><em>다시 떠오르는</em> 하루.',
+      title: '실제 후기에서 가장 많이 들은 말은 <em>"깨끗하다"</em>, <em>"아이가 너무 좋아한다"</em>, <em>"사진이 잘 남는다"</em> 였어요.',
+      body: '하늘의별딸기는 딸기만 따고 돌아가는 곳보다, 아이와 부모 모두 기분 좋게 머물다 가는 하루를 만들고 싶습니다. 따뜻한 온실 안에서 가족이 직접 설향 딸기를 고르고 담아가는 대표 체험은, 한 번 다녀가면 꼭 다시 떠오르는 기억이 됩니다.',
+      items: [
+        ['깨끗하고 <em>쾌적한</em> 온실', '처음 오신 분들도 "깔끔하다"는 말을 가장 많이 남겨 주십니다. 아이와 함께 머물기 편안한 분위기를 오래 유지하려고 늘 신경 씁니다.'],
+        ['아이의 눈높이에 맞춘 <em>체험</em>', '아이들이 직접 열매를 찾고 손으로 따 보는 순간에 특히 집중하고 즐거워합니다. 어른보다 아이들이 더 신나게 움직이는 체험입니다.'],
+        ['사진으로 오래 남는 <em>하루</em>', '사진이 예쁘게 남는다는 후기가 많은 이유는 꾸민 표정보다 자연스러운 장면이 많기 때문입니다. 현장 상황이 맞는 날에는 감성 스냅도 무료로 남겨드립니다.']
+      ]
+    },
+    experience: {
+      label: '체험 안내',
+      heading: '설향 딸기 수확 체험<br>과 <em>추가 옵션.</em>',
+      lead: '아이들이 좋아하고, 부모도 무리 없이 함께할 수 있도록 실제로 궁금해하시는 기준만 분명하게 정리했습니다.',
+      tag: '대표 체험',
+      title: '설향 딸기 <em>수확 체험</em>',
+      priceNote: '사진만 찍는 보호자도 동일 요금 적용<br>24개월 미만 증빙 시 무료 입장',
+      body: '후기에서 가장 많이 들은 말은 "아이가 너무 좋아해요"였습니다. 따뜻한 온실 안에서 가족이 함께 설향 딸기를 직접 고르고 담아가는 대표 체험으로, 1인 전용 500g 팩에 뚜껑이 완전히 닫힐 만큼 가득 담아가실 수 있습니다.',
+      facts: [
+        '1인당 500g 전용 팩 1개 제공. 뚜껑이 닫힐 만큼 담아가세요.',
+        '24개월 미만은 증빙서류 지참 시 무료 입장 가능합니다.',
+        '평일 2시간 30분 · 주말·공휴일 1시간 40분 여유롭게 진행됩니다.',
+        '추가 수확은 100g 단위 현장 결제 (방문일 시세 기준).'
+      ],
+      buttons: ['예약 가능한 날짜 보기', '궁금한 점 먼저 보기'],
+      optionTag: 'Option · +3,000',
+      optionTitle: '딸기 미니 컵케이크',
+      optionBody: '딸기를 따고 나서 아이들이 특히 좋아하는 마무리 옵션입니다. 내 손으로 딴 딸기로 작은 디저트를 직접 만들어 보세요. 1인 세트 3,000원 / 2인 세트 5,000원. 용기 + 생크림 + 카스테라 케이크가 함께 제공됩니다.'
+    },
+    gallery: {
+      label: '감성 스냅',
+      heading: '꾸미지 않아도<br><em>예쁘게 남는</em> 순간.',
+      introTag: 'Free Gift',
+      introTitle: '<em>베스트컷</em><br>한 장이 가족에게 남는 날.',
+      introBody: '다녀가신 분들이 "사진이 잘 남는다"는 말씀을 자주 남겨 주셨어요. 감성 스냅은 예약 가족을 위한 무료 깜짝 이벤트로, 베스트컷 인화 1매를 현장에서 바로 드리고 보정본 파일은 후기 작성 후 전달해 드립니다.',
+      introButton: '인스타 @byeol_farm',
+      caps: ['Pure Joy', 'Little Hands', 'Quiet Moment', 'Soft Light']
+    },
+    visit: {
+      label: '오시기 전 확인',
+      heading: '방문 전에 <em>이것만</em><br>확인해 주세요.',
+      lead: '실제 방문 전에 가장 많이 확인하시는 것만 먼저 모았습니다. 주차와 도착 시간만 알고 오셔도 현장에서 훨씬 편합니다.',
+      title: '<em>오시는 길</em>과 연락처',
+      body: '자가용 방문 기준으로 찾아오시는 분들이 많습니다. 네이버 지도 또는 TMAP으로 길찾기를 확인해 주세요.',
+      rows: [
+        ['주소', '도로명 — 경기 화성시 만세구 팔탄면 노하길116번길 177-26<br>지번 — 팔탄면 노하리 1267-5'],
+        ['운영', '10:00 — 16:00 · 기본 휴무 월요일 (공휴일 월요일은 운영 가능)'],
+        ['전화', '010 · 7970 · 6970'],
+        ['이메일', 'byeol_farm@naver.com']
+      ],
+      buttons: ['네이버 지도', 'TMAP'],
+      notes: [
+        ['주차', '농장 옆 도로에 가로주차해 주세요. 진입로와 시설하우스 앞 주차는 어렵습니다.'],
+        ['도착 시간', '예약 10분 전 도착을 꼭 지켜주세요. 지각 시 체험 연장 불가, 감성 스냅 이벤트 대상에서도 제외될 수 있습니다.'],
+        ['소지품', '체험존 안에는 가방·카메라·포대기 반입이 불가합니다. 딸기에 멍이 들 수 있으니 귀중품은 차량 보관 후 입장해 주세요.'],
+        ['우천 · 동반', '비가 와도 시설하우스 안에서 정상 진행됩니다. 반려동물은 동반하실 수 없습니다.']
+      ]
+    },
+    faq: {
+      label: '자주 묻는 질문',
+      heading: '예약 전에 <em>가장 많이</em><br>묻는 질문.',
+      lead: '예약 직전에 확인하시는 질문만 모았습니다. 운영 가능 여부는 네이버 예약 페이지가 가장 정확합니다.',
+      items: [
+        ['화성에서 아이와 함께 갈 수 있는 딸기체험인가요?', '네. 하늘의별딸기는 경기 화성시 만세구 팔탄면에 있는 가족 체험형 딸기농장으로, 아이와 함께 설향 딸기 수확 체험을 할 수 있습니다.'],
+        ['예약은 어디서 하나요?', '네이버 스마트플레이스를 통해 예약과 결제가 모두 진행됩니다.'],
+        ['팔탄면 근처에서 예약 가능한 딸기체험인가요?', '네. 하늘의별딸기는 경기 화성시 만세구 팔탄면에 있으며, 네이버 스마트플레이스 예약으로 방문 날짜와 가능 시간을 확인한 뒤 예약하실 수 있습니다.'],
+        ['24개월 미만도 입장 가능한가요?', '증빙서류를 지참하시면 24개월 미만 영아는 무료로 입장하실 수 있습니다.'],
+        ['보호자도 요금이 있나요?', '네. 사진만 찍는 보호자도 동일하게 1인 1체험 기준으로 이용 요금이 적용됩니다.'],
+        ['비 오는 날에도 체험 가능한가요?', '네. 비 오는 날에도 온실 안에서 체험이 진행됩니다. 다만 안전상 운영이 어려운 날에는 별도로 안내드립니다.'],
+        ['주차는 어떻게 하나요?', '농장 옆 도로에 가로주차해 주세요. 진입로와 시설하우스 앞 주차는 어렵습니다.'],
+        ['주소에 만세구가 붙었는데 예전 방식으로도 검색할 수 있나요?', '공식 도로명 주소는 경기 화성시 만세구 팔탄면 노하길116번길 177-26이며, 내비나 지도 검색이 잘 안 되면 "화성시 팔탄면 노하리 1267-5"로도 검색해 보실 수 있습니다.']
+      ]
+    },
+    cta: {
+      label: '예약 안내',
+      heading: '운영 일정과 예약 시간은<br><em>예약 페이지</em>에서 확인.',
+      body: '운영일과 가능 시간은 수시로 달라질 수 있습니다. 방문 전 네이버 예약 페이지를 먼저 확인하시고, 농장 분위기가 궁금하시면 인스타그램도 함께 둘러보세요.',
+      buttons: ['예약 가능한 날짜 보기', '@byeol_farm']
+    },
+    footer: {
+      heading: '하늘의별딸기',
+      body: '경기도 화성시 팔탄면 설향 딸기 체험 농장. 아이와 함께 따고 담고 사진으로 남기는 하루가 좋은 기억으로 오래 남도록 차분하게 준비합니다.',
+      links1: ['처음으로', '농장 이야기', '체험 안내', '순간들', '오시기 전 확인', '자주 묻는 질문'],
+      links2: ['네이버 예약 ↗', '인스타그램 ↗', 'TMAP 길찾기 ↗', '이메일 문의 ↗'],
+      meta: ['© 2026 하늘의별딸기 · Byeol Farm', 'Designed with 별빛 · 3D Rebuild v1', '농장 옆 가로주차 · 기본 휴무 월요일']
+    },
+    mobileBar: ['분위기', '날짜 보기']
+  },
+  en: {
+    htmlLang: 'en',
+    title: 'Haneul Strawberry Farm | Family Strawberry Picking in Hwaseong',
+    description: 'A family strawberry farm in Paltan-myeon, Hwaseong. Check Seolhyang strawberry picking details, hours, parking, rainy-day greenhouse access, and Naver reservation information.',
+    ogTitle: 'Haneul Strawberry Farm | Family Strawberry Picking in Hwaseong',
+    ogDescription: 'A family strawberry farm in Hwaseong, Korea with Seolhyang strawberry picking, parking guidance, rainy-day access, and Naver reservations.',
+    brandSubtitle: 'BYEOL FARM · 2026',
+    nav: ['Farm Story', 'Experience', 'Moments', 'Before You Go', 'FAQ'],
+    navCta: 'Book Now',
+    skip: 'Skip to experience',
+    heroTitle: 'Where <em>sunlight</em><br>ripens into <em>memory.</em><span class="kr">Haneul Strawberry Farm · Family Strawberry Experience Farm</span>',
+    heroDesc: 'The moment your child finds a bright red Seolhyang strawberry and holds it with care. Even on the ride home, the conversation keeps circling back to “the strawberries we picked ourselves.” Haneul Strawberry Farm prepares exactly that kind of day.',
+    heroButtons: ['See Available Dates', 'See Farm Story First'],
+    heroMeta: [
+      ['Price', '<em>₩18,000</em> / person · includes one 500g pack'],
+      ['Hours', '<em>10:00 → 16:00</em> · closed Mondays'],
+      ['Location', '<em>Hwaseong, Gyeonggi</em> Paltan-myeon']
+    ],
+    trust: [
+      'Per-person picking experience<br><small>includes one 500g pack</small>',
+      'Free for toddlers under 24 months<br><small>with proof</small>',
+      'Open weekdays and weekends<br><small>regularly closed Mondays</small>',
+      'Indoor greenhouse experience<br><small>available even in rain</small>',
+      'Seolhyang only<br><small>grown in Paltan, Hwaseong</small>'
+    ],
+    summary: {
+      label: 'Key Info',
+      heading: 'What guests check<br><em>most often</em> before booking<span class="outlined">.</span>',
+      items: [
+        ['Location', '177-26, Nohagil 116beon-gil<br>Paltan-myeon, Manse-gu, Hwaseong', 'Lot address — Nohari 1267-5'],
+        ['Experience', 'Seolhyang strawberry picking<br>one 500g pack per guest', 'Fill the pack until the lid closes'],
+        ['Who It Fits', 'A good family outing<br>with children', 'Free for toddlers under 24 months with proof'],
+        ['Reservation', 'Book and pay through<br>Naver Smart Place', 'Check dates and time slots first'],
+        ['Hours', '10:00 — 16:00<br>regularly closed Mondays', 'Check the reservation page on public-holiday Mondays'],
+        ['Parking · Rain', 'Roadside parking next to the farm<br>greenhouse experience on rainy days', 'Pets are not allowed']
+      ]
+    },
+    story: {
+      label: 'Farm Story',
+      heading: 'A day that<br><em>returns to mind</em> again.',
+      title: 'What we hear most often is <em>“it’s clean,”</em> <em>“my child loved it,”</em> and <em>“the photos turn out beautifully.”</em>',
+      body: 'Haneul Strawberry Farm aims to be more than a place where you simply pick strawberries. It is a day that feels good for both children and parents, and a memory that returns on the way home.',
+      items: [
+        ['A <em>clean</em> greenhouse', 'First-time visitors most often tell us the greenhouse feels tidy and comfortable. We work hard to keep it that way for families.'],
+        ['An experience built <em>for children</em>', 'Children focus most on finding berries and picking them themselves. It is often the kids who get the most excited.'],
+        ['A day that remains in <em>photos</em>', 'Guests often say the photos come out especially well because the moments here feel natural rather than staged.']
+      ]
+    },
+    experience: {
+      label: 'Experience',
+      heading: 'Seolhyang strawberry picking<br>and <em>extra options.</em>',
+      lead: 'We kept only the details families most often ask about before visiting.',
+      tag: 'Signature experience',
+      title: 'Seolhyang strawberry <em>picking</em>',
+      priceNote: 'Guardians who only take photos are charged the same<br>Free for children under 24 months with proof',
+      body: 'The sentence we hear most is “my child loved it.” In a warm greenhouse, families pick Seolhyang strawberries together and fill one dedicated 500g pack per guest.',
+      facts: [
+        'One 500g pack per guest. Fill it until the lid closes.',
+        'Children under 24 months may enter free with proof.',
+        'Weekdays 2 hr 30 min · weekends and holidays 1 hr 40 min.',
+        'Extra harvest can be paid onsite in 100g units.'
+      ],
+      buttons: ['See Available Dates', 'Check FAQs First'],
+      optionTag: 'Option · +3,000',
+      optionTitle: 'Mini strawberry cupcake',
+      optionBody: 'A small add-on children especially enjoy after picking. Make a simple dessert with the strawberries you picked yourself.'
+    },
+    gallery: {
+      label: 'Snapshot Moments',
+      heading: 'Moments that stay<br><em>beautiful</em> without posing.',
+      introTag: 'Free Gift',
+      introTitle: '<em>One best shot</em><br>that stays with the family.',
+      introBody: 'Guests often tell us the photos from the farm look especially good. The snapshot event is a small free surprise for booked families, with one printed best shot and a retouched file after a review.',
+      introButton: 'Instagram @byeol_farm',
+      caps: ['Pure Joy', 'Little Hands', 'Quiet Moment', 'Soft Light']
+    },
+    visit: {
+      label: 'Before You Go',
+      heading: 'Please check<br><em>just these things</em> before visiting.',
+      lead: 'These are the details guests most often check before arriving. Knowing the parking and arrival basics makes the visit much easier.',
+      title: '<em>Directions</em> and contact',
+      body: 'Most guests arrive by car. Please check directions on Naver Map or TMAP before you come.',
+      rows: [
+        ['Address', 'Road address — 177-26, Nohagil 116beon-gil, Paltan-myeon, Manse-gu, Hwaseong<br>Lot address — Nohari 1267-5, Paltan-myeon'],
+        ['Hours', '10:00 — 16:00 · closed Mondays by default (some public-holiday Mondays may operate)'],
+        ['Phone', '010 · 7970 · 6970'],
+        ['Email', 'byeol_farm@naver.com']
+      ],
+      buttons: ['Naver Map', 'TMAP'],
+      notes: [
+        ['Parking', 'Please use roadside parking next to the farm. Parking in the entrance lane or in front of the greenhouse is not allowed.'],
+        ['Arrival Time', 'Please arrive 10 minutes before your booking. Late arrivals may miss extended experience time and the snapshot event.'],
+        ['Belongings', 'Bags, cameras, and baby carriers are not allowed inside the experience zone. Please leave valuables in the car.'],
+        ['Rain · Pets', 'The experience continues in the greenhouse even when it rains. Pets are not allowed.']
+      ]
+    },
+    faq: {
+      label: 'FAQ',
+      heading: 'The questions<br><em>families ask most</em> before booking.',
+      lead: 'These are the questions guests check most often right before booking. The Naver reservation page has the most accurate availability.',
+      items: [
+        ['Is this a strawberry picking place in Hwaseong for families with children?', 'Yes. Haneul Strawberry Farm is a family strawberry experience farm in Paltan-myeon, Hwaseong, where you can visit with children and pick Seolhyang strawberries together.'],
+        ['Where do I book?', 'Reservations and payment are both handled through Naver Smart Place.'],
+        ['Is this a reservable strawberry experience near Paltan-myeon?', 'Yes. The farm is in Paltan-myeon, Hwaseong, and you can book after checking dates and time slots on Naver Smart Place.'],
+        ['Can children under 24 months enter?', 'Yes. Children under 24 months may enter free with proof.'],
+        ['Do guardians also pay?', 'Yes. Guardians who only take photos are also charged under the same one-person experience policy.'],
+        ['Is the experience available on rainy days?', 'Yes. The greenhouse stays open even on rainy days unless safety conditions require separate notice.'],
+        ['How does parking work?', 'Please use roadside parking next to the farm. Parking in the entrance lane or directly in front of the greenhouse is not allowed.'],
+        ['The address now says Manse-gu. Can I still search the old way?', 'Yes. The official road address uses Manse-gu, but if map search is difficult, you can also search for “Hwaseong-si Paltan-myeon Nohari 1267-5”.']
+      ]
+    },
+    cta: {
+      label: 'Booking',
+      heading: 'Check the<br><em>reservation page</em><br>for open dates.',
+      body: 'Available dates and time slots can change often. Please check the Naver reservation page first, and browse Instagram if you want a feel for the farm.',
+      buttons: ['See Available Dates', '@byeol_farm']
+    },
+    footer: {
+      heading: 'Haneul Strawberry Farm',
+      body: 'A Seolhyang strawberry experience farm in Hwaseong. We prepare calm, family-friendly days so the memory of picking, packing, and photographing strawberries stays with you.',
+      links1: ['Back to Top', 'Farm Story', 'Experience', 'Moments', 'Before You Go', 'FAQ'],
+      links2: ['Naver Booking ↗', 'Instagram ↗', 'TMAP ↗', 'Email ↗'],
+      meta: ['© 2026 Haneul Strawberry Farm · Byeol Farm', 'Designed with starlight · 3D Rebuild v1', 'Roadside parking · closed Mondays by default']
+    },
+    mobileBar: ['Atmosphere', 'Dates']
+  },
+  zh: {
+    htmlLang: 'zh-Hans',
+    title: '天空之星草莓农场 | 华城家庭草莓采摘体验',
+    description: '位于华城市万岁区八滩面的家庭体验型草莓农场。查看雪香草莓采摘、营业时间、停车、雨天体验和 Naver 预约信息。',
+    ogTitle: '天空之星草莓农场 | 华城家庭草莓采摘体验',
+    ogDescription: '适合亲子同行的华城草莓体验农场，可查看地址、营业时间、停车与预约方式。',
+    brandSubtitle: 'BYEOL FARM · 2026',
+    nav: ['农场故事', '体验介绍', '美好瞬间', '来访前', '常见问题'],
+    navCta: '立即预约',
+    skip: '跳转到体验介绍',
+    heroTitle: 'Where <em>sunlight</em><br>ripens into <em>memory.</em><span class="kr">天空之星草莓农场 · 家庭体验型草莓农场</span>',
+    heroDesc: '孩子亲手找到一颗红熟的雪香草莓并握在手里的那一刻，回家路上也会一直聊着“我们亲手摘的草莓”。我们希望为家人留下这样自然延续的记忆。',
+    heroButtons: ['查看可预约日期', '先看农场故事'],
+    heroMeta: [['Price', '<em>₩18,000</em> / 每人 · 含 500g 专用盒'], ['Hours', '<em>10:00 → 16:00</em> · 周一休息'], ['Location', '<em>京畿道华城</em> 万岁区八滩面']],
+    trust: ['每人采摘体验<br><small>含 500g 专用盒</small>', '24个月以下免费<br><small>出示证明文件</small>', '平日与周末开放<br><small>固定休息日周一</small>', '温室内体验<br><small>雨天也可进行</small>', '雪香单一品种<br><small>华城八滩面种植</small>'],
+    summary: { label: '核心信息', heading: '预约前最常确认的<br><em>关键信息</em><span class="outlined">.</span>', items: [['位置', '京畿道华城市万岁区八滩面<br>노하길116번길 177-26', '地号地址 — Nohari 1267-5'], ['体验', '雪香草莓采摘<br>每人 1 盒 500g', '装到盒盖能盖上为止'], ['对象', '适合亲子出行的<br>家庭体验', '24个月以下凭证明免费'], ['预约', '通过 Naver Smart Place<br>预约与支付', '先确认日期与时间'], ['营业', '10:00 — 16:00<br>固定休息日周一', '节假日周一请以预约页为准'], ['停车·雨天', '农场旁道路边停车<br>雨天温室内进行', '不接受宠物同行']] },
+    story: { label: '农场故事', heading: '来过一次后<br><em>还会想起</em>的一天。', title: '访客最常说的是 <em>“很干净”</em>、<em>“孩子特别喜欢”</em>、<em>“照片很好看”</em>。', body: '我们想做的不只是摘草莓，而是让孩子和父母都能舒服停留、回家后还会想起的一天。', items: [['干净又<em>舒适</em>的温室', '第一次来的客人也常说这里很整洁、很舒服。'], ['适合孩子的<em>体验</em>', '孩子自己找果子、自己摘下来的过程最投入。'], ['能留在照片里的<em>一天</em>', '这里的照片之所以好看，是因为表情和场景都很自然。']] },
+    experience: { label: '体验介绍', heading: '雪香草莓采摘体验<br>与<em>附加选项。</em>', lead: '只保留访客在来之前最常问的重点信息。', tag: '代表体验', title: '雪香草莓<em>采摘体验</em>', priceNote: '仅拍照的监护人也适用同样费用<br>24个月以下凭证明免费入场', body: '这是最具代表性的亲子体验：在温暖的温室里一起挑选并采摘雪香草莓，每人装满一盒 500g 专用盒。', facts: ['每人提供 1 个 500g 专用盒。', '24个月以下凭证明可免费入场。', '平日 2小时30分 · 周末及节假日 1小时40分。', '追加采摘按 100g 现场结算。'], buttons: ['查看可预约日期', '先看常见问题'], optionTag: 'Option · +3,000', optionTitle: '草莓迷你杯子蛋糕', optionBody: '采摘结束后孩子们最喜欢的收尾选项，用亲手摘的草莓做一个小甜点。' },
+    gallery: { label: '感性抓拍', heading: '不刻意摆拍也能<br><em>自然留下</em>的瞬间。', introTag: 'Free Gift', introTitle: '<em>一张最佳照片</em><br>留给家人的一天。', introBody: '很多客人都说这里的照片特别好看。感性抓拍是给预约家庭的免费小惊喜。', introButton: 'Instagram @byeol_farm', caps: ['快乐瞬间', '小小双手', '安静时刻', '柔和光线'] },
+    visit: { label: '来访前', heading: '来之前请先确认<br><em>这些信息</em>。', lead: '这里整理了来访前最常确认的内容。', title: '<em>路线</em>与联系信息', body: '大多数客人是自驾前来，请先确认 Naver Map 或 TMAP 路线。', rows: [['地址', '道路名 — 경기 화성시 만세구 팔탄면 노하길116번길 177-26<br>地号 — 팔탄면 노하리 1267-5'], ['营业', '10:00 — 16:00 · 固定休息日周一（节假日周一可能营业）'], ['电话', '010 · 7970 · 6970'], ['邮箱', 'byeol_farm@naver.com']], buttons: ['Naver 地图', 'TMAP'], notes: [['停车', '请在农场旁的道路边停车。'], ['到达时间', '请在预约时间前 10 分钟到达。'], ['随身物品', '贵重物品请放在车内后再入场。'], ['雨天·同行', '雨天也在温室内正常进行，宠物不可同行。']] },
+    faq: { label: '常见问题', heading: '预约前最常问的<br><em>问题</em>。', lead: '这里整理了预约前最常确认的问题。', items: [['这里是适合亲子同行的华城草莓体验吗？', '是的，这里是位于华城市万岁区八滩面的家庭体验型草莓农场。'], ['在哪里预约？', '预约与支付都通过 Naver Smart Place 进行。'], ['八滩面附近也能预约吗？', '可以，在查看日期和时间后通过 Naver Smart Place 预约。'], ['24个月以下可以入场吗？', '携带证明文件时可免费入场。'], ['监护人也收费吗？', '是的，仅拍照的监护人也适用同样的体验费用。'], ['雨天也可以体验吗？', '可以，一般雨天会在温室内正常进行。'], ['停车怎么安排？', '请在农场旁道路边停车。'], ['地址有万岁区，旧地址还能搜吗？', '可以，如果导航不顺利，也可以搜“华城市八滩面 노하리 1267-5”。']] },
+    cta: { label: '预约 안내', heading: '运营日程与预约时间<br>请在<em>预约页面</em>确认。', body: '运营日期和可预约时间会经常变动，请先查看 Naver 预约页面。', buttons: ['查看可预约日期', '@byeol_farm'] },
+    footer: { heading: '天空之星草莓农场', body: '位于华城市的雪香草莓亲子体验农场，我们希望把采摘、装盒和拍照的一天留成温暖记忆。', links1: ['回到顶部', '农场故事', '体验介绍', '瞬间', '来访前', '常见问题'], links2: ['Naver 预约 ↗', 'Instagram ↗', 'TMAP ↗', '邮件 ↗'], meta: ['© 2026 天空之星草莓农场 · Byeol Farm', 'Designed with starlight · 3D Rebuild v1', '农场旁道路停车 · 周一固定休息'] },
+    mobileBar: ['氛围', '日期']
+  },
+  vi: {
+    htmlLang: 'vi',
+    title: 'Haneul Strawberry Farm | Trải nghiệm hái dâu cho gia đình ở Hwaseong',
+    description: 'Trang trại dâu trải nghiệm gia đình tại Paltan-myeon, Hwaseong. Kiểm tra thông tin hái dâu Seolhyang, giờ mở cửa, đỗ xe, trải nghiệm ngày mưa và đặt lịch qua Naver.',
+    ogTitle: 'Haneul Strawberry Farm | Trải nghiệm hái dâu cho gia đình ở Hwaseong',
+    ogDescription: 'Trang trại dâu cho gia đình ở Hwaseong với thông tin đặt chỗ, giờ mở cửa, đỗ xe và trải nghiệm trong nhà kính ngày mưa.',
+    brandSubtitle: 'BYEOL FARM · 2026',
+    nav: ['Câu chuyện nông trại', 'Thông tin trải nghiệm', 'Khoảnh khắc', 'Trước khi đến', 'FAQ'],
+    navCta: 'Đặt chỗ',
+    skip: 'Đi thẳng đến phần trải nghiệm',
+    heroTitle: 'Where <em>sunlight</em><br>ripens into <em>memory.</em><span class="kr">Haneul Strawberry Farm · Nông trại dâu trải nghiệm cho gia đình</span>',
+    heroDesc: 'Khoảnh khắc con tự tìm thấy quả dâu Seolhyang chín đỏ và cầm trên tay. Trên đường về, câu chuyện về “những quả dâu mình vừa hái” vẫn còn được nhắc mãi. Đó là kiểu kỷ niệm mà Haneul Strawberry Farm muốn lưu lại.',
+    heroButtons: ['Xem ngày còn chỗ', 'Xem câu chuyện nông trại'],
+    heroMeta: [['Price', '<em>₩18,000</em> / người · gồm hộp 500g'], ['Hours', '<em>10:00 → 16:00</em> · nghỉ thứ Hai'], ['Location', '<em>Hwaseong, Gyeonggi</em> Paltan-myeon']],
+    trust: ['Trải nghiệm mỗi người<br><small>gồm 1 hộp 500g</small>', 'Miễn phí dưới 24 tháng<br><small>khi có giấy tờ</small>', 'Mở ngày thường và cuối tuần<br><small>nghỉ cố định thứ Hai</small>', 'Nhà kính hoạt động ngày mưa<br><small>trải nghiệm vẫn diễn ra</small>', 'Chỉ giống Seolhyang<br><small>trồng trực tiếp ở Paltan</small>'],
+    summary: { label: 'Thông tin nhanh', heading: 'Những điều khách<br><em>kiểm tra nhiều nhất</em> trước khi đặt<span class="outlined">.</span>', items: [['Vị trí', 'Hwaseong, Manse-gu, Paltan-myeon<br>Nohagil116beon-gil 177-26', 'Địa chỉ số đất — Nohari 1267-5'], ['Trải nghiệm', 'Hái dâu Seolhyang<br>1 hộp 500g mỗi người'], ['Phù hợp', 'Phù hợp cho gia đình<br>đi cùng trẻ nhỏ', 'Miễn phí dưới 24 tháng khi có giấy tờ'], ['Đặt chỗ', 'Đặt và thanh toán qua<br>Naver Smart Place', 'Kiểm tra ngày và giờ trước'], ['Giờ hoạt động', '10:00 — 16:00<br>nghỉ cố định thứ Hai', 'Thứ Hai trùng ngày lễ vui lòng xem trang đặt chỗ'], ['Đỗ xe · Trời mưa', 'Đỗ dọc đường cạnh nông trại<br>trải nghiệm trong nhà kính ngày mưa', 'Không nhận thú cưng']] },
+    story: { label: 'Câu chuyện nông trại', heading: 'Một ngày mà sau khi đi rồi<br><em>vẫn còn nhớ lại</em>.', title: 'Điều khách nhắc nhiều nhất là <em>“rất sạch”</em>, <em>“con cực kỳ thích”</em>, và <em>“ảnh lên rất đẹp”</em>.', body: 'Haneul Strawberry Farm muốn mang lại nhiều hơn một chuyến hái dâu. Chúng tôi muốn cả bố mẹ và con cái đều ra về với cảm giác dễ chịu và một ký ức còn đọng lại.', items: [['Nhà kính <em>sạch sẽ</em>', 'Nhiều khách lần đầu đến cũng nói nơi đây gọn gàng và dễ chịu.'], ['Trải nghiệm <em>dành cho trẻ nhỏ</em>', 'Trẻ em đặc biệt thích tự tìm và tự hái quả dâu.'], ['Một ngày còn ở lại trong <em>bức ảnh</em>', 'Ảnh thường lên đẹp vì những khoảnh khắc ở đây trông rất tự nhiên.']] },
+    experience: { label: 'Thông tin trải nghiệm', heading: 'Trải nghiệm hái dâu Seolhyang<br>và <em>tuỳ chọn thêm.</em>', lead: 'Chúng tôi chỉ giữ lại những thông tin mà các gia đình thường hỏi trước khi đến.', tag: 'Trải nghiệm chính', title: 'Hái dâu Seolhyang <em>trực tiếp</em>', priceNote: 'Người lớn chỉ chụp ảnh cũng áp dụng cùng mức phí<br>Miễn phí cho trẻ dưới 24 tháng khi có giấy tờ', body: 'Đây là trải nghiệm gia đình tiêu biểu: cùng nhau chọn và hái dâu Seolhyang trong nhà kính ấm áp, sau đó cho vào hộp 500g dành riêng cho mỗi người.', facts: ['1 hộp 500g mỗi người. Đựng đến khi đóng nắp được.', 'Trẻ dưới 24 tháng được miễn phí khi có giấy tờ.', 'Ngày thường 2 giờ 30 phút · cuối tuần và ngày lễ 1 giờ 40 phút.', 'Có thể trả thêm theo đơn vị 100g tại chỗ.'], buttons: ['Xem ngày còn chỗ', 'Xem FAQ trước'], optionTag: 'Option · +3,000', optionTitle: 'Mini cupcake dâu', optionBody: 'Một lựa chọn nhỏ mà trẻ em đặc biệt thích sau khi hái dâu. Dùng những quả dâu vừa hái để làm món tráng miệng đơn giản.' },
+    gallery: { label: 'Khoảnh khắc lưu lại', heading: 'Những khoảnh khắc<br><em>đẹp tự nhiên</em> không cần gượng.', introTag: 'Free Gift', introTitle: '<em>Một tấm đẹp nhất</em><br>ở lại cùng gia đình.', introBody: 'Nhiều khách nói ảnh ở đây lên rất đẹp. Chụp snapshot là món quà nhỏ miễn phí cho gia đình đã đặt chỗ.', introButton: 'Instagram @byeol_farm', caps: ['Niềm vui', 'Bàn tay nhỏ', 'Khoảnh khắc yên', 'Ánh sáng mềm'] },
+    visit: { label: 'Trước khi đến', heading: 'Trước khi đến hãy kiểm tra<br><em>những điều này</em>.', lead: 'Đây là những thông tin mà khách thường kiểm tra nhất trước khi tới.', title: '<em>Đường đi</em> và liên hệ', body: 'Phần lớn khách đến bằng ô tô. Vui lòng kiểm tra đường đi bằng Naver Map hoặc TMAP.', rows: [['Địa chỉ', 'Địa chỉ đường — 경기 화성시 만세구 팔탄면 노하길116번길 177-26<br>Địa chỉ số đất — 팔탄면 노하리 1267-5'], ['Giờ mở cửa', '10:00 — 16:00 · nghỉ thứ Hai (một số thứ Hai ngày lễ có thể hoạt động)'], ['Điện thoại', '010 · 7970 · 6970'], ['Email', 'byeol_farm@naver.com']], buttons: ['Naver Map', 'TMAP'], notes: [['Đỗ xe', 'Vui lòng đỗ xe dọc con đường cạnh nông trại.'], ['Thời gian đến', 'Hãy đến trước giờ hẹn 10 phút.'], ['Đồ mang theo', 'Vui lòng để đồ quý giá trong xe trước khi vào.'], ['Mưa · Thú cưng', 'Ngày mưa vẫn hoạt động trong nhà kính. Không nhận thú cưng.']] },
+    faq: { label: 'FAQ', heading: 'Những câu hỏi<br><em>gia đình hay hỏi nhất</em> trước khi đặt chỗ.', lead: 'Đây là các câu hỏi khách thường xem trước khi đặt lịch. Trang Naver có thông tin thời gian chính xác nhất.', items: [['Đây có phải nơi hái dâu ở Hwaseong phù hợp cho gia đình có trẻ em không?', 'Đúng vậy. Đây là trang trại dâu trải nghiệm gia đình ở Paltan-myeon, Hwaseong.'], ['Đặt chỗ ở đâu?', 'Việc đặt lịch và thanh toán đều thực hiện qua Naver Smart Place.'], ['Đây có phải trải nghiệm gần Paltan-myeon có thể đặt trước không?', 'Có. Bạn có thể kiểm tra ngày giờ còn chỗ và đặt qua Naver Smart Place.'], ['Trẻ dưới 24 tháng có thể vào không?', 'Có. Trẻ dưới 24 tháng được vào miễn phí khi có giấy tờ chứng minh.'], ['Người giám hộ cũng phải trả phí chứ?', 'Có. Người chỉ đi chụp ảnh cũng áp dụng cùng chính sách phí trải nghiệm.'], ['Ngày mưa vẫn trải nghiệm được chứ?', 'Có. Trải nghiệm vẫn diễn ra trong nhà kính trừ khi có thông báo an toàn riêng.'], ['Đỗ xe như thế nào?', 'Vui lòng đỗ xe dọc con đường cạnh nông trại.'], ['Địa chỉ mới có thêm Manse-gu, tôi có thể tìm theo cách cũ không?', 'Có. Nếu khó tìm trên bản đồ, bạn vẫn có thể tìm “Hwaseong-si Paltan-myeon Nohari 1267-5”.']] },
+    cta: { label: 'Đặt chỗ', heading: 'Kiểm tra ngày và giờ<br>trên <em>trang đặt chỗ</em>.', body: 'Ngày vận hành và khung giờ có thể thay đổi thường xuyên. Hãy kiểm tra trang Naver trước và xem Instagram nếu muốn cảm nhận không khí nông trại.', buttons: ['Xem ngày còn chỗ', '@byeol_farm'] },
+    footer: { heading: 'Haneul Strawberry Farm', body: 'Trang trại trải nghiệm dâu Seolhyang ở Hwaseong. Chúng tôi chuẩn bị những ngày nhẹ nhàng để việc hái, đóng hộp và chụp ảnh cùng con trở thành kỷ niệm đẹp.', links1: ['Về đầu trang', 'Câu chuyện nông trại', 'Thông tin trải nghiệm', 'Khoảnh khắc', 'Trước khi đến', 'FAQ'], links2: ['Naver Booking ↗', 'Instagram ↗', 'TMAP ↗', 'Email ↗'], meta: ['© 2026 Haneul Strawberry Farm · Byeol Farm', 'Designed with starlight · 3D Rebuild v1', 'Đỗ xe cạnh nông trại · nghỉ thứ Hai'] },
+    mobileBar: ['Không khí', 'Ngày']
+  },
+  th: {
+    htmlLang: 'th',
+    title: 'Haneul Strawberry Farm | ฟาร์มเก็บสตรอว์เบอร์รีสำหรับครอบครัวในฮวาซอง',
+    description: 'ฟาร์มสตรอว์เบอร์รีแบบครอบครัวในพัลทันมยอน ฮวาซอง ตรวจสอบข้อมูลเก็บสตรอว์เบอร์รี Seolhyang เวลาเปิดทำการ ที่จอดรถ วันที่ฝนตก และการจองผ่าน Naver ได้ที่นี่',
+    ogTitle: 'Haneul Strawberry Farm | ฟาร์มเก็บสตรอว์เบอร์รีสำหรับครอบครัวในฮวาซอง',
+    ogDescription: 'ประสบการณ์เก็บสตรอว์เบอร์รีสำหรับครอบครัวในฮวาซอง พร้อมข้อมูลการจอง เวลาเปิดทำการ และที่จอดรถ',
+    brandSubtitle: 'BYEOL FARM · 2026',
+    nav: ['เรื่องราวของฟาร์ม', 'ข้อมูลกิจกรรม', 'ช่วงเวลา', 'ก่อนมา', 'FAQ'],
+    navCta: 'จองตอนนี้',
+    skip: 'ข้ามไปยังข้อมูลกิจกรรม',
+    heroTitle: 'Where <em>sunlight</em><br>ripens into <em>memory.</em><span class="kr">Haneul Strawberry Farm · ฟาร์มสตรอว์เบอร์รีสำหรับครอบครัว</span>',
+    heroDesc: 'ช่วงเวลาที่ลูกเจอสตรอว์เบอร์รีซอลฮยังสุกสีแดงแล้วถือไว้ด้วยตัวเอง ระหว่างทางกลับบ้าน เรื่อง “สตรอว์เบอร์รีที่เราเก็บเอง” ก็ยังถูกพูดถึงต่อไป เราอยากให้ความทรงจำแบบนั้นอยู่กับครอบครัวอย่างเป็นธรรมชาติ',
+    heroButtons: ['ดูวันที่ว่าง', 'ดูเรื่องราวของฟาร์ม'],
+    heroMeta: [['Price', '<em>₩18,000</em> / ต่อคน · รวมกล่อง 500g'], ['Hours', '<em>10:00 → 16:00</em> · หยุดวันจันทร์'], ['Location', '<em>Hwaseong, Gyeonggi</em> Paltan-myeon']],
+    trust: ['ประสบการณ์เก็บต่อคน<br><small>รวมกล่อง 500g</small>', 'ฟรีสำหรับเด็กต่ำกว่า 24 เดือน<br><small>เมื่อมีเอกสารยืนยัน</small>', 'เปิดวันธรรมดาและวันหยุด<br><small>หยุดประจำวันจันทร์</small>', 'เรือนกระจกใช้งานได้ทุกสภาพอากาศ<br><small>ฝนตกก็ยังทำกิจกรรมได้</small>', 'พันธุ์ Seolhyang เท่านั้น<br><small>ปลูกที่พัลทัน ฮวาซอง</small>'],
+    summary: { label: 'ข้อมูลสำคัญ', heading: 'สิ่งที่ผู้เข้าชม<br><em>เช็กบ่อยที่สุด</em> ก่อนจอง<span class="outlined">.</span>', items: [['ที่ตั้ง', 'Hwaseong Manse-gu Paltan-myeon<br>Nohagil116beon-gil 177-26', 'เลขที่ดิน — Nohari 1267-5'], ['กิจกรรม', 'เก็บสตรอว์เบอร์รี Seolhyang<br>กล่อง 500g ต่อคน'], ['เหมาะกับใคร', 'เหมาะกับครอบครัว<br>ที่มาพร้อมเด็ก', 'ฟรีต่ำกว่า 24 เดือนเมื่อมีเอกสาร'], ['การจอง', 'จองและชำระผ่าน<br>Naver Smart Place', 'ตรวจสอบวันและเวลาว่างก่อน'], ['เวลาเปิดทำการ', '10:00 — 16:00<br>หยุดวันจันทร์', 'วันจันทร์ที่ตรงกับวันหยุดให้เช็กหน้า 예약'], ['ที่จอดรถ · ฝน', 'จอดริมถนนข้างฟาร์ม<br>วันที่ฝนตกทำในเรือนกระจก', 'ไม่อนุญาตสัตว์เลี้ยง']] },
+    story: { label: 'เรื่องราวของฟาร์ม', heading: 'หนึ่งวันที่กลับมา<br><em>นึกถึงอีกครั้ง</em>.', title: 'คำที่ได้ยินบ่อยที่สุดคือ <em>“สะอาดมาก”</em> <em>“ลูกชอบมาก”</em> และ <em>“รูปออกมาสวย”</em>.', body: 'เราอยากให้ที่นี่ไม่ใช่แค่สถานที่เก็บสตรอว์เบอร์รี แต่เป็นหนึ่งวันที่ทั้งเด็กและผู้ปกครองได้ใช้เวลาดี ๆ ร่วมกันและยังนึกถึงอีกครั้งหลังกลับบ้าน', items: [['เรือนกระจกที่<em>สะอาด</em>', 'ผู้มาเยือนครั้งแรกจำนวนมากมักบอกว่าที่นี่สะอาดและสบายตา'], ['กิจกรรมที่เหมาะกับ<em>เด็ก</em>', 'เด็กมักสนุกที่สุดตอนหาผลและเก็บด้วยตัวเอง'], ['หนึ่งวันที่อยู่ใน<em>ภาพถ่าย</em>', 'ภาพที่นี่มักออกมาดีเพราะบรรยากาศและท่าทางดูเป็นธรรมชาติ']] },
+    experience: { label: 'ข้อมูลกิจกรรม', heading: 'กิจกรรมเก็บสตรอว์เบอร์รี Seolhyang<br>และ<em>ตัวเลือกเพิ่มเติม.</em>', lead: 'เราเหลือไว้เฉพาะข้อมูลที่ครอบครัวมักถามก่อนมา', tag: 'กิจกรรมหลัก', title: 'กิจกรรม<em>เก็บสตรอว์เบอร์รี</em> Seolhyang', priceNote: 'ผู้ปกครองที่มาถ่ายรูปอย่างเดียวก็คิดราคาเท่ากัน<br>เด็กต่ำกว่า 24 เดือนเข้าฟรีเมื่อมีเอกสาร', body: 'นี่คือกิจกรรมครอบครัวหลักที่ทุกคนช่วยกันเลือกและเก็บสตรอว์เบอร์รี Seolhyang ในเรือนกระจกอุ่น ๆ พร้อมกล่อง 500g ต่อคน', facts: ['กล่อง 500g ต่อคน ใส่ได้จนกว่าฝาจะปิดสนิท', 'เด็กต่ำกว่า 24 เดือนเข้าฟรีเมื่อมีเอกสาร', 'วันธรรมดา 2 ชั่วโมง 30 นาที · วันหยุด 1 ชั่วโมง 40 นาที', 'เก็บเพิ่มคิดเงินหน้างานเป็นหน่วย 100g'], buttons: ['ดูวันที่ว่าง', 'ดู FAQ ก่อน'], optionTag: 'Option · +3,000', optionTitle: 'มินิคัพเค้กสตรอว์เบอร์รี', optionBody: 'ตัวเลือกเล็ก ๆ ที่เด็ก ๆ ชอบมากหลังเก็บเสร็จ ใช้สตรอว์เบอร์รีที่เก็บเองทำของหวานง่าย ๆ' },
+    gallery: { label: 'ช่วงเวลาที่บันทึกไว้', heading: 'ช่วงเวลาที่<br><em>สวยอย่างเป็นธรรมชาติ</em>.', introTag: 'Free Gift', introTitle: '<em>ภาพที่ดีที่สุดหนึ่งใบ</em><br>ที่อยู่กับครอบครัว.', introBody: 'หลายครอบครัวบอกว่ารูปที่นี่ออกมาสวยมาก เรามี snapshot เป็นของขวัญเล็ก ๆ ให้กับครอบครัวที่จองไว้', introButton: 'Instagram @byeol_farm', caps: ['ความสุข', 'มือเล็ก ๆ', 'ช่วงเงียบสงบ', 'แสงนุ่ม'] },
+    visit: { label: 'ก่อนมา', heading: 'ก่อนมาโปรดตรวจสอบ<br><em>สิ่งเหล่านี้</em>.', lead: 'นี่คือข้อมูลที่ผู้เข้าชมมักเช็กก่อนมาถึง', title: '<em>เส้นทาง</em>และการติดต่อ', body: 'ผู้เข้าชมส่วนใหญ่มาด้วยรถยนต์ กรุณาตรวจสอบ Naver Map หรือ TMAP ก่อนมา', rows: [['ที่อยู่', 'ที่อยู่ถนน — 경기 화성시 만세구 팔탄면 노하길116번길 177-26<br>เลขที่ดิน — 팔탄면 노하리 1267-5'], ['เวลาเปิดทำการ', '10:00 — 16:00 · หยุดวันจันทร์ (บางวันหยุดอาจเปิด)'], ['โทรศัพท์', '010 · 7970 · 6970'], ['อีเมล', 'byeol_farm@naver.com']], buttons: ['Naver Map', 'TMAP'], notes: [['ที่จอดรถ', 'กรุณาจอดรถริมถนนข้างฟาร์ม'], ['เวลาเดินทางมาถึง', 'กรุณามาถึงก่อนเวลาจอง 10 นาที'], ['สิ่งของ', 'ของมีค่าควรเก็บไว้ในรถก่อนเข้าพื้นที่กิจกรรม'], ['ฝน · สัตว์เลี้ยง', 'วันที่ฝนตกยังทำกิจกรรมได้ในเรือนกระจก และไม่อนุญาตสัตว์เลี้ยง']] },
+    faq: { label: 'FAQ', heading: 'คำถามที่ครอบครัว<br><em>ถามบ่อยที่สุด</em> ก่อนจอง.', lead: 'นี่คือคำถามที่ผู้เข้าชมมักเช็กมากที่สุดก่อนจอง หน้า Naver จะมีข้อมูลเวลาว่างที่แม่นยำที่สุด', items: [['ที่นี่เป็นฟาร์มเก็บสตรอว์เบอร์รีที่เหมาะกับเด็กในฮวาซองไหม?', 'ใช่ ที่นี่เป็นฟาร์มสตรอว์เบอร์รีแบบครอบครัวในพัลทันมยอน ฮวาซอง'], ['จองได้ที่ไหน?', 'การจองและชำระเงินทั้งหมดทำผ่าน Naver Smart Place'], ['แถวพัลทันมยอนสามารถจองได้ไหม?', 'ได้ คุณสามารถดูวันและเวลาว่างแล้วจองผ่าน Naver Smart Place'], ['เด็กต่ำกว่า 24 เดือนเข้าได้ไหม?', 'ได้ เมื่อมีเอกสารยืนยัน เด็กต่ำกว่า 24 เดือนเข้าฟรี'], ['ผู้ปกครองก็ต้องเสียค่าบริการไหม?', 'ใช่ แม้จะมาถ่ายรูปอย่างเดียวก็ใช้เกณฑ์ค่าบริการเดียวกัน'], ['วันที่ฝนตกยังทำกิจกรรมได้ไหม?', 'ได้ กิจกรรมจะจัดในเรือนกระจก ยกเว้นมีประกาศด้านความปลอดภัย'], ['จอดรถอย่างไร?', 'กรุณาจอดรถริมถนนข้างฟาร์ม'], ['ที่อยู่ใหม่มี Manse-gu แล้ว ยังค้นหาแบบเดิมได้ไหม?', 'ได้ หากค้นหาไม่เจอ ลองใช้ “Hwaseong-si Paltan-myeon Nohari 1267-5”'] ] },
+    cta: { label: 'การจอง', heading: 'ตรวจสอบวันและเวลาได้ที่<br><em>หน้าจอง</em>.', body: 'วันเปิดและช่วงเวลาที่ว่างอาจเปลี่ยนได้บ่อย กรุณาตรวจสอบหน้าจองของ Naver ก่อน และดู Instagram หากต้องการดูบรรยากาศฟาร์ม', buttons: ['ดูวันที่ว่าง', '@byeol_farm'] },
+    footer: { heading: 'Haneul Strawberry Farm', body: 'ฟาร์มประสบการณ์สตรอว์เบอร์รี Seolhyang ในฮวาซอง เราเตรียมวันที่อบอุ่นและเรียบง่ายให้การเก็บ ใส่กล่อง และถ่ายภาพกับลูกกลายเป็นความทรงจำที่ดี', links1: ['กลับด้านบน', 'เรื่องราวของฟาร์ม', 'ข้อมูลกิจกรรม', 'ช่วงเวลา', 'ก่อนมา', 'FAQ'], links2: ['Naver Booking ↗', 'Instagram ↗', 'TMAP ↗', 'Email ↗'], meta: ['© 2026 Haneul Strawberry Farm · Byeol Farm', 'Designed with starlight · 3D Rebuild v1', 'จอดริมถนน · หยุดวันจันทร์'] },
+    mobileBar: ['บรรยากาศ', 'วันที่']
+  },
+  ru: {
+    htmlLang: 'ru',
+    title: 'Haneul Strawberry Farm | Семейный сбор клубники в Хвасоне',
+    description: 'Семейная клубничная ферма в Пальтан-мёне, Хвасон. Проверьте сбор клубники Сольхян, часы работы, парковку, визит в дождь и бронирование через Naver.',
+    ogTitle: 'Haneul Strawberry Farm | Семейный сбор клубники в Хвасоне',
+    ogDescription: 'Семейный сбор клубники в Хвасоне с информацией о бронировании, часах работы, парковке и визите в дождь.',
+    brandSubtitle: 'BYEOL FARM · 2026',
+    nav: ['История фермы', 'О программе', 'Моменты', 'Перед визитом', 'FAQ'],
+    navCta: 'Забронировать',
+    skip: 'Перейти к разделу опыта',
+    heroTitle: 'Where <em>sunlight</em><br>ripens into <em>memory.</em><span class="kr">Haneul Strawberry Farm · семейная клубничная ферма впечатлений</span>',
+    heroDesc: 'Момент, когда ребёнок сам находит ярко-красную ягоду Сольхян и берёт её в руку. Даже по дороге домой разговор всё ещё возвращается к “клубнике, которую мы собрали сами”. Именно такие дни мы и хотим оставлять в памяти.',
+    heroButtons: ['Посмотреть даты', 'Сначала история фермы'],
+    heroMeta: [['Price', '<em>₩18,000</em> / человек · коробка 500г включена'], ['Hours', '<em>10:00 → 16:00</em> · понедельник выходной'], ['Location', '<em>Хвасон, Кёнгидо</em> Пальтан-мён']],
+    trust: ['Сбор на одного гостя<br><small>с коробкой 500г</small>', 'Бесплатно до 24 месяцев<br><small>при наличии подтверждения</small>', 'Открыто в будни и выходные<br><small>стандартно закрыто по понедельникам</small>', 'Теплица работает в любую погоду<br><small>в дождь опыт продолжается</small>', 'Только сорт Сольхян<br><small>выращено в Пальтане, Хвасон</small>'],
+    summary: { label: 'Краткая информация', heading: 'Что гости<br><em>чаще всего</em> проверяют перед бронированием<span class="outlined">.</span>', items: [['Адрес', 'Hwaseong Manse-gu Paltan-myeon<br>Nohagil116beon-gil 177-26', 'Адрес по участку — Nohari 1267-5'], ['Опыт', 'Сбор клубники Сольхян<br>коробка 500г на человека'], ['Кому подойдёт', 'Для семейных поездок<br>с детьми', 'Бесплатно до 24 месяцев при наличии подтверждения'], ['Бронирование', 'Через Naver Smart Place<br>бронирование и оплата', 'Сначала проверьте дату и время'], ['Часы работы', '10:00 — 16:00<br>понедельник выходной', 'Праздничные понедельники уточняйте на странице бронирования'], ['Парковка · Дождь', 'Парковка вдоль дороги рядом с фермой<br>опыт проходит в теплице даже в дождь', 'Питомцы не допускаются']] },
+    story: { label: 'История фермы', heading: 'День, который<br><em>вспоминается снова</em>.', title: 'Чаще всего мы слышим <em>“очень чисто”</em>, <em>“ребёнку очень понравилось”</em> и <em>“фотографии получаются красиво”</em>.', body: 'Мы хотим, чтобы это было не просто место для сбора клубники, а день, после которого и детям, и родителям по-настоящему хорошо.', items: [['Чистая и <em>уютная</em> теплица', 'Многие гости, приехавшие впервые, прежде всего говорят, что здесь чисто и спокойно.'], ['Опыт, удобный <em>для детей</em>', 'Детям особенно нравится самим находить ягоды и срывать их руками.'], ['День, который остаётся на <em>фото</em>', 'Фотографии получаются хорошо, потому что здесь естественные, а не постановочные моменты.']] },
+    experience: { label: 'О программе', heading: 'Сбор клубники Сольхян<br>и <em>дополнительные опции.</em>', lead: 'Мы оставили только то, что семьи чаще всего спрашивают до визита.', tag: 'Главный опыт', title: 'Сбор клубники <em>Сольхян</em>', priceNote: 'Для взрослых, которые только фотографируют, действует та же цена<br>Дети до 24 месяцев бесплатно при наличии подтверждения', body: 'Это главный семейный опыт: вместе собирать клубнику Сольхян в тёплой теплице и наполнять одну коробку 500г на каждого гостя.', facts: ['Одна коробка 500г на человека.', 'Дети до 24 месяцев могут войти бесплатно при наличии документов.', 'Будни 2 ч 30 мин · выходные и праздники 1 ч 40 мин.', 'Дополнительный сбор оплачивается на месте по 100г.'], buttons: ['Посмотреть даты', 'Сначала FAQ'], optionTag: 'Option · +3,000', optionTitle: 'Мини-кекс с клубникой', optionBody: 'Небольшая опция, которую дети особенно любят после сбора клубники. Используйте ягоды, собранные своими руками, чтобы сделать простой десерт.' },
+    gallery: { label: 'Снимки', heading: 'Моменты, которые<br><em>красиво остаются</em> без позирования.', introTag: 'Free Gift', introTitle: '<em>Один лучший кадр</em><br>остаётся с семьёй.', introBody: 'Многие гости говорят, что фотографии здесь получаются особенно живыми. Snapshot — это небольшой бесплатный сюрприз для семей с бронированием.', introButton: 'Instagram @byeol_farm', caps: ['Радость', 'Маленькие руки', 'Тихий момент', 'Мягкий свет'] },
+    visit: { label: 'Перед визитом', heading: 'Перед приездом<br><em>проверьте вот это</em>.', lead: 'Здесь собраны детали, которые гости чаще всего смотрят до приезда.', title: '<em>Как добраться</em> и контакты', body: 'Большинство гостей приезжают на машине. Пожалуйста, проверьте маршрут через Naver Map или TMAP.', rows: [['Адрес', 'Дорожный адрес — 경기 화성시 만세구 팔탄면 노하길116번길 177-26<br>Адрес по участку — 팔탄면 노하리 1267-5'], ['Часы работы', '10:00 — 16:00 · выходной понедельник (в праздники может работать)'], ['Телефон', '010 · 7970 · 6970'], ['Email', 'byeol_farm@naver.com']], buttons: ['Naver Map', 'TMAP'], notes: [['Парковка', 'Пожалуйста, паркуйтесь вдоль дороги рядом с фермой.'], ['Время приезда', 'Пожалуйста, приезжайте за 10 минут до брони.'], ['Вещи', 'Пожалуйста, оставьте ценные вещи в машине перед входом.'], ['Дождь · Питомцы', 'Даже в дождь опыт проходит внутри теплицы. Питомцы не допускаются.']] },
+    faq: { label: 'FAQ', heading: 'Что семьи<br><em>чаще всего спрашивают</em> перед бронированием.', lead: 'Это вопросы, которые гости чаще всего проверяют до бронирования. Самая точная информация по времени — на Naver.', items: [['Подходит ли это место для семей с детьми в Хвасоне?', 'Да. Это семейная клубничная ферма впечатлений в Пальтан-мёне, Хвасон.'], ['Где оформить бронирование?', 'Бронирование и оплата полностью проходят через Naver Smart Place.'], ['Можно ли забронировать рядом с Пальтан-мёном?', 'Да. Вы можете проверить даты и время и затем забронировать через Naver Smart Place.'], ['Могут ли войти дети младше 24 месяцев?', 'Да. При наличии подтверждения дети младше 24 месяцев проходят бесплатно.'], ['Платят ли сопровождающие взрослые?', 'Да. Даже взрослые, пришедшие только фотографировать, оплачивают участие по тем же правилам.'], ['Можно ли приехать в дождь?', 'Да. Опыт проходит внутри теплицы даже в дождь, если нет отдельного уведомления о безопасности.'], ['Как устроена парковка?', 'Пожалуйста, паркуйтесь вдоль дороги рядом с фермой.'], ['В адресе появился Manse-gu. Можно ли искать по старому варианту?', 'Да. Если навигатор не находит новый адрес, можно также искать “Hwaseong-si Paltan-myeon Nohari 1267-5”.']] },
+    cta: { label: 'Бронирование', heading: 'Проверьте даты и время<br>на <em>странице бронирования</em>.', body: 'Даты работы и свободные слоты могут меняться. Сначала проверьте Naver, а затем при желании загляните в Instagram.', buttons: ['Посмотреть даты', '@byeol_farm'] },
+    footer: { heading: 'Haneul Strawberry Farm', body: 'Семейная ферма впечатлений с клубникой Сольхян в Хвасоне. Мы готовим такие дни, чтобы сбор, упаковка и фотографии с ребёнком оставались хорошим воспоминанием.', links1: ['Наверх', 'История фермы', 'О программе', 'Моменты', 'Перед визитом', 'FAQ'], links2: ['Naver Booking ↗', 'Instagram ↗', 'TMAP ↗', 'Email ↗'], meta: ['© 2026 Haneul Strawberry Farm · Byeol Farm', 'Designed with starlight · 3D Rebuild v1', 'Парковка вдоль дороги · понедельник выходной'] },
+    mobileBar: ['Атмосфера', 'Даты']
+  }
+};
+
+function applyLanguage(language) {
+  const copy = pageCopy[language] || pageCopy.ko;
+  document.documentElement.lang = copy.htmlLang;
+  document.title = copy.title;
+  const metaDescription = document.querySelector('meta[name="description"]');
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  const ogDescription = document.querySelector('meta[property="og:description"]');
+  const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+  const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+  if (metaDescription) metaDescription.setAttribute('content', copy.description);
+  if (ogTitle) ogTitle.setAttribute('content', copy.ogTitle);
+  if (ogDescription) ogDescription.setAttribute('content', copy.ogDescription);
+  if (twitterTitle) twitterTitle.setAttribute('content', copy.ogTitle);
+  if (twitterDescription) twitterDescription.setAttribute('content', copy.description);
+
+  const brandSubtitle = document.querySelector('.brand-copy span');
+  if (brandSubtitle) brandSubtitle.textContent = copy.brandSubtitle;
+
+  document.querySelectorAll('.nav-links a').forEach((node, index) => {
+    if (copy.nav[index]) node.textContent = copy.nav[index];
+  });
+  const topCta = document.querySelector('.nav-actions .btn-primary');
+  if (topCta) topCta.childNodes[topCta.childNodes.length - 1].textContent = ` ${copy.navCta}`;
+  const skip = document.querySelector('.skip-link');
+  if (skip) skip.textContent = copy.skip;
+
+  const heroTitle = document.querySelector('.hero-title');
+  const heroDesc = document.querySelector('.hero-desc');
+  if (heroTitle) heroTitle.innerHTML = copy.heroTitle;
+  if (heroDesc) heroDesc.textContent = copy.heroDesc;
+  const heroButtons = document.querySelectorAll('.hero-actions .btn');
+  heroButtons.forEach((btn, index) => {
+    if (copy.heroButtons[index]) btn.childNodes[btn.childNodes.length - 1].textContent = ` ${copy.heroButtons[index]}`;
+  });
+  document.querySelectorAll('.hero-meta .col').forEach((col, index) => {
+    const k = col.querySelector('.k');
+    const v = col.querySelector('.v');
+    if (copy.heroMeta[index]) {
+      if (k) k.textContent = copy.heroMeta[index][0];
+      if (v) v.innerHTML = copy.heroMeta[index][1];
+    }
+  });
+
+  document.querySelectorAll('.trust-cell .trust-label').forEach((node, index) => {
+    if (copy.trust[index]) node.innerHTML = copy.trust[index];
+  });
+
+  const summaryLabel = document.querySelector('#summary .section-label');
+  const summaryHeading = document.querySelector('#summary h2');
+  if (summaryLabel) summaryLabel.textContent = copy.summary.label;
+  if (summaryHeading) summaryHeading.innerHTML = copy.summary.heading;
+  document.querySelectorAll('#summary .keyinfo-item').forEach((item, index) => {
+    const strong = item.querySelector('strong');
+    const p = item.querySelector('p');
+    const note = item.querySelector('.note');
+    const row = copy.summary.items[index];
+    if (row) {
+      if (strong) strong.textContent = row[0];
+      if (p) p.innerHTML = row[1];
+      if (note) note.textContent = row[2];
+    }
+  });
+
+  const storyLabel = document.querySelector('#story .section-label');
+  const storyHeading = document.querySelector('#story .section-head h2');
+  const storyTitle = document.querySelector('#story .story-text h3');
+  const storyBody = document.querySelector('#story .story-text > p');
+  if (storyLabel) storyLabel.textContent = copy.story.label;
+  if (storyHeading) storyHeading.innerHTML = copy.story.heading;
+  if (storyTitle) storyTitle.innerHTML = copy.story.title;
+  if (storyBody) storyBody.textContent = copy.story.body;
+  document.querySelectorAll('#story .story-item').forEach((item, index) => {
+    const h4 = item.querySelector('h4');
+    const p = item.querySelector('p');
+    if (copy.story.items[index]) {
+      if (h4) h4.innerHTML = copy.story.items[index][0];
+      if (p) p.textContent = copy.story.items[index][1];
+    }
+  });
+
+  const expLabel = document.querySelector('#experience .section-label');
+  const expHeading = document.querySelector('#experience .section-head h2');
+  const expLead = document.querySelector('#experience .lead');
+  const expTag = document.querySelector('#experience .exp-card .exp-tag');
+  const expTitle = document.querySelector('#experience .exp-card h3');
+  const expPriceNote = document.querySelector('#experience .price span');
+  const expBody = document.querySelector('#experience .exp-card > p');
+  if (expLabel) expLabel.textContent = copy.experience.label;
+  if (expHeading) expHeading.innerHTML = copy.experience.heading;
+  if (expLead) expLead.textContent = copy.experience.lead;
+  if (expTag) expTag.childNodes[expTag.childNodes.length - 1].textContent = ` ${copy.experience.tag}`;
+  if (expTitle) expTitle.innerHTML = copy.experience.title;
+  if (expPriceNote) expPriceNote.innerHTML = copy.experience.priceNote;
+  if (expBody) expBody.textContent = copy.experience.body;
+  document.querySelectorAll('#experience .facts li span').forEach((node, index) => {
+    if (copy.experience.facts[index]) node.textContent = copy.experience.facts[index];
+  });
+  document.querySelectorAll('#experience .cta-row .btn').forEach((btn, index) => {
+    if (copy.experience.buttons[index]) btn.textContent = copy.experience.buttons[index];
+  });
+  const expOptionTag = document.querySelector('#experience .exp-note .exp-tag');
+  const expOptionTitle = document.querySelector('#experience .exp-note h4');
+  const expOptionBody = document.querySelector('#experience .exp-note p');
+  if (expOptionTag) expOptionTag.textContent = copy.experience.optionTag;
+  if (expOptionTitle) expOptionTitle.textContent = copy.experience.optionTitle;
+  if (expOptionBody) expOptionBody.textContent = copy.experience.optionBody;
+
+  const galleryLabel = document.querySelector('#gallery .section-label');
+  const galleryHeading = document.querySelector('#gallery .section-head h2');
+  const galleryIntroTag = document.querySelector('#gallery .gallery-intro .exp-tag');
+  const galleryIntroTitle = document.querySelector('#gallery .gallery-intro h3');
+  const galleryIntroBody = document.querySelector('#gallery .gallery-intro p');
+  const galleryIntroButton = document.querySelector('#gallery .gallery-intro .btn');
+  if (galleryLabel) galleryLabel.textContent = copy.gallery.label;
+  if (galleryHeading) galleryHeading.innerHTML = copy.gallery.heading;
+  if (galleryIntroTag) galleryIntroTag.textContent = copy.gallery.introTag;
+  if (galleryIntroTitle) galleryIntroTitle.innerHTML = copy.gallery.introTitle;
+  if (galleryIntroBody) galleryIntroBody.textContent = copy.gallery.introBody;
+  if (galleryIntroButton) galleryIntroButton.textContent = copy.gallery.introButton;
+  document.querySelectorAll('#gallery .gallery-cap').forEach((node, index) => {
+    if (copy.gallery.caps[index]) node.textContent = copy.gallery.caps[index];
+  });
+
+  const visitLabel = document.querySelector('#visit .section-label');
+  const visitHeading = document.querySelector('#visit .section-head h2');
+  const visitLead = document.querySelector('#visit .lead');
+  const visitTitle = document.querySelector('#visit .visit-panel h3');
+  const visitBody = document.querySelector('#visit .visit-panel > p');
+  if (visitLabel) visitLabel.textContent = copy.visit.label;
+  if (visitHeading) visitHeading.innerHTML = copy.visit.heading;
+  if (visitLead) visitLead.textContent = copy.visit.lead;
+  if (visitTitle) visitTitle.innerHTML = copy.visit.title;
+  if (visitBody) visitBody.textContent = copy.visit.body;
+  document.querySelectorAll('#visit .contact-row').forEach((row, index) => {
+    const strong = row.querySelector('strong');
+    const p = row.querySelector('p');
+    const a = row.querySelector('a');
+    const item = copy.visit.rows[index];
+    if (!item) return;
+    if (strong) strong.textContent = item[0];
+    if (p) p.innerHTML = item[1];
+    if (a && !p) a.textContent = item[1];
+  });
+  document.querySelectorAll('#visit .cta-row .btn').forEach((btn, index) => {
+    if (copy.visit.buttons[index]) btn.textContent = copy.visit.buttons[index];
+  });
+  document.querySelectorAll('#visit .note').forEach((item, index) => {
+    const strong = item.querySelector('strong');
+    const p = item.querySelector('p');
+    const row = copy.visit.notes[index];
+    if (!row) return;
+    if (strong) strong.textContent = row[0];
+    if (p) p.textContent = row[1];
+  });
+
+  const faqLabel = document.querySelector('#faq .section-label');
+  const faqHeading = document.querySelector('#faq .section-head h2');
+  const faqLead = document.querySelector('#faq .lead');
+  if (faqLabel) faqLabel.textContent = copy.faq.label;
+  if (faqHeading) faqHeading.innerHTML = copy.faq.heading;
+  if (faqLead) faqLead.textContent = copy.faq.lead;
+  document.querySelectorAll('#faq .faq-item').forEach((item, index) => {
+    const q = item.querySelector('.faq-q span:nth-child(2)');
+    const a = item.querySelector('.faq-a p');
+    const row = copy.faq.items[index];
+    if (!row) return;
+    if (q) q.textContent = row[0];
+    if (a) a.textContent = row[1];
+  });
+
+  const ctaLabel = document.querySelector('#contact .section-label');
+  const ctaHeading = document.querySelector('#contact .cta-panel h2');
+  const ctaBody = document.querySelector('#contact .cta-panel > p');
+  if (ctaLabel) ctaLabel.textContent = copy.cta.label;
+  if (ctaHeading) ctaHeading.innerHTML = copy.cta.heading;
+  if (ctaBody) ctaBody.textContent = copy.cta.body;
+  document.querySelectorAll('#contact .cta-actions .btn').forEach((btn, index) => {
+    if (copy.cta.buttons[index]) btn.textContent = copy.cta.buttons[index];
+  });
+
+  const footerHeading = document.querySelector('footer .footer-col h4');
+  const footerBody = document.querySelector('footer .footer-col p');
+  if (footerHeading) footerHeading.textContent = copy.footer.heading;
+  if (footerBody) footerBody.textContent = copy.footer.body;
+  const footerLinkBlocks = document.querySelectorAll('footer .footer-links');
+  if (footerLinkBlocks[0]) {
+    footerLinkBlocks[0].querySelectorAll('a').forEach((a, index) => {
+      if (copy.footer.links1[index]) a.textContent = copy.footer.links1[index];
+    });
+  }
+  if (footerLinkBlocks[1]) {
+    footerLinkBlocks[1].querySelectorAll('a').forEach((a, index) => {
+      if (copy.footer.links2[index]) a.textContent = copy.footer.links2[index];
+    });
+  }
+  const footerMeta = document.querySelectorAll('.footer-meta span');
+  footerMeta.forEach((node, index) => {
+    if (copy.footer.meta[index]) node.textContent = copy.footer.meta[index];
+  });
+
+  document.querySelectorAll('.mobile-bar .btn').forEach((btn, index) => {
+    if (copy.mobileBar[index]) btn.textContent = copy.mobileBar[index];
+  });
+}
+
+function normalizeLanguage(value) {
+  const code = String(value || '').toLowerCase();
+  if (code.startsWith('ko')) return 'ko';
+  if (code.startsWith('en')) return 'en';
+  if (code.startsWith('zh')) return 'zh';
+  if (code.startsWith('vi')) return 'vi';
+  if (code.startsWith('th')) return 'th';
+  if (code.startsWith('ru')) return 'ru';
+  return 'ko';
+}
+
+function detectLanguage() {
+  const url = new URL(window.location.href);
+  const rawParam = url.searchParams.get('lang');
+  if (rawParam) {
+    const param = normalizeLanguage(rawParam);
+    if (pageCopy[param]) return param;
+  }
+  const stored = normalizeLanguage(window.localStorage.getItem(LANG_STORAGE_KEY));
+  if (stored && pageCopy[stored]) return stored;
+  const langs = Array.isArray(navigator.languages) && navigator.languages.length ? navigator.languages : [navigator.language || 'ko'];
+  for (const item of langs) {
+    const normalized = normalizeLanguage(item);
+    if (pageCopy[normalized]) return normalized;
+  }
+  return 'ko';
+}
+
+function syncUrl(lang) {
+  const url = new URL(window.location.href);
+  if (lang === 'ko') url.searchParams.delete('lang');
+  else url.searchParams.set('lang', lang);
+  window.history.replaceState({}, '', url.toString());
+}
+
+if (langSelect) {
+  langSelect.value = detectLanguage();
+  applyLanguage(langSelect.value);
+  langSelect.addEventListener('change', (event) => {
+    const lang = normalizeLanguage(event.target.value);
+    window.localStorage.setItem(LANG_STORAGE_KEY, lang);
+    syncUrl(lang);
+    applyLanguage(lang);
+  });
+}
 </script>
 
 </body>
