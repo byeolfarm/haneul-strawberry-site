@@ -395,9 +395,15 @@ body.nav-hidden .floating-nav {
   width: 42px; height: 42px;
   flex: 0 0 auto;
   position: relative;
-  filter: drop-shadow(0 10px 18px rgba(173, 89, 97, 0.16));
+  filter: drop-shadow(0 10px 18px rgba(199, 126, 68, 0.2));
 }
-.brand-mark svg { width: 100%; height: 100%; display: block; }
+.brand-mark svg,
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
 
 .brand-copy strong {
   display: block;
@@ -415,6 +421,7 @@ body.nav-hidden .floating-nav {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -604,12 +611,18 @@ body.nav-hidden .floating-nav {
   place-items: center;
   width: 28px; height: 28px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #d9ae79, #b18b68 55%, #8a6647);
-  color: #fff5e3;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 4px 10px rgba(138, 102, 71, 0.4);
+  background: transparent;
+  color: #9c7044;
+  box-shadow: none;
   flex: 0 0 auto;
 }
-.award-badge svg { width: 16px; height: 16px; }
+.award-badge svg,
+.award-badge img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
 .eyebrow-award {
   padding: 10px 24px 10px 10px;
   gap: 14px;
@@ -619,8 +632,13 @@ body.nav-hidden .floating-nav {
   border-width: 1.5px;
   border-color: rgba(173,89,97,0.3);
 }
-.eyebrow-award .award-badge { width: 42px; height: 42px; }
-.eyebrow-award .award-badge svg { width: 22px; height: 22px; }
+.eyebrow-award .award-badge {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 7px 13px rgba(138, 102, 71, 0.24));
+}
+.eyebrow-award .award-badge svg,
+.eyebrow-award .award-badge img { width: 100%; height: 100%; }
 .award-text { display: inline-flex; flex-direction: column; line-height: 1.15; gap: 3px; }
 .award-text small {
   font-family: var(--mono);
@@ -1899,7 +1917,12 @@ body.nav-hidden .floating-nav {
   }
   .nav-links { display: none; }
   .nav-actions .btn-secondary { display: none; }
-  .floating-nav { padding: 8px 10px; }
+  .floating-nav { padding: 8px 10px; gap: 8px; }
+  .brand-lockup { gap: 8px; padding-left: 0; }
+  .brand-mark { width: 34px; height: 34px; }
+  .brand-copy strong { font-size: 13px; letter-spacing: -0.04em; }
+  .brand-copy span { font-size: 7.5px; letter-spacing: 0.08em; }
+  .nav-actions { gap: 6px; }
   .section { padding: 80px 0; }
   .hero { padding: 120px 0 60px; }
   .hero-scene { max-width: 100%; aspect-ratio: 4/5; }
@@ -1998,42 +2021,11 @@ body.nav-hidden .floating-nav {
 <header class="floating-nav">
   <a class="brand-lockup" href="#home" aria-label="하늘의별딸기" data-hover>
     <div class="brand-mark" aria-hidden="true">
-      <svg viewBox="0 0 48 48" fill="none">
-        <defs>
-          <linearGradient id="brandSealBg" x1="9" y1="7" x2="39" y2="42" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#fff6ee"/>
-            <stop offset="1" stop-color="#f2dfd4"/>
-          </linearGradient>
-          <radialGradient id="brandBerryG" cx="0.35" cy="0.24" r="0.75">
-            <stop offset="0%" stop-color="#d88189"/>
-            <stop offset="52%" stop-color="#a94d58"/>
-            <stop offset="100%" stop-color="#74313a"/>
-          </radialGradient>
-          <linearGradient id="brandLeafG" x1="20" y1="9" x2="29" y2="17" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#8a9a75"/>
-            <stop offset="1" stop-color="#596a51"/>
-          </linearGradient>
-        </defs>
-        <rect x="2.5" y="2.5" width="43" height="43" rx="17" fill="url(#brandSealBg)" stroke="rgba(173,89,97,0.18)"/>
-        <path d="M24 13.5 C17.9 13.5 13.7 18.2 13.7 24.5 C13.7 31.7 18.6 37 24 37 C29.4 37 34.3 31.7 34.3 24.5 C34.3 18.2 30.1 13.5 24 13.5 Z"
-              fill="url(#brandBerryG)"/>
-        <path d="M24.2 12.2 C22.6 10.6 20.4 9.9 18.7 10.3 C19 12.2 20.5 14.1 22.8 14.8 C21.7 13 22 11.4 24.2 12.2 Z" fill="url(#brandLeafG)"/>
-        <path d="M24.3 12.2 C25.7 10.1 28 9.4 30 9.8 C29.8 12.1 27.6 14.5 24.4 15 C26.1 13.4 26 11.8 24.3 12.2 Z" fill="url(#brandLeafG)"/>
-        <path d="M24 8.5 L25 12.1 L28.7 12.5 L25.8 14.8 L26.7 18.4 L24 16.4 L21.3 18.4 L22.2 14.8 L19.3 12.5 L23 12.1 Z" fill="#f9e3b8" opacity="0.92"/>
-        <g fill="#fff1d3" opacity="0.92">
-          <circle cx="19.3" cy="21.1" r="0.85"/>
-          <circle cx="24" cy="20.2" r="0.85"/>
-          <circle cx="28.7" cy="21.7" r="0.85"/>
-          <circle cx="20.7" cy="26.4" r="0.85"/>
-          <circle cx="26.8" cy="26.7" r="0.85"/>
-          <circle cx="24" cy="31.3" r="0.85"/>
-        </g>
-        <path d="M17 17.5 C19.1 15.3 22.3 14.5 25.8 15.4" stroke="rgba(255,255,255,0.35)" stroke-width="1.4" stroke-linecap="round"/>
-      </svg>
+      <img src="assets/brand/star-logo.png" alt="">
     </div>
     <div class="brand-copy">
       <strong>하늘의별딸기</strong>
-      <span>BYEOL FARM · 2026</span>
+      <span>BYEOL FARM SINCE 2023</span>
     </div>
   </a>
 
@@ -2075,9 +2067,7 @@ body.nav-hidden .floating-nav {
       <a class="skip-link" href="#experience">체험 안내로 바로가기</a>
       <div class="eyebrow eyebrow-award">
         <span class="award-badge" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 2L14.5 8L21 9L16 13.5L17.5 20L12 16.5L6.5 20L8 13.5L3 9L9.5 8L12 2Z" fill="currentColor"/>
-          </svg>
+          <img src="assets/brand/local-food-badge.png" alt="">
         </span>
         <span class="award-text"><small>2026 화성시</small><strong>로컬푸드 우수농장</strong></span>
       </div>
@@ -2973,7 +2963,7 @@ const pageCopy = {
     description: '경기 화성시 만세구 팔탄면의 가족 체험형 딸기농장. 아이와 함께 설향 딸기 수확 체험을 예약하고, 운영시간·주차·우천 시 운영 여부를 확인해 보세요.',
     ogTitle: '하늘의별딸기 | 화성 가족 체험형 딸기농장 · 예약 안내',
     ogDescription: '경기 화성시 만세구 팔탄면의 가족 체험형 딸기농장. 아이와 함께 설향 딸기 수확 체험을 예약하고, 운영시간·주차·우천 시 운영 여부를 확인해 보세요.',
-    brandSubtitle: 'BYEOL FARM · 2026',
+    brandSubtitle: 'BYEOL FARM SINCE 2023',
     nav: ['농장 이야기', '체험 안내', '순간들', '오시기 전', 'FAQ'],
     navCta: '예약하기',
     skip: '체험 안내로 바로가기',
@@ -3099,7 +3089,7 @@ const pageCopy = {
     description: 'A family strawberry farm in Paltan-myeon, Hwaseong. Check Seolhyang strawberry picking details, hours, parking, rainy-day greenhouse access, and Naver reservation information.',
     ogTitle: 'Haneul Strawberry Farm | Family Strawberry Picking in Hwaseong',
     ogDescription: 'A family strawberry farm in Hwaseong, Korea with Seolhyang strawberry picking, parking guidance, rainy-day access, and Naver reservations.',
-    brandSubtitle: 'BYEOL FARM · 2026',
+    brandSubtitle: 'BYEOL FARM SINCE 2023',
     nav: ['Farm Story', 'Experience', 'Moments', 'Before You Go', 'FAQ'],
     navCta: 'Book Now',
     skip: 'Skip to experience',
@@ -3225,7 +3215,7 @@ const pageCopy = {
     description: '位于华城市万岁区八滩面的家庭体验型草莓农场。查看雪香草莓采摘、营业时间、停车、雨天体验和 Naver 预约信息。',
     ogTitle: '天空之星草莓农场 | 华城家庭草莓采摘体验',
     ogDescription: '适合亲子同行的华城草莓体验农场，可查看地址、营业时间、停车与预约方式。',
-    brandSubtitle: 'BYEOL FARM · 2026',
+    brandSubtitle: 'BYEOL FARM SINCE 2023',
     nav: ['农场故事', '体验介绍', '美好瞬间', '来访前', '常见问题'],
     navCta: '立即预约',
     skip: '跳转到体验介绍',
@@ -3250,7 +3240,7 @@ const pageCopy = {
     description: 'Trang trại dâu trải nghiệm gia đình tại Paltan-myeon, Hwaseong. Kiểm tra thông tin hái dâu Seolhyang, giờ mở cửa, đỗ xe, trải nghiệm ngày mưa và đặt lịch qua Naver.',
     ogTitle: 'Haneul Strawberry Farm | Trải nghiệm hái dâu cho gia đình ở Hwaseong',
     ogDescription: 'Trang trại dâu cho gia đình ở Hwaseong với thông tin đặt chỗ, giờ mở cửa, đỗ xe và trải nghiệm trong nhà kính ngày mưa.',
-    brandSubtitle: 'BYEOL FARM · 2026',
+    brandSubtitle: 'BYEOL FARM SINCE 2023',
     nav: ['Câu chuyện nông trại', 'Thông tin trải nghiệm', 'Khoảnh khắc', 'Trước khi đến', 'FAQ'],
     navCta: 'Đặt chỗ',
     skip: 'Đi thẳng đến phần trải nghiệm',
@@ -3275,7 +3265,7 @@ const pageCopy = {
     description: 'ฟาร์มสตรอว์เบอร์รีแบบครอบครัวในพัลทันมยอน ฮวาซอง ตรวจสอบข้อมูลเก็บสตรอว์เบอร์รี Seolhyang เวลาเปิดทำการ ที่จอดรถ วันที่ฝนตก และการจองผ่าน Naver ได้ที่นี่',
     ogTitle: 'Haneul Strawberry Farm | ฟาร์มเก็บสตรอว์เบอร์รีสำหรับครอบครัวในฮวาซอง',
     ogDescription: 'ประสบการณ์เก็บสตรอว์เบอร์รีสำหรับครอบครัวในฮวาซอง พร้อมข้อมูลการจอง เวลาเปิดทำการ และที่จอดรถ',
-    brandSubtitle: 'BYEOL FARM · 2026',
+    brandSubtitle: 'BYEOL FARM SINCE 2023',
     nav: ['เรื่องราวของฟาร์ม', 'ข้อมูลกิจกรรม', 'ช่วงเวลา', 'ก่อนมา', 'FAQ'],
     navCta: 'จองตอนนี้',
     skip: 'ข้ามไปยังข้อมูลกิจกรรม',
@@ -3300,7 +3290,7 @@ const pageCopy = {
     description: 'Семейная клубничная ферма в Пальтан-мёне, Хвасон. Проверьте сбор клубники Сольхян, часы работы, парковку, визит в дождь и бронирование через Naver.',
     ogTitle: 'Haneul Strawberry Farm | Семейный сбор клубники в Хвасоне',
     ogDescription: 'Семейный сбор клубники в Хвасоне с информацией о бронировании, часах работы, парковке и визите в дождь.',
-    brandSubtitle: 'BYEOL FARM · 2026',
+    brandSubtitle: 'BYEOL FARM SINCE 2023',
     nav: ['История фермы', 'О программе', 'Моменты', 'Перед визитом', 'FAQ'],
     navCta: 'Забронировать',
     skip: 'Перейти к разделу опыта',
