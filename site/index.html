@@ -26,6 +26,9 @@
 <meta name="twitter:image" content="https://byeolfarm.com/assets/photos/photo-02.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://code.iconify.design">
+<link rel="preload" as="image" href="assets/photos/hero-poster.jpg">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Outfit:wght@400;500;600;700;800&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
@@ -1783,7 +1786,7 @@ body.nav-hidden .floating-nav {
 }
 </style>
 </head>
-<body data-mood="day">
+<body data-mood="sunset">
 
 <div class="world-bg" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
@@ -1951,7 +1954,7 @@ body.nav-hidden .floating-nav {
     <!-- Hero video scene -->
     <div class="hero-scene" id="heroScene">
       <div class="hero-scene-frame">
-        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/photos/photo-02.jpg">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/photos/hero-poster.jpg">
           <source src="hero section video/the starberry hero video.mp4" type="video/mp4">
         </video>
         <div class="hero-scene-tint" aria-hidden="true"></div>
@@ -2221,7 +2224,7 @@ body.nav-hidden .floating-nav {
           </div>
           <div class="contact-row">
             <strong>이메일</strong>
-            <p><a href="/cdn-cgi/l/email-protection#8ceef5e9e3e0d3eaedfee1cce2edfae9fea2efe3e1" data-hover><span class="__cf_email__" data-cfemail="95f7ecf0faf9caf3f4e7f8d5fbf4e3f0e7bbf6faf8">[email&#160;protected]</span></a></p>
+            <p><a href="mailto:byeol_farm@naver.com" data-hover>byeol_farm@naver.com</a></p>
           </div>
         </div>
         <div class="cta-row rc" style="--d:240ms">
@@ -2383,7 +2386,7 @@ body.nav-hidden .floating-nav {
         <div class="section-label" style="margin-bottom: 20px;">2026 화성시 로컬푸드 우수농장</div>
         <h4>하늘의별딸기</h4>
         <p>경기도 화성시 팔탄면 설향 딸기 체험 농장. 아이와 함께 따고 담고 사진으로 남기는 하루가 좋은 기억으로 오래 남도록 차분하게 준비합니다.</p>
-        <p style="margin-top: 20px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;">TEL 010.7970.6970 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c9abb0aca6a596afa8bba489a7a8bfacbbe7aaa6a4">[email&#160;protected]</a></p>
+        <p style="margin-top: 20px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;">TEL 010.7970.6970 · <a href="mailto:byeol_farm@naver.com">byeol_farm@naver.com</a></p>
       </div>
       <div class="footer-col">
         <strong>바로가기</strong>
@@ -2402,7 +2405,7 @@ body.nav-hidden .floating-nav {
           <a href="https://map.naver.com/p/entry/place/1487772117?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202603302343&locale=ko&svcName=map_pcv5&searchType=place&lng=126.8615976&lat=37.1489770&c=15.00,0,0,2,dh" target="_blank" rel="noopener" data-hover>네이버 예약 ↗</a>
           <a href="https://www.instagram.com/byeol_farm/" target="_blank" rel="noopener" data-hover>인스타그램 ↗</a>
           <a href="https://tmap.life/60705c08" target="_blank" rel="noopener" data-hover>TMAP 길찾기 ↗</a>
-          <a href="/cdn-cgi/l/email-protection#5d3f24383231023b3c2f301d333c2b382f733e3230" data-hover>이메일 문의 ↗</a>
+          <a href="mailto:byeol_farm@naver.com" data-hover>이메일 문의 ↗</a>
         </div>
       </div>
     </div>
@@ -2584,6 +2587,11 @@ if (finePointerMedia.matches) {
 let particleAnim = null;
 let particleResizeHandler = null;
 let particlesEnabled = true;
+const particlesShouldRun = () => (
+  TWEAKS.particles !== 'off' &&
+  !reducedMotionMedia.matches &&
+  !window.matchMedia('(max-width: 720px)').matches
+);
 function startParticles() {
   const canvas = document.getElementById('particles');
   if (!canvas) return;
@@ -2597,7 +2605,7 @@ function startParticles() {
     particleResizeHandler = null;
   }
 
-  if (TWEAKS.particles === 'off' || reducedMotionMedia.matches) {
+  if (!particlesShouldRun()) {
     const ctx = canvas.getContext('2d');
     ctx && ctx.clearRect(0, 0, canvas.width, canvas.height);
     return;
@@ -2621,7 +2629,7 @@ function startParticles() {
   const particles = Array.from({ length: count }, () => newParticle(canvas, dpr));
 
   function render() {
-    if (!particlesEnabled || document.hidden) {
+    if (!particlesEnabled || document.hidden || !particlesShouldRun()) {
       particleAnim = null;
       return;
     }
