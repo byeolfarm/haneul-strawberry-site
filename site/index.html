@@ -2560,13 +2560,21 @@ if (supportsFinePointer()) {
    ============================================================ */
 const heroScene = document.getElementById('heroScene');
 if (finePointerMedia.matches) {
+  let heroDx = 0;
+  let heroDy = 0;
+  let heroParallaxFrame = null;
+  const renderHeroParallax = () => {
+    heroParallaxFrame = null;
+    if (!heroScene) return;
+    heroScene.style.transform = `translate3d(${heroDx * 18}px, ${heroDy * 14}px, 0) rotateY(${heroDx * 4}deg) rotateX(${-heroDy * 4}deg)`;
+  };
   window.addEventListener('mousemove', e => {
     if (!heroScene) return;
     const cx = window.innerWidth / 2;
     const cy = window.innerHeight / 2;
-    const dx = (e.clientX - cx) / cx;
-    const dy = (e.clientY - cy) / cy;
-    heroScene.style.transform = `translate3d(${dx * 18}px, ${dy * 14}px, 0) rotateY(${dx * 4}deg) rotateX(${-dy * 4}deg)`;
+    heroDx = (e.clientX - cx) / cx;
+    heroDy = (e.clientY - cy) / cy;
+    if (!heroParallaxFrame) heroParallaxFrame = requestAnimationFrame(renderHeroParallax);
   }, { passive: true });
 }
 
@@ -2713,32 +2721,35 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
    Nav hide on scroll down
    ============================================================ */
 let lastY = 0;
-window.addEventListener('scroll', () => {
+const mobileBar = document.querySelector('.mobile-bar');
+let scrollUiFrame = null;
+function updateScrollUi() {
+  scrollUiFrame = null;
   const y = window.scrollY;
   if (y > 120 && y > lastY + 8) {
     document.body.classList.add('nav-hidden');
   } else if (y < lastY - 8 || y < 120) {
     document.body.classList.remove('nav-hidden');
   }
-  lastY = y;
-}, { passive: true });
-
-const mobileBar = document.querySelector('.mobile-bar');
-function syncMobileBarVisibility() {
   if (!mobileBar) return;
   if (window.innerWidth > 720) {
     mobileBar.classList.remove('is-visible');
-    return;
+  } else {
+    const storySection = document.getElementById('story');
+    const showAt = storySection
+      ? Math.max(storySection.offsetTop - window.innerHeight * 0.35, 520)
+      : 720;
+    mobileBar.classList.toggle('is-visible', y > showAt);
   }
-  const storySection = document.getElementById('story');
-  const showAt = storySection
-    ? Math.max(storySection.offsetTop - window.innerHeight * 0.35, 520)
-    : 720;
-  mobileBar.classList.toggle('is-visible', window.scrollY > showAt);
+  lastY = y;
 }
-window.addEventListener('scroll', syncMobileBarVisibility, { passive: true });
-window.addEventListener('resize', syncMobileBarVisibility);
-syncMobileBarVisibility();
+function requestScrollUiUpdate() {
+  if (scrollUiFrame) return;
+  scrollUiFrame = requestAnimationFrame(updateScrollUi);
+}
+window.addEventListener('scroll', requestScrollUiUpdate, { passive: true });
+window.addEventListener('resize', requestScrollUiUpdate);
+updateScrollUi();
 
 /* ============================================================
    FAQ accordion
