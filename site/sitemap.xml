@@ -3,15 +3,80 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://byeolfarm.com/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://byeolfarm.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://byeolfarm.com/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://byeolfarm.com/?lang=zh"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://byeolfarm.com/?lang=vi"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://byeolfarm.com/?lang=th"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://byeolfarm.com/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://byeolfarm.com/en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://byeolfarm.com/zh.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://byeolfarm.com/vi.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://byeolfarm.com/th.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://byeolfarm.com/ru.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://byeolfarm.com/"/>
+  </url>
+  <url>
+    <loc>https://byeolfarm.com/en.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://byeolfarm.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://byeolfarm.com/en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://byeolfarm.com/zh.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://byeolfarm.com/vi.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://byeolfarm.com/th.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://byeolfarm.com/ru.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://byeolfarm.com/"/>
+  </url>
+  <url>
+    <loc>https://byeolfarm.com/zh.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://byeolfarm.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://byeolfarm.com/en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://byeolfarm.com/zh.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://byeolfarm.com/vi.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://byeolfarm.com/th.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://byeolfarm.com/ru.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://byeolfarm.com/"/>
+  </url>
+  <url>
+    <loc>https://byeolfarm.com/vi.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://byeolfarm.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://byeolfarm.com/en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://byeolfarm.com/zh.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://byeolfarm.com/vi.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://byeolfarm.com/th.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://byeolfarm.com/ru.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://byeolfarm.com/"/>
+  </url>
+  <url>
+    <loc>https://byeolfarm.com/th.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://byeolfarm.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://byeolfarm.com/en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://byeolfarm.com/zh.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://byeolfarm.com/vi.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://byeolfarm.com/th.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://byeolfarm.com/ru.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://byeolfarm.com/"/>
+  </url>
+  <url>
+    <loc>https://byeolfarm.com/ru.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://byeolfarm.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://byeolfarm.com/en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://byeolfarm.com/zh.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://byeolfarm.com/vi.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://byeolfarm.com/th.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://byeolfarm.com/ru.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://byeolfarm.com/"/>
   </url>
 </urlset>
