@@ -1,0 +1,258 @@
+{
+  "lang": "vi",
+  "localeName": "Tiếng Việt",
+  "title": "하늘의별딸기 — Tay nhỏ, một ngày đầy ắp",
+  "description": "Cùng gia đình hái dâu Seolhyang, làm bánh và lưu lại kỷ niệm tại 하늘의별딸기 ở Paltan, Hwaseong. Xem thông tin trải nghiệm và đặt chỗ qua Naver Smart Place.",
+  "skip": "Chuyển đến nội dung",
+  "brand": "하늘의별딸기",
+  "nav": [
+    "Một ngày ở nông trại",
+    "Album ảnh",
+    "Trước khi đến"
+  ],
+  "book": "Đặt chỗ trên Naver",
+  "bookLong": "Đặt chỗ qua Naver Smart Place",
+  "language": "Chọn ngôn ngữ",
+  "menu": "Mở menu",
+  "close": "Đóng",
+  "heroEyebrow": "Paltan, Hwaseong · Hái dâu cùng gia đình",
+  "heroTitle": [
+    "Bàn tay nhỏ,",
+    "ngày đầy niềm vui."
+  ],
+  "heroDescription": "Từ ánh mắt tìm quả dâu đỏ đến nụ cười sau miếng cắn đầu tiên.\nĐể hôm nay trong nhà kính trở thành kỷ niệm thật lâu.",
+  "heroExplore": "Một ngày thế nào đang chờ bạn?",
+  "heroCaption": "Khoảnh khắc ngọt ngào nhất là khoảnh khắc bạn tự tìm thấy.",
+  "heroPhotoAlt": "Em bé cầm quả dâu và cười tươi trong nhà kính",
+  "heroStamp": [
+    "Tự tay hái dâu",
+    "Giữ mãi kỷ niệm"
+  ],
+  "award": "Được chọn là Nông trại nông sản địa phương xuất sắc của Hwaseong năm 2026",
+  "facts": [
+    [
+      "Dâu Seolhyang",
+      "Cả nhà cùng thu hoạch"
+    ],
+    [
+      "500g mỗi người",
+      "Niềm vui đầy trong hộp dâu"
+    ],
+    [
+      "Hwaseong, Gyeonggi",
+      "Nhà kính ấm áp ở Paltan"
+    ]
+  ],
+  "introEyebrow": "Điều ở lại lâu hơn một hộp dâu",
+  "introTitle": [
+    "Đến để hái dâu,",
+    "về cùng những kỷ niệm."
+  ],
+  "introBody": "Bước chậm theo nhịp của con và cùng tìm những quả dâu đỏ nhất. Không cần một kế hoạch cầu kỳ. Những khám phá nhỏ nối tiếp nhau sẽ làm nên một ngày đáng nhớ của cả nhà.",
+  "experienceEyebrow": "Ba khoảnh khắc trong nhà kính",
+  "experienceTitle": [
+    "Hôm nay của bạn",
+    "có vị gì?"
+  ],
+  "experienceIntro": "Bắt đầu với hái dâu, rồi thêm chút niềm vui làm bánh hoặc một kỷ niệm qua ảnh.",
+  "experienceInstruction": "Chọn một khoảnh khắc để xem chi tiết trải nghiệm.",
+  "scenes": [
+    {
+      "tab": "Tự tay hái dâu",
+      "kicker": "01 / PICK",
+      "title": [
+        "Quả dâu tự tìm thấy",
+        "luôn ngọt hơn một chút."
+      ],
+      "description": "Cùng con chọn dâu Seolhyang, tự tay hái và cho vào hộp riêng. Người lớn chỉ chụp ảnh cũng tham gia trải nghiệm và cần mua vé.",
+      "image": "photo-02",
+      "alt": "Mẹ và bé cùng ngắm dâu trong nhà kính",
+      "facts": [
+        [
+          "19.000 won/người",
+          "Gồm một hộp hái dâu 500g"
+        ],
+        [
+          "Ngày thường: 2 giờ 30 phút",
+          "Cuối tuần, ngày lễ: 1 giờ 40 phút"
+        ],
+        [
+          "Dưới 24 tháng: miễn phí",
+          "Cần mang giấy tờ chứng minh độ tuổi"
+        ]
+      ],
+      "note": "Vui lòng xếp dâu sao cho nắp hộp đóng kín. Dâu hái thêm được thanh toán tại chỗ theo mỗi 100g, với giá của ngày đến. Kiểm tra giá cuối cùng và giờ hoạt động trên Naver Booking."
+    },
+    {
+      "tab": "Làm món ngọt nhỏ",
+      "kicker": "02 / MAKE",
+      "title": [
+        "Dâu vừa hái,",
+        "chiếc bánh của riêng mình."
+      ],
+      "description": "Đặt từng quả dâu lên lớp kem. Hơi vụng một chút cũng không sao. Món ngọt do chính tay mình làm luôn có điều gì đó thật đặc biệt.",
+      "image": "photo-05",
+      "alt": "Đôi tay làm cupcake mini với dâu vừa tự hái",
+      "facts": [
+        [
+          "Bộ 1 người: 3.000 won",
+          "Bộ 2 người: 5.000 won"
+        ],
+        [
+          "Làm cupcake mini",
+          "Hoạt động tùy chọn thêm vào buổi hái dâu"
+        ],
+        [
+          "Hộp, kem và bánh castella",
+          "Hoàn thiện bằng dâu tự hái"
+        ]
+      ],
+      "note": "Kiểm tra trên Naver Booking hoặc hỏi nhân viên tại chỗ về khả năng tổ chức và giá cuối cùng của hoạt động tùy chọn."
+    },
+    {
+      "tab": "Giữ lại khoảnh khắc",
+      "kicker": "03 / KEEP",
+      "title": [
+        "Không cần cố mỉm cười,",
+        "ảnh vẫn thật đẹp."
+      ],
+      "description": "Ánh mắt nhìn quả dâu, gương mặt cha mẹ khi nhìn con. Chúng tôi ghi lại những khoảnh khắc tự nhiên ấy. Buổi chụp ảnh gia đình là sự kiện bất ngờ miễn phí dành cho gia đình đã đặt chỗ.",
+      "image": "photo-09",
+      "alt": "Gia đình cùng cười và chụp ảnh lưu niệm trong nhà kính dâu",
+      "facts": [
+        [
+          "Một ảnh đẹp nhất được in",
+          "Quà miễn phí vào ngày có thể tổ chức"
+        ],
+        [
+          "Dành cho gia đình đã đặt chỗ",
+          "Tùy tình hình hoạt động tại nông trại"
+        ],
+        [
+          "Ảnh chỉnh sửa là quyền lợi tùy chọn",
+          "Nhận sau khi đăng đánh giá kèm ảnh trên kênh chỉ định"
+        ]
+      ],
+      "note": "Đây không phải dịch vụ luôn sẵn có. Khi chụp cần đồng ý cho phép sử dụng hình ảnh. Buổi chụp phụ thuộc vào giờ đến và hoạt động tại nông trại. Việc viết đánh giá là tự nguyện."
+    }
+  ],
+  "journalEyebrow": "Album nhà kính",
+  "journalTitle": [
+    "Nơi được nhớ đến",
+    "bằng những nụ cười."
+  ],
+  "journalIntro": "Những khoảnh khắc được chụp tại nông trại, khiến chúng tôi mỉm cười mỗi lần xem lại.",
+  "journalHint": "Chọn ảnh để xem lớn hơn.",
+  "photos": [
+    {
+      "image": "photo-03",
+      "caption": "Một khám phá nhỏ nơi đầu ngón tay.",
+      "alt": "Em bé tò mò ngắm những quả dâu trong nhà kính"
+    },
+    {
+      "image": "photo-06",
+      "caption": "Khoảnh khắc cùng nhìn về một phía.",
+      "alt": "Mẹ và bé cùng nhìn luống dâu"
+    },
+    {
+      "image": "photo-08",
+      "caption": "Hôm nay, để tớ làm bạn cười nhé.",
+      "alt": "Hai em bé đùa vui và cười trong nhà kính dâu"
+    },
+    {
+      "image": "photo-09",
+      "caption": "Ngày hôm nay của chúng mình, trong một tấm ảnh.",
+      "alt": "Gia đình cùng mỉm cười chụp ảnh trong nhà kính dâu"
+    }
+  ],
+  "previousPhoto": "Ảnh trước",
+  "nextPhoto": "Ảnh tiếp theo",
+  "viewPhoto": "Xem ảnh lớn",
+  "visitEyebrow": "Chuẩn bị một chút trước chuyến đi",
+  "visitTitle": [
+    "Đến thật nhẹ nhàng,",
+    "về đầy kỷ niệm."
+  ],
+  "addressLabel": "Hẹn gặp tại 하늘의별딸기",
+  "address": "177-26, Noha-gil 116beon-gil, Paltan-myeon,\nManse-gu, Hwaseong-si, Gyeonggi-do",
+  "oldAddress": "Địa chỉ theo số thửa · Noha-ri 1267-5, Paltan-myeon",
+  "map": "Mở Naver Map",
+  "phone": "Gọi hỏi thông tin",
+  "hours": "10:00–16:00",
+  "hoursNote": "Thường nghỉ thứ Hai; nếu thứ Hai là ngày lễ, vẫn mở cửa · Xem ngày mở cửa thực tế trên Naver Booking",
+  "visitItems": [
+    {
+      "title": "Hẹn gặp trước giờ đặt chỗ 10 phút.",
+      "body": "Hãy đến sớm một chút để chuẩn bị. Nếu đến muộn, bạn có thể không được kéo dài thời gian trải nghiệm hoặc tham gia buổi chụp ảnh."
+    },
+    {
+      "title": "Đỗ xe dọc đường bên cạnh nông trại.",
+      "body": "Vui lòng đỗ xe song song bên đường cạnh nông trại. Giữ thông thoáng lối vào và khu vực trước nhà kính."
+    },
+    {
+      "title": "Vào nhà kính với đôi tay nhẹ nhàng.",
+      "body": "Khu trải nghiệm hạn chế mang túi, máy ảnh và địu vải truyền thống kiểu Hàn. Vui lòng cất đồ có giá trị trong xe trước khi hái dâu."
+    },
+    {
+      "title": "Ngày mưa vẫn hẹn trong nhà kính.",
+      "body": "Trải nghiệm vẫn diễn ra trong nhà kính khi trời mưa. Nông trại sẽ thông báo riêng nếu mưa lớn, tuyết lớn hoặc điều kiện không an toàn ảnh hưởng đến hoạt động. Không được mang thú cưng."
+    }
+  ],
+  "checkTitle": "Kiểm tra trước khi xuất phát",
+  "checks": [
+    "Xác nhận đặt chỗ trên Naver",
+    "Dự tính đến sớm 10 phút",
+    "Kiểm tra chỗ đỗ xe",
+    "Cất túi và đồ dùng cá nhân"
+  ],
+  "checkProgress": "mục đã chuẩn bị",
+  "checkComplete": "Sẵn sàng rồi. Hẹn gặp trong nhà kính!",
+  "faqEyebrow": "Câu hỏi thường gặp",
+  "faqTitle": "Biết trước, yên tâm hơn.",
+  "faqs": [
+    [
+      "Đặt chỗ và thanh toán ở đâu?",
+      "Chọn ngày, giờ và hoàn tất đặt chỗ, thanh toán trên Naver Smart Place. Nhấn nút ‘Đặt chỗ trên Naver’ trên website. Lịch hoạt động và chỗ trống dựa trên thông tin Naver."
+    ],
+    [
+      "Người lớn chỉ chụp ảnh có phải trả phí không?",
+      "Có. Mỗi người, kể cả người lớn đi cùng, cần tham gia một lượt trải nghiệm có phí. Trẻ dưới 24 tháng được vào miễn phí khi có giấy tờ chứng minh độ tuổi."
+    ],
+    [
+      "Có thể mang về bao nhiêu dâu?",
+      "Mỗi người nhận một hộp riêng 500g. Vui lòng xếp dâu sao cho nắp hộp đóng kín. Dâu hái thêm thanh toán tại chỗ theo mỗi 100g với giá của ngày hôm đó."
+    ],
+    [
+      "Lúc nào cũng có buổi chụp ảnh gia đình sao?",
+      "Không. Đây là sự kiện bất ngờ miễn phí, không phải dịch vụ thường xuyên. Việc tổ chức phụ thuộc vào hoạt động nông trại và việc đến đúng giờ. Khi chụp cần đồng ý cho phép sử dụng hình ảnh."
+    ],
+    [
+      "Làm sao nhận ảnh kỹ thuật số đã chỉnh sửa?",
+      "Nếu gia đình đã tham gia buổi chụp, bạn có thể nhận ảnh đã chỉnh sửa sau khi đăng đánh giá kèm ảnh trên kênh được chỉ định: Naver Blog, cộng đồng cha mẹ, Karrot Neighborhood Life hoặc bài đăng Instagram. Story không được tính. Viết đánh giá là tự nguyện."
+    ],
+    [
+      "Cần lưu ý gì về an toàn trước khi đến?",
+      "Không trêu hoặc làm phiền ong thụ phấn. Nếu dị ứng với ong, dâu hoặc phấn hoa, hãy liên hệ trước khi đặt chỗ. Báo ngay cho nhân viên nếu có triệu chứng bất thường. Chỉ nếm dâu tại khu vực được chỉ định."
+    ],
+    [
+      "Thay đổi hoặc hủy đặt chỗ thế nào?",
+      "Vui lòng xem chính sách thay đổi và hủy trên Naver Booking. Nếu nông trại hủy, bạn được hoàn tiền đầy đủ. Không đến theo lịch hẹn sẽ không được hoàn tiền."
+    ]
+  ],
+  "endEyebrow": "Khoảnh khắc tiếp theo của chúng ta",
+  "endTitle": [
+    "Trong tấm ảnh tiếp theo,",
+    "sẽ là gia đình bạn."
+  ],
+  "endBody": "Một ngày ngọt ngào của cả nhà bắt đầu từ đây.",
+  "endNote": "Xem ngày mở cửa, giờ còn chỗ và giá cuối cùng trên Naver.",
+  "footerDescription": "Nhà kính đầy nắng ở Hwaseong, Gyeonggi.\nCùng gia đình hái và mang về dâu Seolhyang.",
+  "instagram": "Nông trại hôm nay trên Instagram",
+  "backTop": "Về đầu trang",
+  "mobileLabel": "Một ngày ngọt ngào của cả nhà",
+  "mobileBook": "Đặt chỗ trên Naver",
+  "externalHint": "Mở trong cửa sổ mới",
+  "bookShort": "Đặt chỗ",
+  "journalOpen": "Mở cuốn nhật ký ảnh",
+  "extraTitle": "Thêm chút niềm vui cho ngày đi chơi"
+}

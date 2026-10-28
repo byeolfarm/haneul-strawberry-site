@@ -1,0 +1,258 @@
+{
+  "lang": "en",
+  "localeName": "English",
+  "title": "하늘의별딸기 — Little hands, a big day",
+  "description": "Pick Seolhyang strawberries, make something sweet and capture family memories at 하늘의별딸기 in Paltan, Hwaseong. Explore the experience and book through Naver Smart Place.",
+  "skip": "Skip to content",
+  "brand": "하늘의별딸기",
+  "nav": [
+    "A day at the farm",
+    "Photo journal",
+    "Plan your visit"
+  ],
+  "book": "Book on Naver",
+  "bookLong": "Book on Naver Smart Place",
+  "language": "Select language",
+  "menu": "Open menu",
+  "close": "Close",
+  "heroEyebrow": "Paltan, Hwaseong · Family strawberry picking",
+  "heroTitle": [
+    "Little hands,",
+    "a big day."
+  ],
+  "heroDescription": "From spotting the reddest berry to a smile with every bite.\nA day in the greenhouse, a memory to keep.",
+  "heroExplore": "What will your day look like?",
+  "heroCaption": "The sweetest moments are the ones you discover yourself.",
+  "heroPhotoAlt": "A child smiling brightly with a strawberry in the greenhouse",
+  "heroStamp": [
+    "Pick it yourself",
+    "Keep the memory"
+  ],
+  "award": "Selected as a 2026 Hwaseong Local Food Excellence Farm",
+  "facts": [
+    [
+      "Seolhyang strawberries",
+      "Pick together as a family"
+    ],
+    [
+      "500g per person",
+      "Fill your own picking pack"
+    ],
+    [
+      "Hwaseong, Gyeonggi",
+      "A welcoming greenhouse in Paltan"
+    ]
+  ],
+  "introEyebrow": "More than a pack of berries",
+  "introTitle": [
+    "Come for the strawberries.",
+    "Leave with a story."
+  ],
+  "introBody": "Walk at your child's pace and find the reddest berries together. You don't need a grand plan. One small discovery leads to another, and a family day takes shape.",
+  "experienceEyebrow": "Three moments in the greenhouse",
+  "experienceTitle": [
+    "What will today",
+    "taste like?"
+  ],
+  "experienceIntro": "Start with strawberry picking, then add a little making or a photo memory to your day.",
+  "experienceInstruction": "Choose a moment to explore the experience.",
+  "scenes": [
+    {
+      "tab": "Pick a berry",
+      "kicker": "01 / PICK",
+      "title": [
+        "The berry you find",
+        "tastes the sweetest."
+      ],
+      "description": "Choose Seolhyang strawberries side by side, pick them by hand and fill your own pack. Everyone joins the experience, including adults who only take photos.",
+      "image": "photo-02",
+      "alt": "A mother and child looking at strawberries in the greenhouse",
+      "facts": [
+        [
+          "KRW 19,000 per person",
+          "Includes one 500g picking pack"
+        ],
+        [
+          "Weekdays: 2 hr 30 min",
+          "Weekends & holidays: 1 hr 40 min"
+        ],
+        [
+          "Under 24 months: free",
+          "Proof of age required"
+        ]
+      ],
+      "note": "Please fill the pack so its lid closes completely. Extra picking is charged on site per 100g at that day's price. Check Naver Booking for final prices and operating times."
+    },
+    {
+      "tab": "Make something sweet",
+      "kicker": "02 / MAKE",
+      "title": [
+        "Freshly picked berries.",
+        "A little cake of your own."
+      ],
+      "description": "Place your strawberries on the cream, one at a time. It doesn't have to be perfect. A dessert you make yourself has a sweetness all its own.",
+      "image": "photo-05",
+      "alt": "Hands making a mini cupcake with freshly picked strawberries",
+      "facts": [
+        [
+          "1-person set: KRW 3,000",
+          "2-person set: KRW 5,000"
+        ],
+        [
+          "Mini cupcake making",
+          "An optional add-on to picking"
+        ],
+        [
+          "Container, cream & castella",
+          "Finish with the berries you picked"
+        ]
+      ],
+      "note": "Check Naver Booking or ask on site for the availability and final price of optional activities."
+    },
+    {
+      "tab": "Keep the moment",
+      "kicker": "03 / KEEP",
+      "title": [
+        "No perfect smile needed.",
+        "Just be yourselves."
+      ],
+      "description": "Eyes discovering a berry. A parent watching their child. We capture these unposed moments. Our family photo session is a complimentary surprise event for families with a booking.",
+      "image": "photo-09",
+      "alt": "A family smiling together for a photo in the strawberry greenhouse",
+      "facts": [
+        [
+          "One best-shot print",
+          "A free gift when sessions are available"
+        ],
+        [
+          "For booked families",
+          "Subject to conditions on the day"
+        ],
+        [
+          "Edited digital photo: optional",
+          "Available after a photo review on a designated channel"
+        ]
+      ],
+      "note": "Photo sessions are not always available. Consent to the use of your likeness is required, and sessions depend on arrival time and farm operations. Writing a review is optional."
+    }
+  ],
+  "journalEyebrow": "Greenhouse photo journal",
+  "journalTitle": [
+    "A place remembered",
+    "in smiles."
+  ],
+  "journalIntro": "Real moments photographed at the farm that make us smile again.",
+  "journalHint": "Select a photo to see it larger.",
+  "photos": [
+    {
+      "image": "photo-03",
+      "caption": "A little discovery, at your fingertips.",
+      "alt": "A child looking curiously at strawberries in the greenhouse"
+    },
+    {
+      "image": "photo-06",
+      "caption": "A moment of looking together.",
+      "alt": "A mother and child looking out across the strawberry plants"
+    },
+    {
+      "image": "photo-08",
+      "caption": "Today, I'll make you laugh.",
+      "alt": "Two children playing and laughing in the strawberry greenhouse"
+    },
+    {
+      "image": "photo-09",
+      "caption": "Our day, held in one frame.",
+      "alt": "A family smiling together in the strawberry greenhouse"
+    }
+  ],
+  "previousPhoto": "Previous photo",
+  "nextPhoto": "Next photo",
+  "viewPhoto": "View larger photo",
+  "visitEyebrow": "A little planning before your day out",
+  "visitTitle": [
+    "An easy journey.",
+    "A day full of memories."
+  ],
+  "addressLabel": "Come to 하늘의별딸기",
+  "address": "177-26, Noha-gil 116beon-gil, Paltan-myeon,\nManse-gu, Hwaseong-si, Gyeonggi-do",
+  "oldAddress": "Lot address · 1267-5 Noha-ri, Paltan-myeon",
+  "map": "Open Naver Map",
+  "phone": "Call the farm",
+  "hours": "10:00–16:00",
+  "hoursNote": "Usually closed Mondays; open as usual when Monday is a public holiday · Check Naver Booking for actual opening days",
+  "visitItems": [
+    {
+      "title": "See you 10 minutes before your booking.",
+      "body": "Arrive with a little time to settle in. Late arrivals may not receive extra activity time or be able to join the photo session."
+    },
+    {
+      "title": "Park along the road beside the farm.",
+      "body": "Please parallel park beside the farm. Keep the entrance and the area in front of the greenhouses clear."
+    },
+    {
+      "title": "Come into the greenhouse hands-free.",
+      "body": "Bags, cameras and traditional fabric baby carriers are restricted in the activity area. Please leave valuables in your vehicle before picking."
+    },
+    {
+      "title": "Rainy day? We're in the greenhouse.",
+      "body": "Activities continue indoors when it rains. We will advise you if heavy rain, snow or other unsafe conditions affect opening. Pets are not permitted."
+    }
+  ],
+  "checkTitle": "Before you leave home",
+  "checks": [
+    "Confirm your Naver booking",
+    "Plan to arrive 10 minutes early",
+    "Check where to park",
+    "Put bags and belongings away"
+  ],
+  "checkProgress": "items ready",
+  "checkComplete": "All ready. See you in the greenhouse!",
+  "faqEyebrow": "Frequently asked questions",
+  "faqTitle": "Good to know before you go.",
+  "faqs": [
+    [
+      "Where do I book and pay?",
+      "Choose your date and time, book and pay through Naver Smart Place. Select the ‘Book on Naver’ button on this website. Opening schedules and availability follow the information on Naver."
+    ],
+    [
+      "Do adults who only take photos need to pay?",
+      "Yes. Every visitor, including accompanying adults, joins one paid experience. Children under 24 months can enter free with proof of age."
+    ],
+    [
+      "How many strawberries can I take home?",
+      "Each person receives one 500g picking pack. Please fill it so the lid closes completely. Extra picking is charged on site per 100g at that day's price."
+    ],
+    [
+      "Is the family photo session always available?",
+      "No. It is a complimentary surprise event, not a permanent service. Availability depends on farm operations and arriving at your booked time. Consent to the use of your likeness is required."
+    ],
+    [
+      "How do I receive an edited digital photo?",
+      "If your family has a photo session, you can receive an edited digital photo after posting a photo review on a designated channel: Naver Blog, a parenting community, Karrot Neighborhood Life or an Instagram feed post. Stories do not qualify. Writing a review is optional."
+    ],
+    [
+      "What safety information should I know?",
+      "Please do not disturb the pollinating bees. Contact us before booking if you have allergies to bees, strawberries or pollen. Tell a staff member immediately if you feel unwell. Please taste strawberries only in the designated area."
+    ],
+    [
+      "How do I change or cancel a booking?",
+      "Please check the change and cancellation policy on Naver Booking. Cancellations made by the farm are fully refunded. No-shows are not refundable."
+    ]
+  ],
+  "endEyebrow": "Our next little story",
+  "endTitle": [
+    "Make the next photo",
+    "your family moment."
+  ],
+  "endBody": "Your family's sweet day starts here.",
+  "endNote": "Check Naver for opening days, available times and final prices.",
+  "footerDescription": "A sunlit greenhouse in Hwaseong, Gyeonggi.\nPick and pack Seolhyang strawberries together.",
+  "instagram": "Life at the farm on Instagram",
+  "backTop": "Back to top",
+  "mobileLabel": "A sweet day for your family",
+  "mobileBook": "Book on Naver",
+  "externalHint": "Opens in a new window",
+  "bookShort": "Book",
+  "journalOpen": "Unfold the photo journal",
+  "extraTitle": "A little more to remember"
+}

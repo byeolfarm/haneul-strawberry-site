@@ -1,0 +1,562 @@
+{
+  "하늘의별딸기 — 시안 E, 하루의 필름": {
+    "en": "하늘의별딸기 — Concept E, A Day on Film",
+    "zh": "하늘의별딸기 — 方案 E，一天的影像",
+    "vi": "하늘의별딸기 — Phương án E, Thước phim một ngày",
+    "th": "하늘의별딸기 — แบบ E ภาพหนึ่งวันของเรา",
+    "ru": "하늘의별딸기 — Вариант E, День в кадре"
+  },
+  "들어서고, 딸기를 따고, 함께 남기는 하루. 하늘의별딸기 웹사이트 시안 E.": {
+    "en": "Step inside, pick strawberries and make memories together. Website concept E for 하늘의별딸기.",
+    "zh": "走进温室、采摘草莓，一起留住这一天。하늘의별딸기 网站方案 E。",
+    "vi": "Bước vào nhà kính, hái dâu và lưu lại kỷ niệm cùng nhau. Phương án website E cho 하늘의별딸기.",
+    "th": "ก้าวเข้ามา เก็บสตรอว์เบอร์รี และเก็บความทรงจำร่วมกัน เว็บไซต์แบบ E สำหรับ 하늘의별딸기",
+    "ru": "Зайти в теплицу, собрать клубнику и сохранить общий день. Вариант E сайта 하늘의별딸기."
+  },
+  "본문으로 바로가기": {
+    "en": "Skip to content",
+    "zh": "跳至正文",
+    "vi": "Chuyển đến nội dung",
+    "th": "ข้ามไปยังเนื้อหา",
+    "ru": "Перейти к содержимому"
+  },
+  "시안 E · 하루의 필름": {
+    "en": "Concept E · A Day on Film",
+    "zh": "方案 E · 一天的影像",
+    "vi": "Phương án E · Thước phim một ngày",
+    "th": "แบบ E · ภาพหนึ่งวันของเรา",
+    "ru": "Вариант E · День в кадре"
+  },
+  "전체 시안 보기": {
+    "en": "View all concepts",
+    "zh": "查看全部方案",
+    "vi": "Xem tất cả phương án",
+    "th": "ดูแบบทั้งหมด",
+    "ru": "Все варианты дизайна"
+  },
+  "하늘의별딸기": {
+    "en": "하늘의별딸기",
+    "zh": "하늘의별딸기",
+    "vi": "하늘의별딸기",
+    "th": "하늘의별딸기",
+    "ru": "하늘의별딸기"
+  },
+  "주요 메뉴": {
+    "en": "Main navigation",
+    "zh": "主菜单",
+    "vi": "Điều hướng chính",
+    "th": "เมนูหลัก",
+    "ru": "Основное меню"
+  },
+  "방문 전 확인": {
+    "en": "Before your visit",
+    "zh": "到访前须知",
+    "vi": "Trước khi đến",
+    "th": "เตรียมมาเที่ยว",
+    "ru": "Перед поездкой"
+  },
+  "네이버 예약": {
+    "en": "Book on Naver",
+    "zh": "Naver 预约",
+    "vi": "Đặt chỗ trên Naver",
+    "th": "จองผ่าน Naver",
+    "ru": "Бронь в Naver"
+  },
+  "온실에서 보내는 하루의 세 장면": {
+    "en": "Three scenes from a day in the greenhouse",
+    "zh": "温室里的一天，三个片段",
+    "vi": "Ba khoảnh khắc trong một ngày ở nhà kính",
+    "th": "สามช่วงเวลาของหนึ่งวันในโรงเรือน",
+    "ru": "Три момента одного дня в теплице"
+  },
+  "경기 화성 · 가족 딸기 체험": {
+    "en": "Hwaseong, Gyeonggi · Family strawberry picking",
+    "zh": "京畿道华城 · 亲子草莓采摘",
+    "vi": "Hwaseong, Gyeonggi · Hái dâu cùng gia đình",
+    "th": "ฮวาซอง คยองกี · เก็บสตรอว์เบอร์รีกับครอบครัว",
+    "ru": "Хвасон, Кёнгидо · Клубника всей семьёй"
+  },
+  "첫 번째 장면 · 들어서다": {
+    "en": "Scene one · Step inside",
+    "zh": "第一幕 · 走进温室",
+    "vi": "Cảnh thứ nhất · Bước vào",
+    "th": "ฉากแรก · ก้าวเข้ามา",
+    "ru": "Первый кадр · Войти в теплицу"
+  },
+  "딸기를 따는 하루.": {
+    "en": "A day of picking berries.",
+    "zh": "采摘草莓的一天。",
+    "vi": "Một ngày hái dâu.",
+    "th": "หนึ่งวันที่ได้เก็บสตรอว์เบอร์รี",
+    "ru": "День за сбором клубники."
+  },
+  "오래 남을 한 장면.": {
+    "en": "A moment to keep.",
+    "zh": "久久记得的一幕。",
+    "vi": "Một khoảnh khắc nhớ mãi.",
+    "th": "หนึ่งภาพที่จดจำไปนาน",
+    "ru": "Момент на долгую память."
+  },
+  "아이의 속도로, 천천히.": {
+    "en": "Slowly, at your child's pace.",
+    "zh": "跟着孩子的步子，慢慢来。",
+    "vi": "Chậm rãi, theo nhịp của con.",
+    "th": "ค่อย ๆ เดินไปตามจังหวะของลูก",
+    "ru": "Не спеша, в ритме ребёнка."
+  },
+  "온실 안으로 들어오면": {
+    "en": "Step into the greenhouse,",
+    "zh": "走进温室，",
+    "vi": "Khi bước vào nhà kính,",
+    "th": "เมื่อก้าวเข้ามาในโรงเรือน",
+    "ru": "Стоит войти в теплицу —"
+  },
+  "우리의 이야기가 시작됩니다.": {
+    "en": "and our story begins.",
+    "zh": "我们的故事就开始了。",
+    "vi": "câu chuyện của chúng ta bắt đầu.",
+    "th": "เรื่องราวของเราก็เริ่มต้นขึ้น",
+    "ru": "и начинается наша история."
+  },
+  "큰 계획 없이도 괜찮아요.": {
+    "en": "No grand plans needed.",
+    "zh": "不必安排得满满当当。",
+    "vi": "Không cần kế hoạch cầu kỳ.",
+    "th": "ไม่ต้องมีแผนพิเศษก็ได้",
+    "ru": "Большие планы не нужны."
+  },
+  "함께 바라보는 것부터, 오늘의 첫 장면이니까.": {
+    "en": "Simply looking together is the first scene of your day.",
+    "zh": "一起望向同一处，就是今天的第一幕。",
+    "vi": "Chỉ cần cùng nhìn về một phía, ngày của mình đã có cảnh đầu tiên.",
+    "th": "แค่มองไปด้วยกัน ก็เป็นฉากแรกของวันนี้แล้ว",
+    "ru": "Первый кадр дня — просто посмотреть на мир вместе."
+  },
+  "온실에서 마주 보고 웃는 엄마와 아이": {
+    "en": "A mother and child smiling at each other in the greenhouse",
+    "zh": "妈妈与孩子在温室里面对面微笑",
+    "vi": "Mẹ và bé nhìn nhau và mỉm cười trong nhà kính",
+    "th": "แม่กับลูกมองหน้ากันและยิ้มในโรงเรือน",
+    "ru": "Мама и ребёнок улыбаются друг другу в теплице"
+  },
+  "서로를 바라보는 것부터.": {
+    "en": "It starts with looking at each other.",
+    "zh": "从看着彼此开始。",
+    "vi": "Bắt đầu từ ánh nhìn dành cho nhau.",
+    "th": "เริ่มจากการมองหน้ากัน",
+    "ru": "Всё начинается со взгляда друг на друга."
+  },
+  "두 번째 장면 · 딸기를 따다": {
+    "en": "Scene two · Pick strawberries",
+    "zh": "第二幕 · 亲手摘草莓",
+    "vi": "Cảnh thứ hai · Hái dâu",
+    "th": "ฉากที่สอง · เก็บสตรอว์เบอร์รี",
+    "ru": "Второй кадр · Собрать клубнику"
+  },
+  "가장 빨간 딸기를,": {
+    "en": "The reddest berry,",
+    "zh": "最红的那颗草莓，",
+    "vi": "Quả dâu đỏ nhất,",
+    "th": "สตรอว์เบอร์รีผลที่แดงที่สุด",
+    "ru": "Самую красную ягоду —"
+  },
+  "내 손으로.": {
+    "en": "picked by my own hands.",
+    "zh": "由我亲手采下。",
+    "vi": "do chính tay mình hái.",
+    "th": "เก็บด้วยมือของเราเอง",
+    "ru": "своими руками."
+  },
+  "찾고, 고르고, 조심히 따고.": {
+    "en": "Find, choose, and gently pick.",
+    "zh": "寻找、挑选，再轻轻摘下。",
+    "vi": "Tìm, chọn, rồi nhẹ nhàng hái.",
+    "th": "มองหา เลือก แล้วค่อย ๆ เก็บ",
+    "ru": "Найти, выбрать, бережно сорвать."
+  },
+  "작은 손이 바빠지는 사이": {
+    "en": "While little hands get busy,",
+    "zh": "小手忙碌起来，",
+    "vi": "Khi những bàn tay nhỏ bận rộn,",
+    "th": "เมื่อมือเล็ก ๆ เริ่มทำงาน",
+    "ru": "Пока маленькие ладошки заняты,"
+  },
+  "한 팩 가득, 나만의 수확.": {
+    "en": "a box fills with my own harvest.",
+    "zh": "一盒属于自己的收获渐渐装满。",
+    "vi": "chiếc hộp dần đầy những quả dâu tự hái.",
+    "th": "กล่องก็เต็มไปด้วยผลผลิตที่เก็บเอง",
+    "ru": "коробочка наполняется своим урожаем."
+  },
+  "설향 딸기 수확 체험": {
+    "en": "Seolhyang strawberry picking",
+    "zh": "雪香草莓采摘体验",
+    "vi": "Trải nghiệm hái dâu Seolhyang",
+    "th": "กิจกรรมเก็บสตรอว์เบอร์รีซอลฮยัง",
+    "ru": "Сбор клубники Сольхян"
+  },
+  "1인 500g 전용 팩을 함께 드립니다.": {
+    "en": "One 500g picking pack is included per person.",
+    "zh": "每人包含一个 500g 专用果盒。",
+    "vi": "Mỗi người được cung cấp một hộp hái dâu 500g.",
+    "th": "รวมกล่องเก็บสตรอว์เบอร์รีขนาด 500 กรัม คนละ 1 กล่อง",
+    "ru": "Каждому выдаётся одна коробочка на 500 г."
+  },
+  "딸기밭에서 직접 딸기를 살펴보는 아이": {
+    "en": "A child examining strawberries among the plants",
+    "zh": "孩子在草莓田里仔细观察草莓",
+    "vi": "Em bé chăm chú ngắm dâu giữa những luống cây",
+    "th": "เด็กกำลังมองดูสตรอว์เบอร์รีในแปลงอย่างตั้งใจ",
+    "ru": "Ребёнок рассматривает ягоды на клубничной грядке"
+  },
+  "오늘은 내가 찾았어요.": {
+    "en": "Today, I found it myself.",
+    "zh": "今天，是我自己找到的。",
+    "vi": "Hôm nay, con tự tìm thấy rồi.",
+    "th": "วันนี้หนูหาเจอเองแล้ว",
+    "ru": "Сегодня это моя находка."
+  },
+  "세 번째 장면 · 함께 남기다": {
+    "en": "Scene three · Keep the memory",
+    "zh": "第三幕 · 一起留下回忆",
+    "vi": "Cảnh thứ ba · Cùng lưu giữ",
+    "th": "ฉากที่สาม · เก็บไว้ด้วยกัน",
+    "ru": "Третий кадр · Сохранить вместе"
+  },
+  "오늘의 우리를,": {
+    "en": "This is us, today.",
+    "zh": "把今天的我们，",
+    "vi": "Chúng mình của hôm nay,",
+    "th": "ตัวเรากับคนที่รักในวันนี้",
+    "ru": "Какими мы были сегодня —"
+  },
+  "함께 남기다.": {
+    "en": "A moment we keep together.",
+    "zh": "一起留在照片里。",
+    "vi": "cùng lưu lại trong một tấm ảnh.",
+    "th": "เก็บไว้ในภาพด้วยกัน",
+    "ru": "сохраним это вместе."
+  },
+  "어떤 딸기를 땄는지보다,": {
+    "en": "More than the berries you picked,",
+    "zh": "也许，比起摘了哪颗草莓，",
+    "vi": "Có lẽ, hơn cả những quả dâu đã hái,",
+    "th": "อาจไม่ใช่ผลไหนที่เราเก็บ",
+    "ru": "Возможно, дольше самих ягод"
+  },
+  "누구와 웃었는지가": {
+    "en": "the people you laughed with",
+    "zh": "与谁一起欢笑，",
+    "vi": "người đã cùng mình cười",
+    "th": "แต่เป็นคนที่หัวเราะไปด้วยกัน",
+    "ru": "вам запомнится тот,"
+  },
+  "더 오래 기억날지도 몰라요.": {
+    "en": "may stay with you longer.",
+    "zh": "会在记忆里停留得更久。",
+    "vi": "sẽ ở lại trong ký ức lâu hơn.",
+    "th": "ที่เราจำได้ยาวนานกว่า",
+    "ru": "с кем вы смеялись в этот день."
+  },
+  "감성 스냅은 현장 상황에 따라 진행되는": {
+    "en": "Our photo sessions depend on farm operations:",
+    "zh": "温馨随拍根据现场情况安排，",
+    "vi": "Buổi chụp ảnh tùy thuộc vào hoạt động tại nông trại:",
+    "th": "การถ่ายภาพขึ้นอยู่กับสถานการณ์หน้างาน",
+    "ru": "Съёмка проводится при возможности с учётом работы фермы:"
+  },
+  "예약 가족 대상 무료 특별 이벤트입니다.": {
+    "en": "a complimentary event for families with a booking.",
+    "zh": "是面向已预约家庭的免费特别活动。",
+    "vi": "một sự kiện đặc biệt miễn phí cho gia đình đã đặt chỗ.",
+    "th": "เป็นกิจกรรมพิเศษฟรีสำหรับครอบครัวที่จองไว้",
+    "ru": "это бесплатное событие для семей с бронированием."
+  },
+  "딸기 온실에서 함께 앉아 웃는 가족": {
+    "en": "A family sitting together and smiling in the strawberry greenhouse",
+    "zh": "一家人在草莓温室里坐在一起微笑",
+    "vi": "Gia đình ngồi bên nhau và mỉm cười trong nhà kính dâu",
+    "th": "ครอบครัวนั่งด้วยกันและยิ้มในโรงเรือนสตรอว์เบอร์รี",
+    "ru": "Семья сидит вместе и улыбается в клубничной теплице"
+  },
+  "이 하루가, 오래 남도록.": {
+    "en": "So this day stays with you.",
+    "zh": "让这一天，久久留在心里。",
+    "vi": "Để ngày này còn ở lại thật lâu.",
+    "th": "ให้วันนี้อยู่ในความทรงจำไปนาน ๆ",
+    "ru": "Чтобы этот день остался надолго."
+  },
+  "들어서다": {
+    "en": "Step inside",
+    "zh": "走进温室",
+    "vi": "Bước vào",
+    "th": "ก้าวเข้ามา",
+    "ru": "Войти"
+  },
+  "딸기를 따다": {
+    "en": "Pick berries",
+    "zh": "采摘草莓",
+    "vi": "Hái dâu",
+    "th": "เก็บสตรอว์เบอร์รี",
+    "ru": "Собрать ягоды"
+  },
+  "함께 남기다": {
+    "en": "Keep the moment",
+    "zh": "留下回忆",
+    "vi": "Cùng lưu giữ",
+    "th": "เก็บไว้ด้วยกัน",
+    "ru": "Сохранить момент"
+  },
+  "아래로 스크롤하면, 다음 장면": {
+    "en": "Scroll down for the next scene",
+    "zh": "向下滚动，进入下一幕",
+    "vi": "Cuộn xuống để sang cảnh tiếp theo",
+    "th": "เลื่อนลงเพื่อไปฉากถัดไป",
+    "ru": "Листайте вниз — к следующему кадру"
+  },
+  "장면 사이,": {
+    "en": "Between the scenes,",
+    "zh": "在片段之间，",
+    "vi": "Giữa những khoảnh khắc,",
+    "th": "ระหว่างแต่ละฉาก",
+    "ru": "Между кадрами —"
+  },
+  "꼭 알아둘 이야기.": {
+    "en": "a few things to know.",
+    "zh": "有些事想提前告诉您。",
+    "vi": "vài điều cần biết.",
+    "th": "มีเรื่องที่อยากให้รู้ไว้",
+    "ru": "то, что важно знать."
+  },
+  "우리 가족의 나들이를 준비하는 시간": {
+    "en": "A little planning for your family day out",
+    "zh": "为全家人的出游做一点准备",
+    "vi": "Chuẩn bị một chút cho chuyến đi của cả nhà",
+    "th": "เตรียมตัวสำหรับวันเที่ยวของครอบครัว",
+    "ru": "Немного подготовки к семейной поездке"
+  },
+  "1인 19,000원": {
+    "en": "KRW 19,000 per person",
+    "zh": "每人 19,000 韩元",
+    "vi": "19.000 won/người",
+    "th": "คนละ 19,000 วอน",
+    "ru": "19 000 вон на человека"
+  },
+  "1인 500g 전용 팩 포함": {
+    "en": "Includes one 500g picking pack per person",
+    "zh": "含每人一个 500g 专用果盒",
+    "vi": "Gồm một hộp hái dâu 500g mỗi người",
+    "th": "รวมกล่องขนาด 500 กรัม คนละ 1 กล่อง",
+    "ru": "Включена одна коробочка на 500 г каждому"
+  },
+  "사진만 찍는 보호자도 1인 1체험": {
+    "en": "Every adult joins one paid experience, even if only taking photos",
+    "zh": "即使只拍照，陪同家长也需按一人一次体验付费",
+    "vi": "Người lớn chỉ chụp ảnh cũng cần mua một lượt trải nghiệm mỗi người",
+    "th": "ผู้ปกครองที่ถ่ายภาพอย่างเดียวก็ต้องซื้อกิจกรรมคนละ 1 ครั้ง",
+    "ru": "Каждый взрослый оплачивает программу, даже если только фотографирует"
+  },
+  "24개월 미만은 증빙서류 지참 시 무료 입장합니다.": {
+    "en": "Children under 24 months enter free with proof of age.",
+    "zh": "未满 24 个月的幼儿携带年龄证明文件可免费入场。",
+    "vi": "Trẻ dưới 24 tháng được vào miễn phí khi có giấy tờ chứng minh độ tuổi.",
+    "th": "เด็กอายุต่ำกว่า 24 เดือนเข้าฟรีเมื่อแสดงเอกสารยืนยันอายุ",
+    "ru": "Дети младше 24 месяцев проходят бесплатно с документом, подтверждающим возраст."
+  },
+  "온실에서 보내는 시간": {
+    "en": "Time in the greenhouse",
+    "zh": "在温室里的时间",
+    "vi": "Thời gian trong nhà kính",
+    "th": "ช่วงเวลาในโรงเรือน",
+    "ru": "Время в теплице"
+  },
+  "평일 체험 2시간 30분": {
+    "en": "Weekday experience: 2 hr 30 min",
+    "zh": "平日体验 2 小时 30 分钟",
+    "vi": "Ngày thường: 2 giờ 30 phút",
+    "th": "กิจกรรมวันธรรมดา 2 ชั่วโมง 30 นาที",
+    "ru": "Программа в будни: 2 ч 30 мин"
+  },
+  "주말·공휴일 체험 1시간 40분": {
+    "en": "Weekends and public holidays: 1 hr 40 min",
+    "zh": "周末及公休日体验 1 小时 40 分钟",
+    "vi": "Cuối tuần và ngày lễ: 1 giờ 40 phút",
+    "th": "สุดสัปดาห์และวันหยุด 1 ชั่วโมง 40 นาที",
+    "ru": "В выходные и праздники: 1 ч 40 мин"
+  },
+  "월요일 휴무. 월요일이 공휴일이면 정상 영업합니다.": {
+    "en": "Closed Mondays. Open as usual when Monday is a public holiday.",
+    "zh": "周一休息，周一为公休日时照常营业。",
+    "vi": "Nghỉ thứ Hai. Nếu thứ Hai là ngày lễ, nông trại vẫn mở cửa bình thường.",
+    "th": "หยุดวันจันทร์ แต่เปิดตามปกติหากวันจันทร์ตรงกับวันหยุดนักขัตฤกษ์",
+    "ru": "Понедельник — выходной. В праздничный понедельник работаем как обычно."
+  },
+  "조금 여유롭게, 만나요": {
+    "en": "Give yourself a little extra time",
+    "zh": "留一点余裕，轻松见面",
+    "vi": "Đến sớm một chút cho thong thả",
+    "th": "เผื่อเวลาสักนิด แล้วมาพบกัน",
+    "ru": "Приезжайте без спешки"
+  },
+  "10분 먼저": {
+    "en": "10 minutes early",
+    "zh": "提前 10 分钟",
+    "vi": "Sớm 10 phút",
+    "th": "ก่อนเวลา 10 นาที",
+    "ru": "На 10 минут раньше"
+  },
+  "예약 시간 10분 전 도착": {
+    "en": "Arrive 10 minutes before your booking",
+    "zh": "请在预约时间前 10 分钟到达",
+    "vi": "Đến trước giờ đặt chỗ 10 phút",
+    "th": "มาถึงก่อนเวลาจอง 10 นาที",
+    "ru": "Приезжайте за 10 минут до записи"
+  },
+  "농장 옆 도로에 가로주차": {
+    "en": "Parallel park along the road beside the farm",
+    "zh": "沿农场旁道路平行停车",
+    "vi": "Đỗ xe song song dọc đường bên cạnh nông trại",
+    "th": "จอดรถขนานริมถนนข้างฟาร์ม",
+    "ru": "Паркуйтесь параллельно дороге рядом с фермой"
+  },
+  "진입로 주차는 불가합니다. 체험존에는 가방·카메라·포대기 반입이 제한됩니다.": {
+    "en": "Do not park in the entrance. Bags, cameras and traditional Korean fabric baby carriers are restricted in the activity area.",
+    "zh": "请勿在入口通道停车。体验区限制携带包、相机及韩式布背婴带。",
+    "vi": "Không đỗ xe ở lối vào. Khu trải nghiệm hạn chế mang túi, máy ảnh và địu vải truyền thống kiểu Hàn.",
+    "th": "ห้ามจอดรถขวางทางเข้า พื้นที่กิจกรรมจำกัดการนำกระเป๋า กล้อง และผ้าอุ้มเด็กแบบเกาหลีเข้าไป",
+    "ru": "Не паркуйтесь на въезде. В зону сбора ограничен вход с сумками, камерами и традиционными корейскими тканевыми переносками для детей."
+  },
+  "감성 스냅은 상시 제공되는 서비스가 아니며, 예약 시간과 현장 상황에 따라 진행 여부가 달라집니다. 실제 운영일과 예약 가능한 시간은 네이버에서 확인해 주세요.": {
+    "en": "Photo sessions are not always available; they depend on your arrival time and farm operations. Please check Naver for opening days and available booking times.",
+    "zh": "温馨随拍并非随时提供，是否进行取决于预约时间及现场情况。实际开放日期与可预约时间，请在 Naver 确认。",
+    "vi": "Buổi chụp ảnh không phải dịch vụ luôn sẵn có; việc tổ chức phụ thuộc vào giờ đến và hoạt động tại nông trại. Vui lòng xem ngày mở cửa và giờ còn chỗ trên Naver.",
+    "th": "การถ่ายภาพไม่ใช่บริการที่มีตลอด ขึ้นอยู่กับเวลาที่มาถึงและสถานการณ์หน้างาน กรุณาตรวจสอบวันเปิดจริงและเวลาที่จองได้บน Naver",
+    "ru": "Фотосъёмка проводится не всегда: это зависит от времени прибытия и работы фермы. Дни работы и доступное для бронирования время уточняйте в Naver."
+  },
+  "네이버 지도에서 위치 보기": {
+    "en": "Find us on Naver Map",
+    "zh": "在 Naver 地图查看位置",
+    "vi": "Xem vị trí trên Naver Map",
+    "th": "ดูตำแหน่งใน Naver Map",
+    "ru": "Посмотреть на Naver Map"
+  },
+  "딸기 온실에서 서로를 바라보며 장난치는 두 아이": {
+    "en": "Two children looking at each other and playing in the strawberry greenhouse",
+    "zh": "两个孩子在草莓温室里看着彼此嬉闹",
+    "vi": "Hai em bé nhìn nhau và đùa vui trong nhà kính dâu",
+    "th": "เด็กสองคนมองหน้ากันและเล่นสนุกในโรงเรือนสตรอว์เบอร์รี",
+    "ru": "Двое детей смотрят друг на друга и играют в клубничной теплице"
+  },
+  "다음 장면은, 여러분의 하루": {
+    "en": "The next scene is your day",
+    "zh": "下一幕，是你们的一天",
+    "vi": "Cảnh tiếp theo là ngày của gia đình bạn",
+    "th": "ฉากถัดไป คือวันของครอบครัวคุณ",
+    "ru": "Следующий кадр — ваш день"
+  },
+  "우리의 다음 이야기를": {
+    "en": "Let our next story",
+    "zh": "我们的下一个故事，",
+    "vi": "Câu chuyện tiếp theo của chúng ta,",
+    "th": "มาเริ่มเรื่องราวต่อไปของเรา",
+    "ru": "Пусть следующая история"
+  },
+  "여기에서 시작해요.": {
+    "en": "begin right here.",
+    "zh": "就从这里开始。",
+    "vi": "hãy bắt đầu ngay tại đây.",
+    "th": "ด้วยกันที่นี่",
+    "ru": "начнётся здесь."
+  },
+  "네이버 스마트플레이스 예약하기": {
+    "en": "Book on Naver Smart Place",
+    "zh": "前往 Naver Smart Place 预约",
+    "vi": "Đặt chỗ qua Naver Smart Place",
+    "th": "จองผ่าน Naver Smart Place",
+    "ru": "Забронировать в Naver Smart Place"
+  },
+  "날짜 선택과 예약·결제는 네이버에서 진행됩니다.": {
+    "en": "Choose your date, book and pay through Naver.",
+    "zh": "选择日期、预约及付款均在 Naver 完成。",
+    "vi": "Chọn ngày, đặt chỗ và thanh toán trên Naver.",
+    "th": "เลือกวัน จอง และชำระเงินผ่าน Naver",
+    "ru": "Выбор даты, бронирование и оплата — через Naver."
+  },
+  "경기 화성시 만세구 팔탄면 노하길116번길 177-26": {
+    "en": "경기 화성시 만세구 팔탄면 노하길116번길 177-26",
+    "zh": "경기 화성시 만세구 팔탄면 노하길116번길 177-26",
+    "vi": "경기 화성시 만세구 팔탄면 노하길116번길 177-26",
+    "th": "경기 화성시 만세구 팔탄면 노하길116번길 177-26",
+    "ru": "경기 화성시 만세구 팔탄면 노하길116번길 177-26"
+  },
+  "다른 시안과 비교하기 ↗": {
+    "en": "Compare the other concepts ↗",
+    "zh": "与其他方案比较 ↗",
+    "vi": "So sánh với các phương án khác ↗",
+    "th": "เปรียบเทียบกับแบบอื่น ↗",
+    "ru": "Сравнить с другими вариантами ↗"
+  },
+  "빠른 예약": {
+    "en": "Quick booking",
+    "zh": "快速预约",
+    "vi": "Đặt chỗ nhanh",
+    "th": "จองด่วน",
+    "ru": "Быстрое бронирование"
+  },
+  "우리 가족의 다음 장면": {
+    "en": "Your family's next scene",
+    "zh": "我们全家的下一幕",
+    "vi": "Khoảnh khắc tiếp theo của cả nhà",
+    "th": "ฉากต่อไปของครอบครัวเรา",
+    "ru": "Следующий кадр вашей семьи"
+  },
+  "네이버 예약하기": {
+    "en": "Book on Naver",
+    "zh": "前往 Naver 预约",
+    "vi": "Đặt chỗ trên Naver",
+    "th": "จองผ่าน Naver",
+    "ru": "Забронировать в Naver"
+  },
+  "온실 문을 여는 순간,": {
+    "en": "The moment you open the greenhouse door,",
+    "zh": "推开温室门的那一刻，",
+    "vi": "Ngay khi cánh cửa nhà kính mở ra,",
+    "th": "ทันทีที่เปิดประตูโรงเรือน",
+    "ru": "Стоит открыть дверь теплицы —"
+  },
+  "우리의 하루가 시작됩니다.": {
+    "en": "our day begins.",
+    "zh": "我们的一天就开始了。",
+    "vi": "ngày của chúng ta bắt đầu.",
+    "th": "วันของเราก็เริ่มต้นขึ้น",
+    "ru": "и начинается наш день."
+  },
+  "잘해야 할 일은 없어요.": {
+    "en": "Nothing here needs to be perfect.",
+    "zh": "不用追求完美。",
+    "vi": "Không có gì phải làm cho thật hoàn hảo.",
+    "th": "ไม่ต้องทำอะไรให้สมบูรณ์แบบ",
+    "ru": "Здесь не нужно всё делать идеально."
+  },
+  "같은 곳을 바라보고, 함께 웃으면 되니까.": {
+    "en": "Just look together and share a laugh.",
+    "zh": "一起看看，一起笑笑，就很好。",
+    "vi": "Chỉ cần cùng nhìn, cùng cười là đủ.",
+    "th": "แค่มองไปด้วยกัน แล้วหัวเราะด้วยกันก็พอ",
+    "ru": "Достаточно смотреть в одну сторону и смеяться вместе."
+  },
+  "우리의 첫 장면.": {
+    "en": "Our first scene.",
+    "zh": "我们的第一幕。",
+    "vi": "Cảnh đầu tiên của chúng mình.",
+    "th": "ฉากแรกของเรา",
+    "ru": "Наш первый кадр."
+  },
+  "처음 장면으로 ↑": {
+    "en": "Back to the first scene ↑",
+    "zh": "回到第一幕 ↑",
+    "vi": "Về cảnh đầu tiên ↑",
+    "th": "กลับไปฉากแรก ↑",
+    "ru": "К первому кадру ↑"
+  }
+}
